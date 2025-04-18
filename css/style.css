@@ -41,3 +41,28 @@ body{
       /* .box-item:nth-child(3n) {
         margin-right: 0;
     } */
+ .container{
+  display: flex;
+  gap: 8px;
+  max-width:  900px;
+  margin: 20px auto;
+  border: 1px solid orangered;
+
+ }
+ .sidebar-1{
+  flex-basis: 150px;
+  background-color: bisque;
+
+
+ }
+ .sidebar-2{
+  flex-basis: 200px;
+  background-color: yellowgreen;
+
+ }
+.main{
+  flex-grow: 1;
+  height: 250px;
+  background-color: yellow;
+
+}
