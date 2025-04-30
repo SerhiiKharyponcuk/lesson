@@ -129,3 +129,23 @@ border-right: 5px solid black;
 border-radius: 0 15px 0 0;
 }
 
+
+.bg-box{
+  width: 1000px;
+  height: 777px;
+  content: '';
+  background-color: green;
+  background-image: 
+  url(https://www.freeiconspng.com/uploads/grass-png-images-pictures-transparent-28.png),
+  url(https://www.freeiconspng.com/uploads/lamp-png-0.png),
+  url(https://avatanplus.com/files/resources/mid/58eb07b830eab15b56162788.png),
+  url(https://vignette.wikia.nocookie.net/mashaandthebear/images/e/e0/%D0%81%D0%B6%D0%B8%D0%BA.png/revision/latest?cb=20180209130328&path-prefix=ru),
+  url(https://img.goodfon.ru/wallpaper/big/0/5b/pole-zelen-trava-dom-derevya.webp);
+  background-size: 200px,50px,40px,40px,400px;
+  background-repeat:repeat-x,repeat-x,repeat-y,repeat-y,no-repeat;
+  background-position: bottom,top,right,left,center;
+  outline: 4px dashed red;
+}
+
+
+
