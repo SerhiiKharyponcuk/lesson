@@ -1,6 +1,8 @@
 
 body{
     padding: 15px;
+    background-image: linear-gradient(to right, rgb(244, 67, 54, 0.3) 15%, rgb(9, 121, 43, 0.3) 40%, rgb(0, 185, 255, 0.3) 65%, rgb(255, 184, 0, 0.3))
+    
 }
     .container-link {
         display: flex;
@@ -263,23 +265,21 @@ background-image: linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 255, 0
 
 .list {
   display: flex;
-  align-self: flex-start;
 }
 .list-item {
   width: 250px;
+  height: 300px;
   margin: 10px;
   padding: 10px;
   border-radius: 4px;
   background-color: #bbffe8;
-  color: #5d5200;
+  color: goldenrod;
   font-family: 'Montserrat', serif;
-  align-self: start;
   box-shadow:
     0px 2px 3px rgba(0, 0, 0, 0.2),
     0px 2px 3px rgba(0, 0, 0, 0.14),
     0px 2px 3px rgba(0, 0, 0, 0.12);
 }
-
 
 .list-item::before {
   content: "";
@@ -299,8 +299,122 @@ background-image: linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 255, 0
   background-image: url(https://3627081962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FTOxx7nSUyW1jh74KR9zH%2Fuploads%2FOHZYGSzd9n9OKwkAUaeI%2F4.png?alt=media);
 }
 
+.card-item {
+    width: 392px;
+    height: 294px;
+    padding: 33px;
+    outline: 1px solid red;
+    background-color: #1E252B;
+}
+
+.card-title-content {
+    height: 66px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    outline: 1px solid red;
+}
+
+.card-title {
+    margin-bottom: 3px;
+    font-size: 24px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.card-price {
+    font-weight: 400;
+    font-size: 18px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(255, 165, 55, 0.55);
+}
+.card-description{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 187%;
+    color: rgba(255, 255, 255, 0.55);
+}
+.card-link{
+font-family: var(--font-family);
+font-weight: 600;
+font-size: 16px;
+color: rgba(255, 255, 255, 0.55);
+}
 
 
 
 
+.newcomer-title-content {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 197px;
+    width: 427px;
+    height: 300px;
+}
 
+.newcomer-title {
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    line-height: 130%;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.newcomer-description {
+    margin-bottom: 60px;
+    font-size: 18px;
+    line-height: 167%;
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.newcomer-button {
+    border-radius: 8px;
+    width: 198px;
+    height: 58px;
+    background-color: var(--fifth-light-color);
+    font-size: 18px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: #fff;
+    border-radius: 8px;
+    width: 198px;
+    height: 58px;
+    background: #ff6e30; 
+}
+
+.card-box {
+    width: 600px;
+    height: 638px;
+    display: inline-block;
+}
+
+.newcomer-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 50px;
+}
+
+.newcomer-item {
+    width: 288px;
+    height: 284px;
+    border-radius: 15px;
+    padding: 28px 22px;
+    outline: 1px solid red;
+}
+section{
+  display: flex;
+  width: 1224px;
+  height: 638px;
+  background-color:#1E252B ;
+}
