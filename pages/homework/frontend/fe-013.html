@@ -1,0 +1,93 @@
+<!-- ===== Header with burger menu ===== -->
+<header class="site-header">
+  <a class="logo" href="#">LOGO</a>
+
+  <nav class="nav">
+    <input class="nav__toggle sr-only" type="checkbox" id="toggle" />
+
+    <label class="nav__hamburger" for="toggle" aria-label="Open menu">
+      <span class="hamburger"></span>
+    </label>
+
+    <ul class="nav-list" id="menu">
+      <li class="nav-list__item"><a href="#" class="nav-list__link">About</a></li>
+      <li class="nav-list__item"><a href="#" class="nav-list__link">Appartments</a></li>
+      <li class="nav-list__item"><a href="#" class="nav-list__link">How it works</a></li>
+      <li class="nav-list__item"><a href="#" class="nav-list__link">Agents</a></li>
+      <li class="nav-list__item"><a href="#" class="nav-list__link">Contact us</a></li>
+    </ul>
+  </nav>
+
+  <div class="join_block">
+    <button class="join" type="button">Join us</button>
+    <button class="started" type="button">Getting started</button>
+  </div>
+</header>
+
+<!-- ===== Bootstrap grid: 3 columns ===== -->
+<section class="part part_2">
+  <h2 class="title-section">1. Розмітка в Bootstrap (3 колонки від sm)</h2>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm other-styles">Перша колонка</div>
+      <div class="col-sm other-styles">Друга колонка</div>
+      <div class="col-sm other-styles">Третя колонка</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Bootstrap grid: 2 layouts ===== -->
+<section class="part part_2">
+  <h2 class="title-section">2. Розмітка в Bootstrap (2 сітки від xs)</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="col other-styles">1 з 2</div>
+      <div class="col other-styles">2 з 2</div>
+    </div>
+
+    <div class="row">
+      <div class="col other-styles">1 з 3</div>
+      <div class="col other-styles">2 з 3</div>
+      <div class="col other-styles">3 з 3</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Breadcrumbs ===== -->
+<section class="part part_3">
+  <h2 class="title-section">3. Breadcrumbs</h2>
+
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item other-styles"><a href="#">Home</a></li>
+        <li class="breadcrumb-item other-styles"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active other-styles" aria-current="page">Data</li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ===== Buttons ===== -->
+<section class="part part_4">
+  <h2 class="title-section">4. Buttons</h2>
+
+  <div class="buttons-container">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+
+  <div class="buttons-container">
+    <button type="button" class="btn btn-primary btn-lg">Large</button>
+    <button type="button" class="btn btn-primary btn-sm">Small</button>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+﻿/* FE-007: list cards */
+.list{
+  display:flex;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+.list-item{
+  width:250px;
+  height:300px;
+  margin:10px;
+  padding:10px;
+  border-radius:4px;
+  background-color:#bbffe8;
+  color: goldenrod;
+  font-family:'Montserrat', serif;
+  box-shadow:
+    0 2px 3px rgba(0,0,0,.2),
+    0 2px 3px rgba(0,0,0,.14),
+    0 2px 3px rgba(0,0,0,.12);
+}
+
+.list-item::before{
+  content:"";
+  height:120px;
+  display:block;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.list-item:nth-child(1)::before{
+  background-image:url(https://3627081962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FTOxx7nSUyW1jh74KR9zH%2Fuploads%2FHsDkGkBnRTFodwTgpGvq%2F5.png?alt=media);
+}
+.list-item:nth-child(2)::before{
+  background-image:url(https://3627081962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FTOxx7nSUyW1jh74KR9zH%2Fuploads%2FmqeubeKEPt8zSJpaTvDZ%2F6.png?alt=media);
+}
+.list-item:nth-child(3)::before{
+  background-image:url(https://3627081962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FTOxx7nSUyW1jh74KR9zH%2Fuploads%2FOHZYGSzd9n9OKwkAUaeI%2F4.png?alt=media);
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JavaScript — homeworks</title>
+
+    <link rel="stylesheet" href="../../../assets/base.css" />
+    <link rel="stylesheet" id="jsStyle" href="" />
+</head>
+
+<body class="fe-body">
+    <div class="wsapp-shell">
+        <header class="wsapp-topbar">
+            <div class="wsapp-topbar__left">
+                <strong class="wsapp-brand">JavaScript</strong>
+            </div>
+
+            <div class="wsapp-topbar__right">
+                <a class="wsapp-btn wsapp-btn--ghost" href="./index.html">← До списку</a>
+            </div>
+        </header>
+
+        <main class="wsapp-main">
+            <h2 class="wsapp-h2" id="taskTitle">Завдання</h2>
+
+            <div class="wsapp-panel">
+                <div class="fe-task" id="taskContent"></div>
+
+                <div style="margin-top:16px">
+                    <button class="wsapp-btn" id="runJsBtn" type="button">▶ Запустити код</button>
+                </div>
+            </div>
+
+            <nav class="wsapp-navTask" aria-label="Навігація завдання">
+                <a class="wsapp-btn wsapp-btn--ghost" id="prevTask" href="./index.html">← Попереднє</a>
+                <a class="wsapp-btn" id="nextTask" href="./index.html">Наступне →</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="./loader-task.js" defer></script>
+</body>
+
+</html>

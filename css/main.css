@@ -1,0 +1,708 @@
+/* style.css */
+/* =====================================================
+   WSAPP — Bootstrap-safe styles (BEM + namespace)
+   ===================================================== */
+
+:root{
+  /* Background */
+  --wsapp-bg1:#070B14;
+  --wsapp-bg2:#0B1220;
+
+  /* Surfaces */
+  --wsapp-surface: rgba(255,255,255,.06);
+  --wsapp-surface2: rgba(255,255,255,.08);
+  --wsapp-stroke: rgba(255,255,255,.12);
+
+  /* Text palette */
+  --wsapp-text-strong: rgba(255,255,255,.94);
+  --wsapp-text: rgba(255,255,255,.86);
+  --wsapp-text-muted: rgba(255,255,255,.68);
+  --wsapp-text-faint: rgba(255,255,255,.55);
+
+  /* Accents (no yellow) */
+  --wsapp-accent: #6EA8FF;   /* blue */
+  --wsapp-accent2:#A78BFA;   /* purple */
+  --wsapp-info:   #22D3EE;   /* cyan */
+  --wsapp-ok:     #34D399;   /* green */
+  --wsapp-danger: #FB7185;   /* pink-red */
+
+  /* Effects */
+  --wsapp-shadow: 0 22px 70px rgba(0,0,0,.35);
+  --wsapp-radius: 18px;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
+  background: #000; /* не видно під app, але ок */
+}
+
+/* =====================================================
+   LOADER
+   ===================================================== */
+.wsapp-loader{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(1100px 520px at 18% 12%, rgba(110,168,255,.20), transparent 60%),
+    radial-gradient(900px 520px at 92% 28%, rgba(167,139,250,.16), transparent 55%),
+    linear-gradient(160deg, var(--wsapp-bg1), var(--wsapp-bg2));
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.wsapp-loader::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.06), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.05), transparent 45%);
+  filter: blur(2px);
+  animation: wsappFloatBg 7s ease-in-out infinite alternate;
+}
+
+@keyframes wsappFloatBg{
+  from{ transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to  { transform: translate3d(1.5%, 1%, 0) scale(1.02); }
+}
+
+.wsapp-loader__panel{
+  position: relative;
+  width: min(520px, 100%);
+  padding: 26px 22px;
+  border-radius: var(--wsapp-radius);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: var(--wsapp-shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.wsapp-loader__icon{
+  position: relative;
+  height: 70px;
+  margin-bottom: 12px;
+}
+
+.wsapp-loader__gear{
+  position:absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,.35);
+  box-shadow: inset 0 0 0 6px rgba(255,255,255,.06);
+}
+
+.wsapp-loader__gear::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,.32);
+}
+
+.wsapp-loader__gear--big{
+  animation: wsappSpin 1.8s linear infinite;
+}
+
+.wsapp-loader__gear--small{
+  width: 36px;
+  height: 36px;
+  top: 30px;
+  left: calc(50% + 48px);
+  border-width: 2px;
+  animation: wsappSpinReverse 1.2s linear infinite;
+  opacity: .9;
+}
+
+@keyframes wsappSpin{
+  from{ transform: translateX(-50%) rotate(0deg); }
+  to  { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes wsappSpinReverse{
+  from{ transform: translateX(-50%) rotate(0deg); }
+  to  { transform: translateX(-50%) rotate(-360deg); }
+}
+
+.wsapp-loader__title{
+  margin: 0 0 6px;
+  color: var(--wsapp-text-strong);
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+.wsapp-loader__subtitle{
+  margin: 0 0 16px;
+  color: var(--wsapp-text-muted);
+  font-size: 14px;
+}
+
+.wsapp-loader__bar{
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  overflow: hidden;
+}
+
+.wsapp-loader__barFill{
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--wsapp-accent), var(--wsapp-accent2));
+  box-shadow: 0 10px 30px rgba(110,168,255,.15);
+  transition: width .18s ease;
+}
+
+.wsapp-loader__meta{
+  margin-top: 12px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--wsapp-text-muted);
+  font-size: 13px;
+}
+
+.wsapp-loader__percent{
+  color: var(--wsapp-text-faint);
+}
+
+.wsapp-loader__skip{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  color: var(--wsapp-text-strong);
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.wsapp-loader__skip:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.26);
+  transform: translateY(-1px);
+}
+
+.wsapp-loader__skip:active{
+  transform: translateY(0px) scale(.98);
+}
+
+.wsapp-loader--hide{
+  animation: wsappFadeOut .45s ease forwards;
+}
+
+@keyframes wsappFadeOut{
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* =====================================================
+   APP SHELL
+   ===================================================== */
+.wsapp-app--hidden{ display:none; }
+
+.wsapp-shell{
+  min-height: 100vh;
+  padding: 18px;
+  background:
+    radial-gradient(1100px 520px at 18% 12%, rgba(110,168,255,.10), transparent 60%),
+    radial-gradient(900px 520px at 92% 28%, rgba(167,139,250,.08), transparent 55%),
+    linear-gradient(160deg, var(--wsapp-bg1), var(--wsapp-bg2));
+  color: var(--wsapp-text);
+}
+
+/* TOPBAR */
+.wsapp-topbar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wsapp-brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  user-select:none;
+}
+
+.wsapp-brand__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--wsapp-accent), var(--wsapp-accent2));
+  box-shadow: 0 10px 30px rgba(110,168,255,.18);
+}
+
+.wsapp-brand__title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--wsapp-text-strong);
+}
+
+.wsapp-topbar__right{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.wsapp-roleBadge{
+  font-size: 13px;
+  color: var(--wsapp-text-faint);
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+}
+
+/* BUTTONS (bootstrap-safe, do not use .btn) */
+.wsapp-btn{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.08);
+  color: var(--wsapp-text);
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
+  font: inherit;
+}
+
+.wsapp-btn:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.24);
+  transform: translateY(-1px);
+  color: var(--wsapp-text-strong);
+}
+
+.wsapp-btn:active{
+  transform: translateY(0) scale(.99);
+}
+
+.wsapp-btn--ghost{
+  background: rgba(255,255,255,.04);
+  color: var(--wsapp-text-muted);
+}
+
+/* MAIN */
+.wsapp-main{
+  padding: 18px 4px;
+}
+
+.wsapp-h2{
+  margin: 14px 0 8px;
+  font-size: 20px;
+  color: var(--wsapp-text-strong);
+}
+
+.wsapp-muted{
+  margin: 0 0 16px;
+  color: var(--wsapp-text-muted);
+  font-size: 14px;
+}
+
+/* Screens */
+.wsapp-screen{ display:none; }
+.wsapp-screen--active{ display:block; }
+
+.wsapp-screenHead{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.wsapp-panel{
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* =====================================================
+   MENU (BEM, complex classes, no collisions)
+   ===================================================== */
+.wsapp-menu{
+  padding: 10px 0 0;
+}
+
+.wsapp-menu__grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 700px){
+  .wsapp-menu__grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.wsapp-menu__tile{
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+
+  padding: 18px 16px 20px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 22px 60px rgba(0,0,0,.30);
+
+  cursor: pointer;
+  user-select: none;
+
+  /* reset button defaults + prevent bootstrap influence */
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease,
+    border-color .18s ease;
+
+  color: var(--wsapp-text);
+}
+
+.wsapp-menu__tile:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 28px 80px rgba(0,0,0,.38);
+  border-color: rgba(255,255,255,.22);
+}
+
+.wsapp-menu__tile:active{
+  transform: translateY(-1px) scale(.99);
+}
+
+.wsapp-menu__tile::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(140deg, rgba(255,255,255,.18), transparent 45%);
+  opacity: .25;
+  z-index: 0;
+}
+
+.wsapp-menu__tile::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  border-radius: 20px 20px 0 0;
+  z-index: 1;
+}
+
+.wsapp-menu__title,
+.wsapp-menu__text{
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.wsapp-menu__title{
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  margin-bottom: 8px;
+  color: var(--wsapp-text-strong);
+}
+
+.wsapp-menu__text{
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--wsapp-text-muted);
+}
+
+.wsapp-menu__tile:focus-visible{
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.22),
+    0 22px 60px rgba(0,0,0,.35);
+}
+
+/* Theme modifiers */
+.wsapp-menu__tile--homework .wsapp-menu__title{ color: var(--wsapp-accent); }
+.wsapp-menu__tile--homework::after{ background: linear-gradient(90deg, var(--wsapp-accent), transparent); }
+
+.wsapp-menu__tile--lesson .wsapp-menu__title{ color: var(--wsapp-info); }
+.wsapp-menu__tile--lesson::after{ background: linear-gradient(90deg, var(--wsapp-info), transparent); }
+
+.wsapp-menu__tile--training .wsapp-menu__title{ color: var(--wsapp-accent2); }
+.wsapp-menu__tile--training::after{ background: linear-gradient(90deg, var(--wsapp-accent2), transparent); }
+
+/* Hidden modifier used by JS (role-based) */
+.wsapp-menu__tile--hidden{
+  display: none !important;
+}
+
+/* =====================================================
+   HOMEWORK LIST
+   ===================================================== */
+.wsapp-list{
+  display: grid;
+  gap: 10px;
+}
+
+.wsapp-listItem{
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-color .16s ease, background .16s ease, transform .16s ease;
+  cursor: pointer;
+}
+
+.wsapp-listItem:hover{
+  border-color: rgba(110,168,255,.32);
+  background: rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
+
+.wsapp-listItem__title{
+  margin: 0 0 6px;
+  font-weight: 900;
+  color: var(--wsapp-text-strong);
+}
+
+.wsapp-listItem__meta{
+  margin: 0;
+  font-size: 13px;
+  color: var(--wsapp-text-faint);
+}
+
+/* HOMEWORK screen: spacing between Frontend / JavaScript tiles */
+#wsapp-screen-homework .wsapp-menu__grid{
+  gap: 50px !important; /* можеш 18px, 24px видно краще */
+}
+
+@media (max-width: 640px){
+  #wsapp-screen-homework .wsapp-menu__grid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+#wsapp-screen-homework .wsapp-menu__tile{
+  min-height: 80px;}
+
+  /* =========================
+   Role Gate (beautiful UI)
+   ========================= */
+
+.wsapp-gate{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  pointer-events: auto;
+}
+
+.wsapp-gate--hidden{
+  display: none;
+}
+
+.wsapp-gate__backdrop{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 50% 20%, rgba(255,255,255,.18), rgba(0,0,0,.55));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: wsFadeIn .22s ease both;
+}
+
+.wsapp-gate__modal{
+  position: relative;
+  width: min(560px, 100%);
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 30px 80px rgba(0,0,0,.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transform: translateY(10px) scale(.98);
+  opacity: 0;
+  animation: wsModalIn .28s cubic-bezier(.2,.9,.2,1) both;
+}
+
+.wsapp-gate__head{
+  padding: 10px 10px 6px;
+}
+
+.wsapp-gate__badge{
+  width: 46px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0,185,255,.8), rgba(9,121,43,.8), rgba(255,184,0,.8));
+  margin-bottom: 10px;
+  box-shadow: 0 10px 18px rgba(0,0,0,.10);
+}
+
+.wsapp-gate__roles{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 10px;
+}
+
+@media (max-width: 520px){
+  .wsapp-gate__roles{
+    grid-template-columns: 1fr;
+  }
+}
+
+.wsapp-gate__card{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 14px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.70);
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease, background .14s ease;
+}
+
+.wsapp-gate__card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.16);
+  border-color: rgba(0,0,0,.18);
+  background: rgba(255,255,255,.86);
+}
+
+.wsapp-gate__card--active{
+  border-color: rgba(0,0,0,.22);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 20px 55px rgba(0,0,0,.18);
+}
+
+.wsapp-gate__icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  font-size: 22px;
+}
+
+.wsapp-gate__title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: rgba(0,0,0,.86);
+}
+
+.wsapp-gate__desc{
+  margin-top: 2px;
+  font-size: 13px;
+  opacity: .75;
+}
+
+.wsapp-gate__form{
+  padding: 10px;
+}
+
+.wsapp-gate__label{
+  display: block;
+  font-size: 13px;
+  opacity: .75;
+  margin: 6px 0 8px;
+}
+
+.wsapp-gate__inputWrap{
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.wsapp-gate__input{
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.88);
+  outline: none;
+  font-size: 14px;
+  transition: border-color .14s ease, box-shadow .14s ease;
+}
+
+.wsapp-gate__input:focus{
+  border-color: rgba(0,0,0,.28);
+  box-shadow: 0 0 0 4px rgba(0,0,0,.08);
+}
+
+.wsapp-gate__toggle{
+  width: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.70);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.wsapp-gate__toggle:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0,0,0,.12);
+}
+
+.wsapp-gate__error{
+  min-height: 18px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(200, 0, 0, .85);
+}
+
+.wsapp-gate__actions{
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.wsapp-gate__enter{
+  flex: 1;
+}
+
+@keyframes wsFadeIn{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+
+@keyframes wsModalIn{
+  from{ opacity: 0; transform: translateY(16px) scale(.98); }
+  to{ opacity: 1; transform: translateY(0) scale(1); }
+}

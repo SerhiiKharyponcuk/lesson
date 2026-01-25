@@ -1,0 +1,19 @@
+﻿/* FE-010: checkbox no-js */
+.input-box{
+  margin-bottom:40px;
+  width:400px;
+  height:100px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  outline:4px double tomato;
+}
+
+.input-box > label{
+  outline:1px solid grey;
+}
+
+.input-box > input:checked + label{
+  background-color:#e8ffcd;
+}

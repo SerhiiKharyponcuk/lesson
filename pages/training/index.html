@@ -5,12 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lesson</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+<!-- LOADER -->
+<div id="app-loader" class="loader" role="status" aria-live="polite" aria-label="Завантаження">
+  <div class="loader__panel">
+    <div class="loader__icon" aria-hidden="true">
+      <div class="gear gear--big"></div>
+      <div class="gear gear--small"></div>
+    </div>
+
+    <h1 class="loader__title">Вітаю у своїй майстерні</h1>
+    <p class="loader__subtitle">Тут я тренуюсь та роблю уроки...</p>
+
+    <div class="loader__bar" aria-hidden="true">
+      <div class="loader__barFill" id="loaderBar"></div>
+    </div>
+
+    <div class="loader__meta">
+      <span id="loaderPercent">0%</span>
+      <button type="button" class="loader__skip" id="loaderSkip">Пропустити</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="app" class="app app--hidden">
+
+
      <!-- Кнопки прокрутки -->
 <button type="button" class="scroll-btn scroll-up hidden" aria-label="Вгору">↑</button>
 <button type="button" class="scroll-btn scroll-down" aria-label="Вниз">↓</button>
@@ -714,6 +740,10 @@ NEWS</li>
             <button type="button" class="btn btn-primary btn-sm">Мала кнопка</button>
         </div>
     </div>
+</div>
+
+
+  
 
 
 
@@ -733,12 +763,17 @@ NEWS</li>
         </script>
 
  
-       <!--! Скрипт модалки -->
-        <script src="./Js/modal.js"></script>
+        <!--! Скрипт модалки -->
+        <script src="../../Js/modal.js"></script>
      <!-- скрипт скролу  -->
-        <script src="./Js/scroll.js"></script>
+        <script src="../../js/scroll.js"></script>
         <!-- скрипт дз-1 -->
-        <script src="./js/homework.js" type="module"></script>
+        <!-- <script src="./js/homework.js" type="module"></script> -->
         <!-- <script src="./js/lesson.js" type="module"></script> -->
+        <script src="../../assets/loader.js" defer></script>
+
+
+
+        
 </body>
 </html>

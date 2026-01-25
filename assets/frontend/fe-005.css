@@ -1,0 +1,44 @@
+﻿/* FE-005: container12 + box1 */
+.container12{
+  width:900px;
+  display:flex;
+  flex-wrap:wrap;
+  outline:1px solid red;
+  gap:10px;
+}
+
+.box1{
+  flex-basis: calc((100% - 10px) / 2);
+}
+
+.box1:nth-child(1){
+  height:200px;
+  background-color: purple;
+  background-image: url(https://www.freeiconspng.com/uploads/grass-png-images-pictures-transparent-28.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100px;
+}
+
+.box1:nth-child(2){
+  height:200px;
+  background-color: teal;
+  background-image: url(https://vignette.wikia.nocookie.net/mashaandthebear/images/e/e0/%D0%81%D0%B6%D0%B8%D0%BA.png/revision/latest?cb=20180209130328&path-prefix=ru);
+  background-repeat:repeat-x;
+  background-position:bottom;
+  background-size:50px;
+}
+
+.box1:nth-child(3){
+  height:200px;
+  background-color: lightskyblue;
+  background-image: url(https://3627081962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FTOxx7nSUyW1jh74KR9zH%2Fuploads%2FmqeubeKEPt8zSJpaTvDZ%2F6.png?alt=media);
+  background-repeat:repeat-y;
+  background-position:left;
+}
+
+.box1:nth-child(4){
+  height:200px;
+  background-color: blue;
+  background-image: url(https://3627081962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FTOxx7nSUyW1jh74KR9zH%2Fuploads%2Feg1ZIuycuCZ2Fd46ub0w%2F7.png?alt=media);
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frontend — Завдання</title>
+
+  <!-- Bootstrap (якщо підключений глобально — залишайте там; якщо ні, вставте тут) -->
+  <!-- <link rel="stylesheet" href="PATH_TO_BOOTSTRAP.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Base + Loader -->
+  <link rel="stylesheet" href="../../../assets/base.css" />
+  <link rel="stylesheet" href="../../../assets/loader.css" />
+
+  <!-- This will be set dynamically per task (fe-001..fe-013) -->
+  <link rel="stylesheet" id="feStyle" href="" />
+</head>
+
+<body class="fe-body">
+  <div class="wsapp-shell">
+    <header class="wsapp-topbar">
+      <div class="wsapp-topbar__left">
+        <strong class="wsapp-brand">Frontend</strong>
+      </div>
+
+      <div class="wsapp-topbar__right">
+        <a class="wsapp-btn wsapp-btn--ghost" href="./index.html">← До списку</a>
+      </div>
+    </header>
+
+    <main class="wsapp-main">
+      <h2 class="wsapp-h2" id="taskTitle">Завдання</h2>
+
+      <div class="wsapp-panel">
+        <!-- сюда підвантажується контент fe-00X.html -->
+        <div class="fe-task" id="taskContent"></div>
+      </div>
+
+      <!-- Навігація (опціонально). Якщо не треба — можна видалити блок повністю -->
+      <nav class="wsapp-navTask" aria-label="Навігація завдання">
+        <a class="wsapp-btn wsapp-btn--ghost" id="prevTask" href="./index.html">← Попереднє</a>
+        <a class="wsapp-btn" id="nextTask" href="./index.html">Наступне →</a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- Optional: your global site logic (roles etc.) -->
+  <script src="../../../assets/site.js" defer></script>
+
+  <!-- Task loader (must be in same folder as layout.html) -->
+  <script src="./loader-task.js" defer></script>
+</body>
+
+</html>

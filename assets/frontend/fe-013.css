@@ -1,0 +1,156 @@
+﻿/* FE-013: burger header + bootstrap demo */
+
+/* utilities */
+* { box-sizing: border-box; } /* ok even if duplicated, but you can remove if in base.css */
+
+/* header */
+.site-header{
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  margin: 40px auto 50vh;
+  padding: 35px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  outline:1px solid #000; /* demo */
+}
+
+.logo{
+  font-size:25px;
+  font-weight:600;
+  flex-grow:1;
+  outline:1px dashed darkgreen; /* demo */
+}
+
+.nav{ position: relative; }
+
+/* burger */
+.nav__hamburger{
+  position:relative;
+  display:block;
+  height:30px;
+  width:30px;
+  margin-left:auto;
+  background-color:aqua; /* demo */
+  cursor:pointer;
+}
+
+.hamburger{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:24px;
+  height:4px;
+  background: green;
+  transform: translate(-50%,-50%);
+  transition:.5s;
+}
+.hamburger::before,
+.hamburger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:24px;
+  height:4px;
+  background: green;
+  transition:.5s;
+}
+.hamburger::before{ top:-8px; background:red; }
+.hamburger::after{ top: 8px; background:blue; }
+
+/* mobile menu */
+.nav-list{
+  list-style:none;
+  position:absolute;
+  top:120%;
+  left:0;
+  width:100%;
+  padding:20px;
+  margin:0;
+  background:#ffe6c6;
+  box-shadow:0 12px 8px #797979;
+  display:none;
+  outline:2px dotted blue; /* demo */
+}
+
+.nav-list__item{ margin:15px 0; }
+.nav-list__link{
+  display:block;
+  padding:8px 4px;
+  font-size:13px;
+  font-weight:400;
+  text-decoration:none;
+  color:#111;
+}
+
+/* right buttons */
+.join_block{
+  flex-grow:1;
+  text-align:right;
+  outline:1px dashed green; /* demo */
+}
+.join, .started{
+  font-size:13px;
+  transition: opacity .5s;
+}
+.join{
+  padding:0 20px;
+  border:none;
+  background:none;
+}
+.started{
+  padding:14px 20px;
+  border:none;
+  border-radius:6px;
+  background:#ffcc01;
+}
+.join:hover, .started:hover{ opacity:.7; cursor:pointer; }
+
+/* checked state */
+#toggle:checked ~ .nav-list{ display:block; }
+#toggle:checked ~ .nav__hamburger .hamburger{
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+#toggle:checked ~ .nav__hamburger .hamburger::before{ top:0; }
+#toggle:checked ~ .nav__hamburger .hamburger::after{ top:0; transform: rotate(90deg); }
+
+/* focus */
+.nav__hamburger:focus-visible,
+.join:focus-visible, .started:focus-visible,
+.nav-list__link:focus-visible{
+  outline:2px solid #111;
+  outline-offset:2px;
+}
+
+/* desktop */
+@media (min-width:768px){
+  .nav__hamburger, .nav__toggle{ display:none; }
+  .nav-list{
+    position:static;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:transparent;
+    box-shadow:none;
+    padding:0;
+    outline:2px dotted blue; /* demo */
+    gap:16px;
+  }
+  .nav-list__item{ margin:0; }
+}
+
+/* bootstrap demo helpers */
+.part_2 .other-styles{
+  text-align:center;
+  background-color:#e6e7ff;
+  outline:1px solid blue;
+}
+
+.part_3 .container{ outline:1px solid tomato; }
+
+.part_3 .other-styles{
+  background-color:#fffce6;
+  outline:1px dotted green;
+}

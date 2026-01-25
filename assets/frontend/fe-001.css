@@ -1,0 +1,37 @@
+﻿/* FE-001: container-link + box-list */
+.container-link{
+  display:flex;
+  flex-wrap:wrap;
+  width:600px;
+  height:600px;
+  outline:1px solid #000;
+  background-color: bisque;
+}
+
+.link{
+  display:flex;
+  width:150px;
+  height:150px;
+  outline:1px dashed red;
+  margin-right:10px;
+  background-color: blueviolet;
+}
+
+.box-list{
+  width:320px;
+  display:flex;
+  flex-wrap:wrap;
+  column-gap:10px;
+  row-gap:20px;
+  background-color: lightblue;
+  outline:2px solid tomato;
+  padding:0;
+  list-style:none;
+}
+
+.box-item{
+  width:100px;
+  height:100px;
+  background-color: yellow;
+  outline:1px dotted green;
+}

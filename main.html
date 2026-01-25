@@ -1,0 +1,204 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Моя майстерня</title>
+
+  <!-- Bootstrap (як у вас вже підключено) -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+
+  <!-- Ваш CSS -->
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+  <!-- ===================== LOADER ===================== -->
+  <div id="wsapp-loader" class="wsapp-loader" role="status" aria-live="polite" aria-label="Завантаження">
+    <div class="wsapp-loader__panel">
+      <div class="wsapp-loader__icon" aria-hidden="true">
+        <div class="wsapp-loader__gear wsapp-loader__gear--big"></div>
+        <div class="wsapp-loader__gear wsapp-loader__gear--small"></div>
+      </div>
+
+      <h1 class="wsapp-loader__title">Вітаю у своїй майстерні</h1>
+      <p class="wsapp-loader__subtitle">Готуємо меню та уроки…</p>
+
+      <div class="wsapp-loader__bar" aria-hidden="true">
+        <div class="wsapp-loader__barFill" id="wsappLoaderBar"></div>
+      </div>
+
+      <div class="wsapp-loader__meta">
+        <span id="wsappLoaderPercent" class="wsapp-loader__percent">0%</span>
+        <button type="button" class="wsapp-loader__skip" id="wsappLoaderSkip">Пропустити</button>
+      </div>
+    </div>
+  </div>
+  <!-- ROLE GATE (choose role + password) -->
+  <div id="wsapp-roleGate" class="wsapp-gate wsapp-gate--hidden" aria-hidden="true">
+    <div class="wsapp-gate__backdrop" data-gate-close></div>
+
+    <div class="wsapp-gate__modal" role="dialog" aria-modal="true" aria-labelledby="wsappGateTitle">
+      <div class="wsapp-gate__head">
+        <div class="wsapp-gate__badge" aria-hidden="true"></div>
+        <h2 class="wsapp-h2" id="wsappGateTitle">Вхід у майстерню</h2>
+        <p class="wsapp-muted">Оберіть роль і введіть пароль.</p>
+      </div>
+
+      <div class="wsapp-gate__roles">
+        <button class="wsapp-gate__card wsapp-gate__card--active" type="button" data-role="teacher">
+          <div class="wsapp-gate__icon" aria-hidden="true">👩‍🏫</div>
+          <div class="wsapp-gate__text">
+            <div class="wsapp-gate__title">Вчитель</div>
+            <div class="wsapp-gate__desc">Доступ до перевірки домашки</div>
+          </div>
+        </button>
+
+        <button class="wsapp-gate__card" type="button" data-role="student">
+          <div class="wsapp-gate__icon" aria-hidden="true">🎓</div>
+          <div class="wsapp-gate__text">
+            <div class="wsapp-gate__title">Учень</div>
+            <div class="wsapp-gate__desc">Урок + домашні завдання</div>
+          </div>
+        </button>
+      </div>
+
+      <form class="wsapp-gate__form" id="wsappGateForm">
+        <label class="wsapp-gate__label" for="wsappGatePassword">Пароль</label>
+
+        <div class="wsapp-gate__inputWrap">
+          <input id="wsappGatePassword" class="wsapp-gate__input" type="password" inputmode="text" autocomplete="off"
+            placeholder="Введіть пароль" required />
+          <button class="wsapp-gate__toggle" type="button" id="wsappGateToggle" aria-label="Показати/сховати пароль">
+            👁
+          </button>
+        </div>
+
+        <div class="wsapp-gate__error" id="wsappGateError" role="alert" aria-live="polite"></div>
+
+        <div class="wsapp-gate__actions">
+          <button class="wsapp-btn wsapp-gate__enter" type="submit">Увійти</button>
+          <button class="wsapp-btn wsapp-btn--ghost" type="button" data-gate-close>Скасувати</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================== APP ===================== -->
+  <div id="wsapp-app" class="wsapp-app wsapp-app--hidden">
+    <div class="wsapp-shell">
+      <!-- TOP BAR -->
+      <header class="wsapp-topbar">
+        <div class="wsapp-topbar__left">
+          <div class="wsapp-brand">
+            <span class="wsapp-brand__dot" aria-hidden="true"></span>
+            <span class="wsapp-brand__title">Моя майстерня</span>
+          </div>
+        </div>
+
+        <div class="wsapp-topbar__right">
+          <span class="wsapp-roleBadge" id="wsappRoleBadge">Роль: учень</span>
+          <button class="wsapp-btn wsapp-btn--ghost" id="wsappRoleBtn" type="button">Змінити роль</button>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main class="wsapp-main">
+        <!-- HOME -->
+        <section class="wsapp-screen wsapp-screen--active" id="wsapp-screen-home">
+          <h2 class="wsapp-h2">Меню</h2>
+          <p class="wsapp-muted">Обери режим навчання.</p>
+
+          <div class="wsapp-menu">
+            <div class="wsapp-menu__grid">
+              <button class="wsapp-menu__tile wsapp-menu__tile--homework" data-wsnav="homework" type="button">
+                <p class="wsapp-menu__title">Домашка</p>
+                <p class="wsapp-menu__text">Звдання на перевірку.</p>
+              </button>
+
+              <button class="wsapp-menu__tile wsapp-menu__tile--lesson" data-wsnav="lesson" data-ws-student-only="true"
+                type="button">
+                <p class="wsapp-menu__title">Під час уроку</p>
+                <p class="wsapp-menu__text">Тренуйся прямо на уроці.</p>
+              </button>
+
+              <button class="wsapp-menu__tile wsapp-menu__tile--training" data-wsnav="training"
+                data-ws-student-only="true" type="button">
+                <p class="wsapp-menu__title">Тренування</p>
+                <p class="wsapp-menu__text">Швидкі вправи та повторення.</p>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- HOMEWORK -->
+        <section class="wsapp-screen" id="wsapp-screen-homework">
+          <div class="wsapp-screenHead">
+            <button class="wsapp-btn wsapp-btn--ghost" data-wsnav="home" type="button">← Назад</button>
+            <h2 class="wsapp-h2">Домашка</h2>
+          </div>
+
+          <!-- ДВІ КНОПКИ: FRONTEND / JS -->
+          <div class="wsapp-menu">
+            <div class="wsapp-menu__grid">
+              <a class="wsapp-menu__tile wsapp-menu__tile--homework" href="./pages/homework/frontend/index.html">
+                <p class="wsapp-menu__title">Frontend</p>
+                <p class="wsapp-menu__text">Домашні завдання з Frontend.</p>
+              </a>
+
+              <a class="wsapp-menu__tile wsapp-menu__tile--homework" href="./pages/homework/js/index.html">
+                <p class="wsapp-menu__title">JavaScript</p>
+                <p class="wsapp-menu__text">Домашні завдання з JS.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- LESSON -->
+        <section class="wsapp-screen" id="wsapp-screen-lesson">
+          <div class="wsapp-screenHead">
+            <button class="wsapp-btn wsapp-btn--ghost" data-wsnav="home" type="button">← Назад</button>
+            <h2 class="wsapp-h2">Під час уроку</h2>
+          </div>
+
+          <div class="wsapp-panel">
+            <p class="wsapp-muted">Тут буде тренування “під час уроку”.</p>
+          </div>
+        </section>
+
+        <!-- TRAINING -->
+        <section class="wsapp-screen" id="wsapp-screen-training">
+          <div class="wsapp-screenHead">
+            <button class="wsapp-btn wsapp-btn--ghost" data-wsnav="home" type="button">← Назад</button>
+            <h2 class="wsapp-h2">Тренування</h2>
+          </div>
+
+          <div class="wsapp-panel">
+            <p class="wsapp-muted">Тут буде швидке тренування та повторення.</p>
+          </div>
+        </section>
+
+        <!-- SHEET (поки демо) -->
+        <section class="wsapp-screen" id="wsapp-screen-sheet">
+          <div class="wsapp-screenHead">
+            <button class="wsapp-btn wsapp-btn--ghost" data-wsnav="homework" type="button">← До списку ДЗ</button>
+            <h2 class="wsapp-h2" id="wsappSheetTitle">Аркуш</h2>
+          </div>
+
+          <div class="wsapp-panel">
+            <p class="wsapp-muted" id="wsappSheetMeta">Тут буде контент аркуша (наступний крок).</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="./assets/site.js"></script>
+  <script src="./assets/loader.js"></script>
+  <script src="./assets/role.js"></script>
+</body>
+
+</html>

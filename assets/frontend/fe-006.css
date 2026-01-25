@@ -1,0 +1,11 @@
+﻿/* FE-006: overlay2 (multilayer bg) */
+.overlay2{
+  height:600px;
+  outline:2px solid #000;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-image:
+    linear-gradient(to right, rgba(255,0,0,.3), rgba(0,255,0,.3)),
+    url(../../css/images/photo.jpg);
+}

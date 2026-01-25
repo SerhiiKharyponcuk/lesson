@@ -1,0 +1,53 @@
+﻿/* FE-012: sidebar slide menu */
+.box-4{
+  width:600px;
+  height:600px;
+  display:flex;
+  flex-direction:column;
+  background-color:#fff;
+  overflow:hidden;
+}
+
+.sidebar{
+  width:300px;
+  height:100%;
+  background-color:#777;
+  transform: translateX(-250px);
+  position: relative;
+  transition: transform 600ms;
+}
+
+.sidebar:hover{
+  transform: translateX(0);
+}
+
+.menu-title{
+  width:100px;
+  height:30px;
+  transform: rotate(90deg);
+  position:absolute;
+  left:217px;
+  bottom:275px;
+  color:#fff;
+  opacity:1;
+  transition: opacity 500ms cubic-bezier(0.83, -0.08, 0.32, 1);
+}
+
+.sidebar:hover .menu-title{ opacity:0; }
+
+.sidebar li{
+  padding:20px 50px;
+  color:#fff;
+  font-family: Century;
+  font-size:18px;
+  display:flex;
+  gap:20px;
+  transition: color 1000ms;
+}
+
+.sidebar li:first-child{ margin-top:100px; }
+
+.sidebar li:hover{ color: orange; }
+
+/* IMPORTANT: restrict svg rotation to this task only */
+.box-4 svg{ transform: rotate(45deg); }

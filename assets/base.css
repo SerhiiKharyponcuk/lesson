@@ -1,0 +1,205 @@
+﻿/* assets/base.css */
+* { box-sizing: border-box; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Only for Frontend layout */
+.fe-body{
+  padding: 15px;
+  background-image: linear-gradient(to right,
+    rgb(244 67 54 / 0.3) 15%,
+    rgb(9 121 43 / 0.3) 40%,
+    rgb(0 185 255 / 0.3) 65%,
+    rgb(255 184 0 / 0.3)
+  );
+}
+
+@media (min-width: 400px) and (max-width:768px) { .fe-body{ background-color: violet; } }
+@media (min-width: 768px) and (max-width:1199px) { .fe-body{ background-color: blueviolet; } }
+@media (min-width: 1200px) and (max-width:2000px) { .fe-body{ background-color: white; } }
+
+/* =========================================
+   Frontend Shell UI (menu, list, prev/next)
+   ========================================= */
+
+.wsapp-shell{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wsapp-topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+
+  padding: 14px 14px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 35px rgba(0,0,0,.10);
+
+  margin-bottom: 14px;
+}
+
+.wsapp-brand{
+  font-size: 16px;
+  letter-spacing: .2px;
+}
+
+.wsapp-main{
+  padding: 6px 2px 24px;
+}
+
+.wsapp-h2{
+  margin: 10px 0 6px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.wsapp-muted{
+  margin: 0 0 14px;
+  font-size: 14px;
+  opacity: .78;
+}
+
+/* panel where task content sits */
+.wsapp-panel{
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 35px rgba(0,0,0,.10);
+}
+
+/* buttons */
+.wsapp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.10);
+
+  text-decoration:none;
+  font-size: 14px;
+  font-weight: 600;
+
+  background: rgba(255,255,255,.85);
+  color: rgba(0,0,0,.88);
+
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease, opacity .12s ease;
+}
+
+.wsapp-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.14);
+  border-color: rgba(0,0,0,.18);
+}
+
+.wsapp-btn:active{
+  transform: translateY(0px) scale(.99);
+  box-shadow: none;
+}
+
+.wsapp-btn--ghost{
+  background: rgba(255,255,255,.55);
+}
+
+/* task prev/next nav */
+.wsapp-navTask{
+  margin-top: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.wsapp-navTask .wsapp-btn{
+  width: 100%;
+}
+
+@media (min-width: 720px){
+  .wsapp-navTask .wsapp-btn{
+    width: auto;
+    min-width: 240px;
+  }
+}
+
+/* list on frontend/index.html */
+.wsapp-list{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 720px){
+  .wsapp-list{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px){
+  .wsapp-list{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.wsapp-listItem{
+  display:block;
+  padding: 14px 14px;
+  border-radius: 18px;
+  text-decoration:none;
+
+  background: rgba(255,255,255,.70);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.wsapp-listItem:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,.16);
+  box-shadow: 0 16px 34px rgba(0,0,0,.16);
+  background: rgba(255,255,255,.82);
+}
+
+.wsapp-listItem__title{
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 800;
+  color: rgba(0,0,0,.88);
+  letter-spacing: .2px;
+}
+
+.wsapp-listItem__meta{
+  margin: 0;
+  font-size: 13px;
+  opacity: .75;
+}
+
+/* small polish */
+.fe-task{
+  overflow-x: auto;
+}
+
+/* focus visibility */
+.wsapp-btn:focus-visible,
+.wsapp-listItem:focus-visible{
+  outline: 2px solid rgba(0,0,0,.85);
+  outline-offset: 3px;
+}

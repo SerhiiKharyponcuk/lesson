@@ -27,31 +27,183 @@
 
          // УРОК 4
 
-console.log(10 % 3)
-const number = Math.floor( Math.random()*50+1)
-console.log(number)
-if (number % 2 === 0) {
-    console.log(number % 2 === 0)
-} else {
-console.log(number % 2 === 0)
-    }
+// console.log(10 % 3)
+// const number = Math.floor( Math.random()*50+1)
+// console.log(number)
+// if (number % 2 === 0) {
+//     console.log(number % 2 === 0)
+// } else {
+// console.log(number % 2 === 0)
+//     }
 
-const age = Number( prompt("Ведіть свій вік"))
-console.log(age)
+// const age = Number( prompt("Ведіть свій вік"))
+// console.log(age)
 
-const chips = parseFloat( "63.5grn")
-const cola = parseFloat( "50grn")
-console.log(chips+cola)
+// const chips = parseFloat( "63.5grn")
+// const cola = parseFloat( "50grn")
+// console.log(chips+cola)
 
-const number1 = parseFloat(prompt("Веди число"))
-const number2 = parseFloat(prompt("Веди число"))
-const operator = (prompt("Веди знак"))
-if (operator === "+") {
-   console.log(number1 + number2) 
-}if (operator === "-") {
-   console.log(number1 - number2) 
-}if (operator === "*") {
-   console.log(number1 * number2) 
-}if (operator === "/") {
-   console.log(number1 / number2) 
-}
+// const number1 = parseFloat(prompt("Веди число"))
+// const number2 = parseFloat(prompt("Веди число"))
+// const operator = (prompt("Веди знак"))
+// if (operator === "+") {
+//    console.log(number1 + number2) 
+// }if (operator === "-") {
+//    console.log(number1 - number2) 
+// }if (operator === "*") {
+//    console.log(number1 * number2) 
+// }if (operator === "/") {
+//    console.log(number1 / number2) 
+// }
+
+// урок 5
+
+// let name = prompt("Ведіть ваш нік")
+// if (name.length > 0) {
+//    alert("Все добре")
+// }else{
+//    alert("Все погано")
+// }
+
+// const name = prompt("Ведіть ім'я")
+// const nickname = prompt("Ведіть нікнейм")
+// if (name.trim().length > 0 && nickname.trim().length > 0) {
+//    alert(`${name} ${nickname}`)
+// }else{
+//    alert("Все погано")
+// }
+
+// let role = prompt("Ведіть роль")
+// if(role.trim().toLowerCase() === "admin"){
+//    console.log("Ви адмін")
+// }else{
+//    console.log("Ви не адмін")
+// }
+
+// УРОК 6
+
+// let email = prompt("Ведіть імейл")
+// email = email.trim()
+// if (email.length > 0 && email.includes("@")){
+// alert("Все добре")
+// }else{
+//     alert("Все погано")
+// }
+
+
+//  let role = prompt("Ведіть нікнейм")
+//  role = role.toLowerCase()
+//  role = role[0].toUpperCase()
+//  alert(`Привіт ${role.trim()}`)
+
+// виправлено 
+
+//  let role = prompt("Ведіть нікнейм");
+
+// role = role.trim().toLowerCase();
+// role = role[0].toUpperCase() + role.slice(1);
+
+// alert(`Привіт ${role}`);
+
+// let comment = prompt("Ведіть коментар:")
+// if ((comment.trim().length === 0) || (comment.toLowerCase().includes("стан") || comment.toLowerCase().includes("реклама"))) {
+//     alert("Все погано")
+// } else {
+//     alert("Все добре")
+// }
+
+// let email = "http://127.0.0.1:5504/index.html"
+// if (email.startsWith("https:")){
+//     alert("Протокол є захищено")
+// }
+
+// let domenchek = "ua"
+// if (domenchek.endsWith("ua")){
+//     alert("Домен правельний")
+// }
+
+    // УРОК 7
+
+// const pasword = prompt("Ведіть пароль")
+// if (!pasword){
+//     console.log("Ведіть правильний пароль") 
+// }else if(pasword.trim().length < 6){
+// console.log("Пароль закороткий") 
+// }else{
+//   console.log("Пароль правильний")  
+// }
+
+// let mark = prompt("Ведіть оцінку")
+
+// switch (true){
+//     case mark > 90:
+//         alert(5)
+//         break
+//         case mark > 80:
+//         alert(4)
+//         break
+//         case mark > 70:
+//         alert(3)
+//         break
+//         case mark > 60:
+//         alert(2)
+//         break
+//         case mark > 50:
+//         alert(1)
+//         break
+//         default:
+//             alert("Не здав")
+//             break
+// }
+
+// const day = prompt("Ведіть день тижня")
+// const ofday = day === "Субота" || day === "Неділя"? alert("Вихідний"): alert("Це будній день")
+// if(day === "Субота" || day === "Неділя"){
+// alert("Це вихідний")
+// }else{
+// alert("Це будній день")
+// }
+
+   // УРОК 8
+
+// const comment = prompt("Напишіть ваш відгук")
+// const bedwork = "bed"
+// if (comment.trim().length < 10 && comment.includes("bed") ) {
+//     console.log("Ведіть правильні слова")
+// }
+
+// let status = "Оплачено"
+
+// switch(status) {
+//     case "Оплачено":
+//         alert("Платіж успішний")
+//         break
+//     case "Відправлено":
+//         alert("Відправлено")
+//         break
+//     case "Доставлено":
+//         alert("Доставлено")
+//         break
+//     default:
+//         alert("Невідомий стан")
+//         break
+// }
+
+// const status = "не бан"
+// const banned = false
+// const verifi =  banned === true? alert("Не забанена"): alert("Ви забанені")
+// console.log(status, banned)
+
+// for(let i = 0; i <= 100; i += 2) {
+//     console.log(i)
+// }
+
+// let helth = 100
+// while(helth > 0){
+//     let hit = 20
+//     helth -= hit
+//     console.log(hit , helth )
+//     if (helth === 0){
+//         alert("Game over")
+//     }
+// }
