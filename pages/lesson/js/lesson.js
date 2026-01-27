@@ -20,12 +20,12 @@
 // console.log(userName.length >= 3)
 
 
-         // УРОК 3
+// УРОК 3
 
 
 // console.log(isNaN(67))
 
-         // УРОК 4
+// УРОК 4
 
 // console.log(10 % 3)
 // const number = Math.floor( Math.random()*50+1)
@@ -122,7 +122,7 @@
 //     alert("Домен правельний")
 // }
 
-    // УРОК 7
+// УРОК 7
 
 // const pasword = prompt("Ведіть пароль")
 // if (!pasword){
@@ -164,7 +164,7 @@
 // alert("Це будній день")
 // }
 
-   // УРОК 8
+// УРОК 8
 
 // const comment = prompt("Напишіть ваш відгук")
 // const bedwork = "bed"
@@ -207,3 +207,41 @@
 //         alert("Game over")
 //     }
 // }
+
+
+// УРОК 9
+
+// let info = prompt("Ведіть текст")
+// let leters = 0
+// for (let i = 0; i < info.length; i += 1) {
+//     leters += 1; if (info.length < 10) {
+//         alert("Все добре")
+//     } else {
+//         alert("Потрібно вести менше 10 символів")
+//     }
+// }
+// console.log(leters)
+
+// let energy = 100
+// let health = 100
+// let skill = 0
+// while (energy > 0 && health > 0) {
+//     let do_ = prompt("тренування/бій/арена")
+//     if (do_ === "тренування") {
+//         skill++
+//         alert(skill)
+//     } else if (do_ === "бій") {
+//         health = Math.floor((health - (Math.random() * 20)) + skill)
+//         alert(health)
+//     } else if (do_ === "відпочинок") {
+//         health = Math.floor(health + (Math.random() * 5))
+//         alert(health)
+//     }
+// }
+
+// let age
+// do {
+//     age = prompt("Скільки вам років?")
+// } while (age >= 14)
+
+
