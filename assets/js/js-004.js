@@ -40,15 +40,19 @@ window.runTask = function () {
     console.log("Число не входить в діапазон від 10 до 20");
   }
 
-  // 5. Перевірка імʼя, email, пароль
+  // 5. Перевірка імʼя, email, пароль (ВИПРАВЛЕНО)
   let name = "Viktor";
   let email = "viktor@gmail.com";
   let password = "123456";
 
+  let atIndex = email.indexOf("@");
+  let dotIndex = email.indexOf(".");
+
   if (
     name.length >= 3 &&
-    email.includes("@") &&
-    email.includes(".") &&
+    atIndex !== -1 &&
+    dotIndex !== -1 &&
+    dotIndex > atIndex &&
     password.length >= 6
   ) {
     console.log("Перенаправлення на іншу сторінку");

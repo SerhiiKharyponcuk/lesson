@@ -11,7 +11,16 @@
   const elNext = document.getElementById("nextTask");
   const runBtn = document.getElementById("runJsBtn");
 
-  const TASKS = ["js-001.html", "js-002.html", "js-003.html", "js-004.html", "js-005.html"];
+  const TASKS = [
+    "js-001.html",
+    "js-002.html",
+    "js-003.html",
+    "js-004.html",
+    "js-005.html",
+    "js-006.html",
+    "js-007.html",
+  ];
+
 
   const cssMap = {
     "js-001.html": "../../../assets/js/js-001.css",
@@ -22,20 +31,26 @@
   };
 
   const jsMap = {
-    "js-001.html": "../../../assets/js/js-001.js",
-    "js-002.html": "../../../assets/js/js-002.js",
-    "js-003.html": "../../../assets/js/js-003.js",
-    "js-004.html": "../../../assets/js/js-004.js",
-    "js-005.html": "../../../assets/js/js-005.js",
-  };
+  "js-001.html": "../../../assets/js/js-001.js",
+  "js-002.html": "../../../assets/js/js-002.js",
+  "js-003.html": "../../../assets/js/js-003.js",
+  "js-004.html": "../../../assets/js/js-004.js",
+  "js-005.html": "../../../assets/js/js-005.js",
+  "js-006.html": "../../../assets/js/js-006.js",
+  "js-007.html": "../../../assets/js/js-007.js",
+};
 
-  const titleMap = {
-    "js-001.html": "JS-001 — Змінні та типи даних",
-    "js-002.html": "JS-002 — Основні оператори. Числа",
-    "js-003.html": "JS-003 — Рядки",
-    "js-004.html": "JS-004 — Логічні оператори.",
-    "js-005.html": "JS-005 — (поки не зроблено)",
-  };
+
+ const titleMap = {
+  "js-001.html": "JS-001 — Змінні",
+  "js-002.html": "JS-002 — Числа",
+  "js-003.html": "JS-003 — Рядки",
+  "js-004.html": "JS-004 — Умови",
+  "js-005.html": "JS-005 — switch та логіка",
+  "js-006.html": "JS-006 — switch (напої, дні, пори року)",
+  "js-007.html": "JS-007 — Калькулятор",
+};
+
 
   function setNav(i) {
     const prev = TASKS[i - 1];

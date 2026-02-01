@@ -244,4 +244,51 @@
 //     age = prompt("Скільки вам років?")
 // } while (age >= 14)
 
+// УРОК 10
 
+// let info = prompt("Ведіть текст")
+// let hasNambers = false
+// let hasSpace = false
+// let bigLeter = false
+// for (let i = 0; i < info.length; i += 1) {
+//     let leter = info[i]
+//     if (info[i] >= '0' && info[i] <= '9') {
+//         hasNambers = true
+//     }
+
+//     if (leter !== leter.toLowerCase() && leter === leter.toUpperCase()) {
+//         bigLeter = true
+//     }
+
+//     if (leter === " ")
+//        hasSpace = true
+// }
+// let result = Number(hasNambers) + Number(hasSpace) + Number(bigLeter);
+
+// switch (result) {
+//   case 0:
+//     console.log("Дуже поганий пароль");
+//     break;
+//   case 1:
+//     console.log("Поганий пароль");
+//     break;
+//   case 2:
+//     console.log("Середній пароль");
+//     break;
+//   case 3:
+//     console.log("Гарний пароль");
+//     break;
+// }
+
+// let number = prompt("")
+// let maxNumber = Number(number[0])
+// let i = 1
+
+// while (i < number.length) {
+//     if (maxNumber <= Number(number[i])) {
+//         maxNumber = number[i]
+//     }
+//     i++
+// }
+
+// console.log(maxNumber)
