@@ -292,3 +292,109 @@
 // }
 
 // console.log(maxNumber)
+
+
+// УРОК 11
+
+// let marks = [8 , 9 , 7 , 8 , 9 ]
+// let suma = 0
+// for (let i = 0; i < marks.length; i += 1) {
+//     marks[i]
+//     suma += marks[i]
+//     console.log(marks[i],suma);
+// }
+// let allsuma = suma / marks.length
+// console.log(allsuma);
+
+// let array = [170, 100, 60, 400, 30]
+
+// let maxPrice = Number(array[0])
+
+// for (let i = 1; i < array.length; i++) {
+//   let value = Number(array[i])
+//   if (maxPrice < value) {
+//     maxPrice = value
+//   }
+// }
+
+// let discount = 10
+// maxPrice = maxPrice * (1 - discount / 100)
+
+// console.log(maxPrice)
+
+// УРОК 11
+
+// const orders = [120, 450, 99, 560, 300, 120, 800];
+// let maxPrice = 0
+// let sum = 0 
+// let maxOrders = 0
+// for (let i = 0; i < orders.length; i++) {
+//     let value = Number(orders[i])
+//     sum += value; 
+//   if (maxPrice < value) {
+//     maxPrice = value
+//   }if (value > 300){
+//     maxOrders++
+//   }
+// }
+// let allsuma = sum / orders.length
+// let convertSum = Math.floor(allsuma)
+// console.log(sum,convertSum, maxPrice,maxOrders);
+
+// УРОК 12
+
+// const message = "Це поганеСлово";
+// const bedword = "поганеСлово";
+// const messageArr = message.split(" ");
+// const newMassage = []
+
+// for (let i = 0; i < messageArr.length; i++) {
+//   let element = messageArr[i];
+//   if (element.toLowerCase().includes(bedword.toLowerCase())) {
+//     element = "***";
+//     newMassage.push(element);
+//     continue;
+//   }
+//   newMassage.push(element);
+// }
+
+// const result = newMassage.join(" ")
+
+// console.log(result);
+
+
+// const allowedDomains = ["company.com", "corp.org"];
+// const email = "user@company.co";
+// const emailArr = email.split("@")[1]
+// // emailArr[1]
+// if(allowedDomains.includes(emailArr)){
+//   alert("Все добре")
+// }else{
+//   alert("Все погано")
+// }
+// console.log(emailArr);
+
+const cart = ["apple", "banana", "apple", "orange", "banana"];
+
+const uniqueCart = [];
+
+for (let i = 0; i < cart.length; i++) {
+  if (uniqueCart.indexOf(cart[i]) === -1) {
+    uniqueCart.push(cart[i]);
+  }
+}
+
+console.log(uniqueCart);
+
+// const cart = ["apple", "banana", "apple", "orange", "banana"];
+
+// let newCart = [];
+// for (let i = 0; i < cart.length; i++) {
+//     if (newCart.includes(cart[i])) {
+//         continue;
+//     };
+//     newCart.push(cart[i]);
+// };
+
+// console.log(newCart);
+
