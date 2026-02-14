@@ -398,3 +398,73 @@ console.log(uniqueCart);
 
 // console.log(newCart);
 
+
+// const numbers = [5, 10, 15, 20];
+// numbers.forEach(num => {
+//   console.log(num);
+// });
+
+
+// 🟢 Задача 2
+
+// Помножити кожне число на 2
+
+// const numbers = [2, 4, 6, 8];
+
+// const doubled = numbers.map(num => num * 2);
+
+// console.log(doubled); 
+
+
+// 🟡 Задача 3
+
+// Числа більше 10
+
+// const numbers = [1, 5, 10, 15, 20];
+
+// const bigNumbers = numbers.filter(num => num > 10);
+
+// console.log(bigNumbers);
+// [15, 20]
+
+// 🟡 Задача 4
+
+// Перевірити чи є "orange"
+
+const fruits = ["apple", "banana", "orange", "banana"];
+
+const hasOrange = fruits.includes("orange");
+
+console.log(hasOrange);
+// true
+
+const numbers = [10, 20, 30, 40];
+
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+console.log(sum);
+// 100
+
+// УРОК 13
+
+// let lessons = [
+//   "Math",
+//   "English",
+//   "Biology",
+//   "History",
+//   "PE",
+//   "Music"
+// ];
+// let goedLessons = lessons.splice(2 ,2,"Інформатика","Хімія")
+// console.log(goedLessons);
+// console.log(lessons);
+
+// let cart = ["Apple", "Milk", "Bread", "Sugar", "Eggs"];
+
+// let Milk = cart.indexOf("Milk");
+// cart.splice(Milk, 1);
+// let Sugar = cart.indexOf("Sugar");
+// cart.splice(Sugar, 1, "Honey", "Tea");
+// cart.splice(0, 0, "Cheese");
+// cart.splice(-1, 1);
+// console.log(cart);
