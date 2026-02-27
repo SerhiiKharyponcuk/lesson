@@ -374,17 +374,17 @@
 // }
 // console.log(emailArr);
 
-const cart = ["apple", "banana", "apple", "orange", "banana"];
+// const cart = ["apple", "banana", "apple", "orange", "banana"];
 
-const uniqueCart = [];
+// const uniqueCart = [];
 
-for (let i = 0; i < cart.length; i++) {
-  if (uniqueCart.indexOf(cart[i]) === -1) {
-    uniqueCart.push(cart[i]);
-  }
-}
+// for (let i = 0; i < cart.length; i++) {
+//   if (uniqueCart.indexOf(cart[i]) === -1) {
+//     uniqueCart.push(cart[i]);
+//   }
+// }
 
-console.log(uniqueCart);
+// console.log(uniqueCart);
 
 // const cart = ["apple", "banana", "apple", "orange", "banana"];
 
@@ -431,18 +431,18 @@ console.log(uniqueCart);
 
 // Перевірити чи є "orange"
 
-const fruits = ["apple", "banana", "orange", "banana"];
+// const fruits = ["apple", "banana", "orange", "banana"];
 
-const hasOrange = fruits.includes("orange");
+// const hasOrange = fruits.includes("orange");
 
-console.log(hasOrange);
-// true
+// console.log(hasOrange);
+// // true
 
-const numbers = [10, 20, 30, 40];
+// const numbers = [10, 20, 30, 40];
 
-const sum = numbers.reduce((acc, num) => acc + num, 0);
+// const sum = numbers.reduce((acc, num) => acc + num, 0);
 
-console.log(sum);
+// console.log(sum);
 // 100
 
 // УРОК 13
@@ -468,3 +468,177 @@ console.log(sum);
 // cart.splice(0, 0, "Cheese");
 // cart.splice(-1, 1);
 // console.log(cart);
+
+// УРОК 14
+
+// const cart = ["laptop", "phone"];
+
+// function addCard(cart, newCart) {
+//   cart.push(newCart);
+//   return cart;
+// };
+
+// function findCart(cart, findCart) {
+//   if (cart.indexOf(findCart) !== -1) {
+//     return findCart;
+//   }
+//   return "Такого товару не має";
+// };
+
+// function deleteCart(cart, deletCart) {
+//   let indexOfcart = cart.indexOf(deletCart);
+
+//   if (indexOfcart !== -1) {
+//     cart.splice(indexOfcart, 1);
+//   }
+
+//   return cart;
+// };
+
+// function copyCart(cart) {
+//   let newCarts = [cart];
+//   return newCarts;
+// };
+
+// let newCart = "Tablet";
+
+// console.log(addCard(cart, newCart));
+// console.log(findCart(cart, newCart));
+// console.log(addCard(copyCart(cart), "PC"));
+
+
+// let players = ["Anna", "Max", "Olena"];
+
+// function addPlayer(players, addPalayers) {
+//   players.push(addPalayers)
+//   return players;
+// }
+// console.log(players);
+// console.log(addPlayer(players, "Viktor"));
+// function removePlayer(players, removePlayers) {
+//   let removePlayer = players.indexOf(removePlayers);
+//   players.splice(removePlayer, 1)
+//   return players
+// }
+// console.log(players);
+// console.log(removePlayer(players, "Max"));
+// function replacePlayer(players, oldName, newName) {
+//   let replacePlayer = players.indexOf(oldName)
+//   players.splice(replacePlayer, 1, newName)
+//   return players
+// }
+// console.log(players);
+// console.log(replacePlayer(players, "Anna", "Maria"));
+
+                                                                // 1️ Що функція отримує?
+                                                                // 2️ Що вона робить?
+                                                                // 3️ Що вона повертає?
+// 1
+
+// let students = ["Oleh", "Ira", "Dmytro"];
+// function addStudent(students,newStudent){
+//   students.unshift(newStudent)
+//   return students;
+
+// }
+// console.log(addStudent(students,"Viktor"));
+
+// function removeStudent(students, name) {
+//   const index = students.indexOf(name);
+
+//   if (index !== -1) {
+//     students.splice(index, 1);
+//   }
+
+//   return students;
+// }
+
+// УРОК 15
+
+// function createWallet() {
+//   let coins = 0; // приватна змінна
+//   return function (amount) {
+//     coins += amount;
+//     console.log(`Ти маєш стільки ${coins} на гаманці`);
+//   };
+// }
+// const wallet = createWallet()
+// console.log(wallet);
+// wallet(15);
+// wallet(25);
+
+
+// function createTracker(goal) {
+//     return function (staps){
+//       if(staps > goal){
+//         console.log("---Ціль досягнена---");
+//       }else{
+//         console.log("---Треба ще пройтись---");
+//       }
+//     }
+// }
+// const tracker = createTracker(5000)
+// console.log(tracker);
+// tracker(10000)
+
+// УРОК 16
+
+// function calculate(number1, number2, operator) {
+//   return operator(number1, number2);
+// }
+// function minus(a, b) {
+//   return a - b;
+// }
+
+// function plus(a, b) {
+//   return a + b;
+// }
+
+// function divide(a, b) {
+//   return a / b;
+// }
+
+// function multiply(a, b) {
+//   return a * b;
+// }
+
+
+// console.log(calculate(2, 2, minus));
+// console.log(calculate(2, 2, plus)); 
+// console.log(calculate(6, 2, divide)); 
+// console.log(calculate(3, 2, multiply));
+
+// function upString(string , colback) {
+//   return colback(string);
+// }
+// function up(string) {
+//   string.toUpperCase()
+//   return string.toUpperCase()
+// }
+// function low(string) {
+//   string.toLowerCase()
+//   return string.toLowerCase()
+// }
+
+// console.log(upString("рядок", up));
+// console.log(upString("РЯДОК", low));
+
+// let Array1 = [0, 5, 10, 5, 25];
+
+// function maxOfArray(array, callback) {
+//     let maxNumber = array[0];
+
+//     for (let i = 1; i < array.length; i++) {
+//         if (callback(maxNumber, array[i])) {
+//             maxNumber = array[i];
+//         };
+//     };
+
+//     return maxNumber;
+// };
+
+// function checkArray(maxNumber, theNumber) {
+//     return maxNumber > theNumber;
+// };
+
+// console.log(maxOfArray(Array1, checkArray));

@@ -19,8 +19,10 @@
     "js-005.html",
     "js-006.html",
     "js-007.html",
+    "js-008.html",
+    "js-009.html",
+    "js-010.html",
   ];
-
 
   const cssMap = {
     "js-001.html": "../../../assets/js/js-001.css",
@@ -28,29 +30,38 @@
     "js-003.html": "../../../assets/js/js-003.css",
     "js-004.html": "../../../assets/js/js-004.css",
     "js-005.html": "../../../assets/js/js-005.css",
+    "js-006.html": "../../../assets/js/js-006.css",
+    "js-007.html": "../../../assets/js/js-007.css",
+    // "js-008.html": "../../../assets/js/js-008.css",
+    // "js-009.html": "../../../assets/js/js-009.css",
+    // "js-010.html": "../../../assets/js/js-010.css",
   };
 
   const jsMap = {
-  "js-001.html": "../../../assets/js/js-001.js",
-  "js-002.html": "../../../assets/js/js-002.js",
-  "js-003.html": "../../../assets/js/js-003.js",
-  "js-004.html": "../../../assets/js/js-004.js",
-  "js-005.html": "../../../assets/js/js-005.js",
-  "js-006.html": "../../../assets/js/js-006.js",
-  "js-007.html": "../../../assets/js/js-007.js",
-};
+    "js-001.html": "../../../assets/js/js-001.js",
+    "js-002.html": "../../../assets/js/js-002.js",
+    "js-003.html": "../../../assets/js/js-003.js",
+    "js-004.html": "../../../assets/js/js-004.js",
+    "js-005.html": "../../../assets/js/js-005.js",
+    "js-006.html": "../../../assets/js/js-006.js",
+    "js-007.html": "../../../assets/js/js-007.js",
+    "js-008.html": "../../../assets/js/js-008.js",
+    "js-009.html": "../../../assets/js/js-009.js",
+    "js-010.html": "../../../assets/js/js-010.js",
+  };
 
-
- const titleMap = {
-  "js-001.html": "JS-001 — Змінні",
-  "js-002.html": "JS-002 — Числа",
-  "js-003.html": "JS-003 — Рядки",
-  "js-004.html": "JS-004 — Умови",
-  "js-005.html": "JS-005 — switch та логіка",
-  "js-006.html": "JS-006 — Цикли",
-  "js-007.html": "JS-007 — Масиви. Ітерація",
-};
-
+  const titleMap = {
+    "js-001.html": "JS-001 — Змінні",
+    "js-002.html": "JS-002 — Числа",
+    "js-003.html": "JS-003 — Рядки",
+    "js-004.html": "JS-004 — Умови",
+    "js-005.html": "JS-005 — switch та логіка",
+    "js-006.html": "JS-006 — Цикли",
+    "js-007.html": "JS-007 — Масиви. Ітерація",
+    "js-008.html": "JS-008 — Методи масиву",
+    "js-009.html": "JS-009 — Завдання",
+    "js-010.html": "JS-010 — Завдання",
+  };
 
   function setNav(i) {
     const prev = TASKS[i - 1];
@@ -74,10 +85,8 @@
   }
 
   function loadTaskScript(src) {
-    // скидаємо попередню функцію
     delete window.runTask;
 
-    // видаляємо попередній інжект-скрипт
     const old = document.querySelector("script[data-task-script='1']");
     if (old) old.remove();
 
@@ -99,7 +108,6 @@
 
     if (elStyle) elStyle.href = cssMap[taskFile] || "";
 
-    // HTML завдання
     try {
       const res = await fetch(`./${taskFile}`, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -109,8 +117,8 @@
       console.error(e);
     }
 
-    // JS завдання (кнопка активується тільки після onload)
     setRunButtonState(false);
+
     try {
       const jsSrc = jsMap[taskFile];
       if (jsSrc) {
@@ -123,18 +131,16 @@
     }
   }
 
-  // Клік по кнопці запускає window.runTask()
   if (runBtn) {
     runBtn.addEventListener("click", () => {
       if (typeof window.runTask === "function") {
         window.runTask();
       } else {
-        alert("❌ Функція runTask() не знайдена. Перевір, що JS-файл огорнутий у window.runTask = function(){}");
+        alert("❌ Функція runTask() не знайдена.");
       }
     });
   }
 
-  // guards
   if (!file) {
     elTitle.textContent = "Оберіть завдання зі списку";
     elContent.innerHTML = "<p>Немає параметра <code>?file=js-00X.html</code></p>";
@@ -145,6 +151,7 @@
   }
 
   const idx = TASKS.indexOf(file);
+
   if (idx === -1) {
     elTitle.textContent = "Завдання не знайдено";
     elContent.innerHTML = `<p>Невідомий файл: <strong>${file}</strong></p>`;
