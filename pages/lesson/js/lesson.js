@@ -642,3 +642,76 @@
 // };
 
 // console.log(maxOfArray(Array1, checkArray));
+
+// const runLottery = (participants, ruleCallback) => {
+//   for (let I = 0; I < participants.length; I++) {
+//     const element = participants[I];
+//     if (ruleCallback(element)) {
+//         return element
+//     }
+//   }
+//   return "Переможця немає"
+// };
+
+// function choseWinner(winNumber) {
+//     let randomNumber = Math.floor(Math.random()*100)
+//     console.log(randomNumber);
+//     if(randomNumber === winNumber){
+//     return true
+//     }else{
+//         return false
+//     }
+// }
+// let participants = [11, 25, 77, 54];
+// console.log(runLottery(participants,choseWinner)); 
+
+// function sayHello() {
+//   console.log("Hello");
+// }
+
+// function processUser(callback) {
+//   console.log("Processing...");
+//   callback();
+// }
+
+// processUser(sayHello);
+
+// УРОК 17
+
+const telefon = {
+  brand: "Samsung",
+  price: 1000,
+
+
+  
+  color: "black",
+
+  priceUp(money){
+    telefon.price += money;
+  },
+}
+telefon.brand = "Apple"
+console.log(telefon.brand);
+console.log(telefon["price"]);
+console.log(telefon.color);
+telefon.priceUp(200);
+console.log(telefon.price);
+
+
+const player ={
+  currentSong:"Eminem - Lose Yourself",
+  volume: 60,
+  isPlaying: false,
+  play(){
+    this.isPlaying = true;
+  console.log(`Грає пісня ${this.currentSong}`);},
+  setVolume(newVolume){
+    if (newVolume <= 100 && newVolume >= 0) {
+      this.volume = newVolume;
+    }
+  }
+}
+player.play()
+console.log(player);
+player.setVolume(100)
+console.log(player);
