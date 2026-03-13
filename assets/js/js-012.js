@@ -100,3 +100,21 @@ window.runTask = function () {
   console.log("calculateTotalPrice Apple:", calculateTotalPrice(products, "Apple"));
   console.log("calculateTotalPrice Orange:", calculateTotalPrice(products, "Orange"));
 };
+
+
+const products = {
+  laptop: 1200,
+  mouse: 25,
+  keyboard: 80,
+  monitor: 300,
+};
+
+const expensiveProducts = {};
+
+for (const key in products) {
+  if (products[key] > 100) {
+    expensiveProducts[key] = products[key];
+  }
+}
+
+console.log("Товари дорожче 100:", expensiveProducts);

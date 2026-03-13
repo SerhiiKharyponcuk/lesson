@@ -839,3 +839,119 @@ console.log(`Загальна кількість (через Object.values): ${s
 
 const chest2 = {...chest} ;
 console.log(chest2);
+
+// УРОК 20
+
+// Завдання
+// Вивести назви всіх товарів
+// Порахувати скільки всього різних товарів у магазині
+
+const store = {
+  laptop: 5,
+  mouse: 12,
+  keyboard: 8,
+  monitor: 3,
+};
+const items = Object.keys(store);
+let sum1 = 0 ;
+for (let i = 0; i < items.length; i++) {
+  const element = items[i];
+  console.log(element);
+}
+sum1 = items.length
+console.log(sum1);
+console.log(items);
+
+
+// Завдання
+// Вивести імена всіх користувачів
+// Порахувати кількість онлайн користувачів
+
+const users = {
+  Artem: true,
+  Anna: false,
+  Ivan: true,
+  Olha: true,
+};
+const user = Object.values(users);
+let onlineSum = 0
+for (let i = 0; i < user.length; i++) {
+  const element = user[i];
+  console.log(element);
+  if (element === true) {
+   onlineSum++
+  }
+}
+console.log(onlineSum);
+
+// Є об'єкт оцінок.
+
+// Завдання: Порахувати середню оцінку
+
+const grades = {
+  math: 90,
+  english: 75,
+  physics: 85,
+  history: 80,
+};
+const gradess = Object.values(grades)
+let sum3 = 0
+let result = 0
+for (const element of gradess) {
+  console.log(element);
+  sum3 += element
+  result = sum3 / gradess.length
+}
+console.log(sum3);
+console.log(result);
+// for (let i = 0; i < gradess.length; i++) {
+//   const element = gradess[i];
+  
+// }
+
+
+// const car = {
+//   marka: "Toyota",
+//   model: "Camry",
+//   price: 20000,
+// };
+// const entries = Object.entries(car);
+
+// console.log(entries);
+// for (const element of entries) {
+//   const key = element[0];
+//   const value = element[1];
+
+//   console.log(key, value);
+// }
+
+// for (const [key, value] of entries) {
+//   console.log(key, value);
+// }
+
+
+const sales = {
+  laptop: 12,
+  mouse: 25,
+  keyboard: 15,
+  monitor: 8,
+};
+const entries = Object.entries(sales);
+let bestItem = ""
+let bestCount = 0
+for (const [key, value] of entries) {
+  console.log(key, value);
+  if (value > bestCount){
+    bestCount = value;
+    bestItem = key;
+  }
+}
+console.log( "Top product:", bestItem , bestCount);
+
+
+// Завдання
+// Є об'єкт продажів магазину.
+// Потрібно:
+// 1️⃣ перебрати всі товари
+// 2️⃣ знайти товар з найбільшою кількістю продажів
+// 3️⃣ вивести:Top product: mouse (25)
