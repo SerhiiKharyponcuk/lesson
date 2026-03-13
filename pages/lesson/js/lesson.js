@@ -715,3 +715,127 @@ player.play()
 console.log(player);
 player.setVolume(100)
 console.log(player);
+
+// УРОК 18
+
+// Ти розробляєш ядро системи для управління книжковим фондом(бібліотекою).  Система повинна вміти робити "знімки" (snapshots) стану перед кожною зміною, щоб бібліотекар міг скасувати помилкову дію (undo).
+
+// Твоє ТЗ:
+
+// saveState(): Метод, що робить копію об’єкта books і кладе її в масив history. Важливо: Використовуй спред-оператор {...}, інакше undo не працюватиме через копіювання за посиланням.
+
+// addBook(title, amount): Додає книги. Перед зміною обов'язково викликай saveState().
+
+// lendBook(title): Видає книгу (-1). Додай валідацію: якщо книги немає або її 0 — виводь помилку і зупиняй метод.
+
+// undo(): Повертає стан books до останнього збереженого в history.
+
+const library = {
+  name: "Cyber-Library 2026",
+  books: { "Clean Code": 5, "JS for Kids": 2 },  
+  history: [],
+
+  saveState() {
+    console.log({...this.books});
+    this.history.push({...this.books});
+    // TODO: Додай копію this.books в this.history через {...}
+  },
+
+  addBook(title, amount) {
+    this.saveState();
+if (this.books[title]) {
+      this.books[title] += amount;
+    } else {
+      this.books[title] = amount;
+    }
+    console.log(this.books);
+    // TODO: Логіка додавання (якщо є — плюсуєм, якщо нема — створюєм ключ)
+  },
+
+  lendBook(title) {
+    // TODO: Валідація (чи є книга і чи > 0)
+    if (!this.books[title] || this.books[title] <= 0) {
+      console.log("Книга не знайдена або відсутня");
+      return;
+
+    }
+    this.saveState();
+    this.books[title] -= 1;
+    console.log(this.books);
+    // TODO: Логіка зменшення на 1
+  },
+
+  undo() {
+    // TODO: Дістань останній запис з history через .pop() і заміни ним this.books
+    let LastState = this.history.pop();
+    console.log(LastState);
+    this.books = LastState;
+  },
+};
+
+
+
+// Об’єкт:
+// const user = {
+//   name: "Anna",
+//   age: 25
+// };
+
+// // Отримати значення:
+// user.name
+// user["age"]
+// Змінити значення:
+// user.name = "Olena"
+// user["age"] = 30
+// Додати нову пару ключ-значення:
+// user.location = "Kyiv"
+// user["email"] = "anna@kyiv.ua"
+// Видалити пару ключ-значення:
+// delete user.age
+// delete user["email"]
+// Перебрати:
+// for (let key in user) {
+//   console.log(key, user[key]);
+// }
+
+const product = {
+  title: "Phone",
+  price: 500,
+  brand: "Samsung"
+};
+
+for (let key in product) {
+  console.log(`${key}: ${product[key]}`);
+}
+
+// УРОК 19
+
+// Завдання:
+// Об'єднай всі три об'єкти в один fullProfile за допомогою spread.
+// Додай у fullProfile нову властивість lastLogin, яка дорівнює поточній даті (new Date().toLocaleDateString()).
+// За допомогою циклу for...in виведи всі пари ключ: значення, але пропусти ключ id (він секретний).
+
+// const user = { id: 1, nick: "DragonSlayer" };
+// const stats = { kills: 150, deaths: 20 };
+// const achievements = { medal: "Gold", veteran: true };
+
+// const fullProfile = {...user, ...stats, ...achievements, lastLogin: new Date().toLocaleDateString()};
+// console.log(fullProfile);
+
+
+const chest = { gold: 50, diamonds: 5, silver: 100 };
+let sum = 0;
+for (let key in chest){
+  sum += chest[key];
+}
+
+console.log(`Загальна кількість: ${sum}`);
+const velues = Object.values(chest);
+let sum2 = 0;
+for (let i = 0; i < velues.length; i++){
+  sum2 += velues[i];
+}
+console.log(`Загальна кількість (через Object.values): ${sum2}`);
+
+const chest2 = {...chest} ;
+console.log(chest2);

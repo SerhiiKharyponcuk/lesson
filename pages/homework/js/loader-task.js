@@ -22,6 +22,8 @@
     "js-008.html",
     "js-009.html",
     "js-010.html",
+    "js-011.html",
+    "js-012.html",
   ];
 
   const cssMap = {
@@ -48,6 +50,8 @@
     "js-008.html": "../../../assets/js/js-008.js",
     "js-009.html": "../../../assets/js/js-009.js",
     "js-010.html": "../../../assets/js/js-010.js",
+    "js-011.html": "../../../assets/js/js-011.js",
+    "js-012.html": "../../../assets/js/js-012.js",
   };
 
   const titleMap = {
@@ -61,6 +65,8 @@
     "js-008.html": "JS-008 — Методи масиву",
     "js-009.html": "JS-009 — Завдання",
     "js-010.html": "JS-010 — Завдання",
+    "js-011.html": "JS-011 — Завдання",
+    "js-012.html": "JS-012 — Завдання",
   };
 
   function setNav(i) {
