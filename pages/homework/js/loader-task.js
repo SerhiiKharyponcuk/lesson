@@ -24,6 +24,7 @@
     "js-010.html",
     "js-011.html",
     "js-012.html",
+    "js-013.html",
   ];
 
   const cssMap = {
@@ -52,6 +53,7 @@
     "js-010.html": "../../../assets/js/js-010.js",
     "js-011.html": "../../../assets/js/js-011.js",
     "js-012.html": "../../../assets/js/js-012.js",
+    "js-013.html": "../../../assets/js/js-013.js",
   };
 
   const titleMap = {
@@ -67,6 +69,7 @@
     "js-010.html": "JS-010 — Колбек і стрілочні функції.",
     "js-011.html": "JS-011 — Об’єкти. Створення, властивості, методи об'єкту",
     "js-012.html": "JS-012 — Об’єкти. Перебір об'єкту",
+    "js-013.html": "JS-013 — Об’єкти. Деструкткризація об'єктів",
   };
 
   function setNav(i) {

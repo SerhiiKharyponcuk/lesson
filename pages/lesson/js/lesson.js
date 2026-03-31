@@ -530,9 +530,9 @@
 // console.log(players);
 // console.log(replacePlayer(players, "Anna", "Maria"));
 
-                                                                // 1️ Що функція отримує?
-                                                                // 2️ Що вона робить?
-                                                                // 3️ Що вона повертає?
+// 1️ Що функція отримує?
+// 2️ Що вона робить?
+// 3️ Що вона повертає?
 // 1
 
 // let students = ["Oleh", "Ira", "Dmytro"];
@@ -683,10 +683,10 @@ const telefon = {
   price: 1000,
 
 
-  
+
   color: "black",
 
-  priceUp(money){
+  priceUp(money) {
     telefon.price += money;
   },
 }
@@ -698,14 +698,15 @@ telefon.priceUp(200);
 console.log(telefon.price);
 
 
-const player ={
-  currentSong:"Eminem - Lose Yourself",
+const player = {
+  currentSong: "Eminem - Lose Yourself",
   volume: 60,
   isPlaying: false,
-  play(){
+  play() {
     this.isPlaying = true;
-  console.log(`Грає пісня ${this.currentSong}`);},
-  setVolume(newVolume){
+    console.log(`Грає пісня ${this.currentSong}`);
+  },
+  setVolume(newVolume) {
     if (newVolume <= 100 && newVolume >= 0) {
       this.volume = newVolume;
     }
@@ -732,18 +733,18 @@ console.log(player);
 
 const library = {
   name: "Cyber-Library 2026",
-  books: { "Clean Code": 5, "JS for Kids": 2 },  
+  books: { "Clean Code": 5, "JS for Kids": 2 },
   history: [],
 
   saveState() {
-    console.log({...this.books});
-    this.history.push({...this.books});
+    console.log({ ...this.books });
+    this.history.push({ ...this.books });
     // TODO: Додай копію this.books в this.history через {...}
   },
 
   addBook(title, amount) {
     this.saveState();
-if (this.books[title]) {
+    if (this.books[title]) {
       this.books[title] += amount;
     } else {
       this.books[title] = amount;
@@ -825,19 +826,19 @@ for (let key in product) {
 
 const chest = { gold: 50, diamonds: 5, silver: 100 };
 let sum = 0;
-for (let key in chest){
+for (let key in chest) {
   sum += chest[key];
 }
 
 console.log(`Загальна кількість: ${sum}`);
 const velues = Object.values(chest);
 let sum2 = 0;
-for (let i = 0; i < velues.length; i++){
+for (let i = 0; i < velues.length; i++) {
   sum2 += velues[i];
 }
 console.log(`Загальна кількість (через Object.values): ${sum2}`);
 
-const chest2 = {...chest} ;
+const chest2 = { ...chest };
 console.log(chest2);
 
 // УРОК 20
@@ -853,7 +854,7 @@ const store = {
   monitor: 3,
 };
 const items = Object.keys(store);
-let sum1 = 0 ;
+let sum1 = 0;
 for (let i = 0; i < items.length; i++) {
   const element = items[i];
   console.log(element);
@@ -879,7 +880,7 @@ for (let i = 0; i < user.length; i++) {
   const element = user[i];
   console.log(element);
   if (element === true) {
-   onlineSum++
+    onlineSum++
   }
 }
 console.log(onlineSum);
@@ -906,7 +907,7 @@ console.log(sum3);
 console.log(result);
 // for (let i = 0; i < gradess.length; i++) {
 //   const element = gradess[i];
-  
+
 // }
 
 
@@ -941,12 +942,12 @@ let bestItem = ""
 let bestCount = 0
 for (const [key, value] of entries) {
   console.log(key, value);
-  if (value > bestCount){
+  if (value > bestCount) {
     bestCount = value;
     bestItem = key;
   }
 }
-console.log( "Top product:", bestItem , bestCount);
+console.log("Top product:", bestItem, bestCount);
 
 
 // Завдання
@@ -955,3 +956,171 @@ console.log( "Top product:", bestItem , bestCount);
 // 1️⃣ перебрати всі товари
 // 2️⃣ знайти товар з найбільшою кількістю продажів
 // 3️⃣ вивести:Top product: mouse (25)
+
+
+// const products = {
+//   laptop: 1200,
+//   mouse: 25,
+//   keyboard: 80,
+//   monitor: 300,
+// };
+
+// const expensiveProducts = {};
+
+// for (const key in products) {
+//   if (products[key] > 100) {
+//     expensiveProducts[key] = products[key];
+//   }
+// }
+
+// console.log("Товари дорожче 100:", expensiveProducts);
+
+// const products = {
+//   laptop: 1200,
+//   mouse: 25,
+//   keyboard: 80,
+//   monitor: 300,
+// };
+
+// const expensiveProducts = Object.fromEntries(
+//   Object.entries(products).filter(([key, value]) => value > 100)
+// );
+
+// console.log(expensiveProducts);
+
+
+
+const human = {
+  name: "Петро",
+  adult: true,
+  age: Math.floor((0 + Math.random() * 100) - 1),
+}
+console.log(Number.MAX_VALUE);
+console.log(human.age);
+const Petro = {
+  ...human,
+  age: 19,
+
+  sleep(time) {
+    return `Я проспав ${time} годин`
+  }
+
+}
+console.log(Petro.sleep(12));
+console.log(Petro);
+
+
+
+const car = {
+  brand: "Tesla",
+  model: "S",
+  location: {
+    city: "London",
+    x: 121313,
+    y: 121212,
+  }
+}
+
+console.log(car.brand);
+
+const { brand, model } = car;
+console.log(brand, model);
+function whereIsMyCar({ location }) {
+  console.log(location);
+  const { x, y } = location;
+
+}
+whereIsMyCar(car)
+
+const users1 = [
+  { name: "Artem", age: 24 },
+  { name: "Anna", age: 20 },
+];
+for (const { name, age } of users1) {
+  console.log(name, age);
+  console.log(`${name} is ${age} years old`);
+}
+
+// В циклі вивести:
+// "Artem is 24 years old"
+
+
+// УРОК 21
+
+const items1 = [
+  { name: 'Футболка', price: 250, quantity: 2 },
+  { name: 'Джинси', price: 800, quantity: 1 },
+  { name: 'Кросівки', price: 1200, quantity: 1 }
+];
+function getSum(goods) {
+  let sum = 0;
+  let sum2 = 0;
+  console.log(goods);
+  for (const { price, quantity } of goods) {
+    sum = price * quantity
+    console.log(sum);
+    sum2 += sum
+  }
+  return sum2
+};
+console.log(getSum(items1));
+
+
+// УРОК 22
+
+
+
+const arr2 = [2, 4, 5, 6];
+for (const element of arr2) {
+  element
+}
+
+
+
+console.log(arr2.forEach((number) => { console.log(number * 2); }));
+
+const users2 = [
+  { id: 1, name: "Alex", age: 25, isActive: true },
+  { id: 2, name: "Maria", age: 17, isActive: false },
+  { id: 3, name: "John", age: 30, isActive: true },
+  { id: 4, name: "Kate", age: 22, isActive: false },
+];
+
+const arr3 = [1, 4, 7, 9, 10, 3, 5, 6]
+function filterNam(arr3) {
+  const arr4 = []
+  for (const element of arr3) {
+    const { isActive } = element;
+    if (isActive) {
+      arr4.push(element);
+    }
+  }
+  return arr4;
+}
+console.log(filterNam(users2));
+
+const filterArr = users2.filter((user) => user.age > 18).map((user) => user.name)
+console.log(filterArr);
+
+
+const cart = [
+  { id: 1, title: "Phone", price: 500 },
+  { id: 2, title: "Laptop", price: 1200 },
+  { id: 3, title: "Mouse", price: 50 },
+];
+const filterCart = cart.filter(({ price }) => price <= 1200 && price >= 300)
+const findProduct = cart.find(({ title }) => title === "Mouse")
+const sortedCart = [...cart].sort(({title},{title:b}) => title.localeCompare(b) )
+console.log(sortedCart);
+console.log(cart);
+console.log(filterCart);
+console.log(findProduct);
+
+const users3 = [
+  { id: 2, name: "Maria", age: 17, isActive: false },
+  { id: 3, name: "John", age: 30, isActive: true },
+  { id: 1, name: "Alex", age: 25, isActive: true },
+  { id: 4, name: "Kate", age: 22, isActive: false },
+];
+const sortedUsers = [...users3].sort(({isActive},{isActive:b}) => b - isActive)
+console.log(sortedUsers);

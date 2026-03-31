@@ -364,7 +364,6 @@ body{
 .wsapp-menu__tile{
   position: relative;
   display: block;
-  width: 100%;
   text-align: left;
 
   padding: 18px 16px 20px;
