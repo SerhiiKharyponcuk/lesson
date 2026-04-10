@@ -1110,7 +1110,7 @@ const cart = [
 ];
 const filterCart = cart.filter(({ price }) => price <= 1200 && price >= 300)
 const findProduct = cart.find(({ title }) => title === "Mouse")
-const sortedCart = [...cart].sort(({title},{title:b}) => title.localeCompare(b) )
+const sortedCart = [...cart].sort(({ title }, { title: b }) => title.localeCompare(b))
 console.log(sortedCart);
 console.log(cart);
 console.log(filterCart);
@@ -1122,5 +1122,152 @@ const users3 = [
   { id: 1, name: "Alex", age: 25, isActive: true },
   { id: 4, name: "Kate", age: 22, isActive: false },
 ];
-const sortedUsers = [...users3].sort(({isActive},{isActive:b}) => b - isActive)
+const sortedUsers = [...users3].sort(({ isActive }, { isActive: b }) => b - isActive)
 console.log(sortedUsers);
+
+
+
+
+
+// function filterNam(arr3) {
+//   const arr4 = []
+//   for (const element of arr3) {
+//     const { isActive } = element;
+//     if (isActive) {
+//       arr4.push(element);
+//     }
+//   }
+//   return arr4;
+// }
+
+// const numbers5 = [1,2,3,4,5];
+
+// const sum4 = numbers5.reduce((acc,number) => {
+//   return(acc += number);
+// }, 0);
+// console.log(sum4);
+const students = [
+  { id: 1, name: "Anna", age: 17, isActive: true, progress: 80 },
+  { id: 2, name: "Ivan", age: 22, isActive: true, progress: 100 },
+  { id: 3, name: "Olena", age: 19, isActive: true, progress: 40 },
+  { id: 4, name: "Max", age: 16, isActive: true, progress: 60 },
+  { id: 5, name: "Sofia", age: 25, isActive: true, progress: 100 },
+];
+const isActiveSudent = students.some(({ isActive , progress }) => isActive === false || progress < 30 )
+const ageSudent = students.every(({age}) => age >= 15)
+const isveSudent = students.every(({isActive}) => isActive)
+const progStudent = students.some(({progress}) => progress === 100)
+console.log(isveSudent);
+console.log(progStudent);
+console.log(ageSudent);
+console.log(isActiveSudent);
+
+
+const transactions = [
+  { type: "income", amount: 500 },
+  { type: "expense", amount: 200 },
+  { type: "income", amount: 300 },
+];
+const reduceInCome = transactions.reduce((acc, transaction) => {
+  const { type, amount } = transaction
+  if (acc[type] !== undefined) {
+    acc[type] += amount
+  }else{
+    acc[type] = amount
+  }
+  return acc
+}, {})
+console.log(reduceInCome);
+
+
+const characters = [
+  { id: 1, name: "Arthas", class: "Paladin", level: 80, health: 12000, faction: "Alliance" },
+  { id: 2, name: "Thrall", class: "Shaman", level: 75, health: 9500, faction: "Horde" },
+  { id: 3, name: "Sylvanas", class: "Ranger", level: 85, health: 8000, faction: "Horde" },
+  { id: 4, name: "Jaina", class: "Mage", level: 78, health: 6500, faction: "Alliance" },
+  { id: 5, name: "Uther", class: "Paladin", level: 90, health: 15000, faction: "Alliance" },
+  { id: 6, name: "Gul'dan", class: "Warlock", level: 82, health: 7000, faction: "Horde" },
+  { id: 7, name: "Illidan", class: "Demon Hunter", level: 99, health: 20000, faction: "Neutral" },
+  { id: 8, name: "Malfurion", class: "Druid", level: 88, health: 11000, faction: "Alliance" },
+  { id: 9, name: "Vol'jin", class: "Shadow Hunter", level: 72, health: 8800, faction: "Horde" },
+  { id: 10, name: "Tyrande", class: "Priest", level: 84, health: 7500, faction: "Alliance" }
+];
+
+const charechtersFilter = characters.filter(({ faction }) => faction === "Horde").map(({ name: charactersName }) => charactersName)
+const findCharacters = characters.find(({ class: classs }) => classs === "Mage")
+const sortCharactersByHealth = [...characters].sort(({ health: a }, { health: b }) => b - a)
+const sortCharactersByName = [...characters].sort(({ name: a }, { name: b }) => a.localeCompare(b))
+const sumCharactersHealth = characters.reduce((acc, { health }) => {
+  return (acc += health)
+}, 0)
+const reduceShaman = characters.reduce((acc, character) => {
+  const { class: classs } = character
+  if (classs === "Shaman") {
+    acc.push(character)
+  } return acc
+}, [])
+console.log(reduceShaman);
+console.log(sumCharactersHealth);
+console.log(sortCharactersByName);
+console.log(sortCharactersByHealth[0]);
+console.log(findCharacters);
+console.log(charechtersFilter);
+
+
+const users5 = [
+  { id: 1, name: "Anna", role: "admin" },
+  { id: 2, name: "Ivan", role: "user" },
+  { id: 3, name: "Olga", role: "admin" },
+  { id: 4, name: "Ivan", role: "user" },
+  { id: 5, name: "Petro", role: "user" }
+];
+const reduceUsers = users5.reduce((acc, user) => {
+  if (user.role in acc){
+   acc[user.role].push(user)
+  }else{
+  acc[user.role] = [user]
+  }
+  return acc
+
+},
+ {})
+ console.log(reduceUsers);
+
+//  admin: [{...}, {...}],
+// user: [{...}, {...}]},
+
+const pirat = { 
+  name: "Petro",
+  pseudo: "Jack",
+  money: 0,
+  goWalk(){
+  this.money += 100;
+  console.log(pirat);
+  },
+};
+pirat.goWalk();
+
+class BasePirate {
+  constructor(name, pseudo, money){
+    this.name = name;
+    this.pseudo = pseudo;
+    this.money = money;
+  }
+};
+const Bill = new BasePirate("North", "tirn", 0);
+for (let i = 0; i < 100; i++) {
+ 
+  
+}
+console.log(Bill);
+console.log(BasePirate);
+
+class Student {
+  constructor(name , age , cours) {
+    this.name = name;
+    this.age = age;
+    this.cours = cours;
+  }
+};
+const Fill = new Student( "Fill" , 17 , 2 );
+console.log(Fill); 
