@@ -26,6 +26,10 @@
     "js-012.html",
     "js-013.html",
     "js-014.html",
+    "js-015.html",
+    "js-016.html",
+    "js-017.html",
+    "js-018.html",
   ];
 
   const cssMap = {
@@ -56,6 +60,10 @@
     "js-012.html": "../../../assets/js/js-012.js",
     "js-013.html": "../../../assets/js/js-013.js",
     "js-014.html": "../../../assets/js/js-014.js",
+    "js-015.html": "../../../assets/js/js-015.js",
+    "js-016.html": "../../../assets/js/js-016.js",
+    "js-017.html": "../../../assets/js/js-017.js",
+    "js-018.html": "../../../assets/js/js-018.js",
   };
 
   const titleMap = {
@@ -73,6 +81,10 @@
     "js-012.html": "JS-012 — Об’єкти. Перебір об'єкту",
     "js-013.html": "JS-013 — Об’єкти. Деструкткризація об'єктів",
     "js-014.html": "JS-014 — Імперативний і декларативний код. Чисті функції",
+    "js-015.html": "JS-015 — Перебираючі методи масиву",
+    "js-016.html": "JS-016 — ООП",
+    "js-017.html": "JS-017 — DOM (основи)",
+    "js-018.html": "JS-018 — DOM Створення та видалення вузлів.",
   };
 
   function setNav(i) {

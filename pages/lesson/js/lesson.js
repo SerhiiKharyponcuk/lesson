@@ -1,3 +1,16 @@
+const hackerStyle = `
+  background: black;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 8px;
+  text-shadow: 0 0 5px #00ff00;
+`;
+
+console.log('%cSYSTEM ONLINE', hackerStyle);
+console.log('%cCONNECTING TO SERVER...', hackerStyle);
+console.log('%cACCESS GRANTED', hackerStyle);
+
 // урок 2
 
 // let userName = prompt("Ваше ім'я");
@@ -990,56 +1003,56 @@ console.log("Top product:", bestItem, bestCount);
 
 
 
-const human = {
-  name: "Петро",
-  adult: true,
-  age: Math.floor((0 + Math.random() * 100) - 1),
-}
-console.log(Number.MAX_VALUE);
-console.log(human.age);
-const Petro = {
-  ...human,
-  age: 19,
+// const human = {
+//   name: "Петро",
+//   adult: true,
+//   age: Math.floor((0 + Math.random() * 100) - 1),
+// }
+// console.log(Number.MAX_VALUE);
+// console.log(human.age);
+// const Petro = {
+//   ...human,
+//   age: 19,
 
-  sleep(time) {
-    return `Я проспав ${time} годин`
-  }
+//   sleep(time) {
+//     return `Я проспав ${time} годин`
+//   }
 
-}
-console.log(Petro.sleep(12));
-console.log(Petro);
+// }
+// console.log(Petro.sleep(12));
+// console.log(Petro);
 
 
 
-const car = {
-  brand: "Tesla",
-  model: "S",
-  location: {
-    city: "London",
-    x: 121313,
-    y: 121212,
-  }
-}
+// const car = {
+//   brand: "Tesla",
+//   model: "S",
+//   location: {
+//     city: "London",
+//     x: 121313,
+//     y: 121212,
+//   }
+// }
 
-console.log(car.brand);
+// console.log(car.brand);
 
-const { brand, model } = car;
-console.log(brand, model);
-function whereIsMyCar({ location }) {
-  console.log(location);
-  const { x, y } = location;
+// const { brand, model } = car;
+// console.log(brand, model);
+// function whereIsMyCar({ location }) {
+//   console.log(location);
+//   const { x, y } = location;
 
-}
-whereIsMyCar(car)
+// }
+// whereIsMyCar(car)
 
-const users1 = [
-  { name: "Artem", age: 24 },
-  { name: "Anna", age: 20 },
-];
-for (const { name, age } of users1) {
-  console.log(name, age);
-  console.log(`${name} is ${age} years old`);
-}
+// const users1 = [
+//   { name: "Artem", age: 24 },
+//   { name: "Anna", age: 20 },
+// ];
+// for (const { name, age } of users1) {
+//   console.log(name, age);
+//   console.log(`${name} is ${age} years old`);
+// }
 
 // В циклі вивести:
 // "Artem is 24 years old"
@@ -1047,83 +1060,83 @@ for (const { name, age } of users1) {
 
 // УРОК 21
 
-const items1 = [
-  { name: 'Футболка', price: 250, quantity: 2 },
-  { name: 'Джинси', price: 800, quantity: 1 },
-  { name: 'Кросівки', price: 1200, quantity: 1 }
-];
-function getSum(goods) {
-  let sum = 0;
-  let sum2 = 0;
-  console.log(goods);
-  for (const { price, quantity } of goods) {
-    sum = price * quantity
-    console.log(sum);
-    sum2 += sum
-  }
-  return sum2
-};
-console.log(getSum(items1));
+// const items1 = [
+//   { name: 'Футболка', price: 250, quantity: 2 },
+//   { name: 'Джинси', price: 800, quantity: 1 },
+//   { name: 'Кросівки', price: 1200, quantity: 1 }
+// ];
+// function getSum(goods) {
+//   let sum = 0;
+//   let sum2 = 0;
+//   console.log(goods);
+//   for (const { price, quantity } of goods) {
+//     sum = price * quantity
+//     console.log(sum);
+//     sum2 += sum
+//   }
+//   return sum2
+// };
+// console.log(getSum(items1));
 
 
 // УРОК 22
 
 
 
-const arr2 = [2, 4, 5, 6];
-for (const element of arr2) {
-  element
-}
+// const arr2 = [2, 4, 5, 6];
+// for (const element of arr2) {
+//   element
+// }
 
 
 
-console.log(arr2.forEach((number) => { console.log(number * 2); }));
+// console.log(arr2.forEach((number) => { console.log(number * 2); }));
 
-const users2 = [
-  { id: 1, name: "Alex", age: 25, isActive: true },
-  { id: 2, name: "Maria", age: 17, isActive: false },
-  { id: 3, name: "John", age: 30, isActive: true },
-  { id: 4, name: "Kate", age: 22, isActive: false },
-];
+// const users2 = [
+//   { id: 1, name: "Alex", age: 25, isActive: true },
+//   { id: 2, name: "Maria", age: 17, isActive: false },
+//   { id: 3, name: "John", age: 30, isActive: true },
+//   { id: 4, name: "Kate", age: 22, isActive: false },
+// ];
 
-const arr3 = [1, 4, 7, 9, 10, 3, 5, 6]
-function filterNam(arr3) {
-  const arr4 = []
-  for (const element of arr3) {
-    const { isActive } = element;
-    if (isActive) {
-      arr4.push(element);
-    }
-  }
-  return arr4;
-}
-console.log(filterNam(users2));
+// const arr3 = [1, 4, 7, 9, 10, 3, 5, 6]
+// function filterNam(arr3) {
+//   const arr4 = []
+//   for (const element of arr3) {
+//     const { isActive } = element;
+//     if (isActive) {
+//       arr4.push(element);
+//     }
+//   }
+//   return arr4;
+// }
+// console.log(filterNam(users2));
 
-const filterArr = users2.filter((user) => user.age > 18).map((user) => user.name)
-console.log(filterArr);
+// const filterArr = users2.filter((user) => user.age > 18).map((user) => user.name)
+// console.log(filterArr);
 
 
-const cart = [
-  { id: 1, title: "Phone", price: 500 },
-  { id: 2, title: "Laptop", price: 1200 },
-  { id: 3, title: "Mouse", price: 50 },
-];
-const filterCart = cart.filter(({ price }) => price <= 1200 && price >= 300)
-const findProduct = cart.find(({ title }) => title === "Mouse")
-const sortedCart = [...cart].sort(({ title }, { title: b }) => title.localeCompare(b))
-console.log(sortedCart);
-console.log(cart);
-console.log(filterCart);
-console.log(findProduct);
+// const cart = [
+//   { id: 1, title: "Phone", price: 500 },
+//   { id: 2, title: "Laptop", price: 1200 },
+//   { id: 3, title: "Mouse", price: 50 },
+// ];
+// const filterCart = cart.filter(({ price }) => price <= 1200 && price >= 300)
+// const findProduct = cart.find(({ title }) => title === "Mouse")
+// const sortedCart = [...cart].sort(({ title }, { title: b }) => title.localeCompare(b))
+// console.log(sortedCart);
+// console.log(cart);
+// console.log(filterCart);
+// console.log(findProduct);
 
-const users3 = [
-  { id: 2, name: "Maria", age: 17, isActive: false },
-  { id: 3, name: "John", age: 30, isActive: true },
-  { id: 1, name: "Alex", age: 25, isActive: true },
-  { id: 4, name: "Kate", age: 22, isActive: false },
-];
-const sortedUsers = [...users3].sort(({ isActive }, { isActive: b }) => b - isActive)
-console.log(sortedUsers);
+// const users3 = [
+//   { id: 2, name: "Maria", age: 17, isActive: false },
+//   { id: 3, name: "John", age: 30, isActive: true },
+//   { id: 1, name: "Alex", age: 25, isActive: true },
+//   { id: 4, name: "Kate", age: 22, isActive: false },
+// ];
+// const sortedUsers = [...users3].sort(({ isActive }, { isActive: b }) => b - isActive)
+// console.log(sortedUsers);
 
 
 
@@ -1146,128 +1159,181 @@ console.log(sortedUsers);
 //   return(acc += number);
 // }, 0);
 // console.log(sum4);
-const students = [
-  { id: 1, name: "Anna", age: 17, isActive: true, progress: 80 },
-  { id: 2, name: "Ivan", age: 22, isActive: true, progress: 100 },
-  { id: 3, name: "Olena", age: 19, isActive: true, progress: 40 },
-  { id: 4, name: "Max", age: 16, isActive: true, progress: 60 },
-  { id: 5, name: "Sofia", age: 25, isActive: true, progress: 100 },
-];
-const isActiveSudent = students.some(({ isActive , progress }) => isActive === false || progress < 30 )
-const ageSudent = students.every(({age}) => age >= 15)
-const isveSudent = students.every(({isActive}) => isActive)
-const progStudent = students.some(({progress}) => progress === 100)
-console.log(isveSudent);
-console.log(progStudent);
-console.log(ageSudent);
-console.log(isActiveSudent);
+// const students = [
+//   { id: 1, name: "Anna", age: 17, isActive: true, progress: 80 },
+//   { id: 2, name: "Ivan", age: 22, isActive: true, progress: 100 },
+//   { id: 3, name: "Olena", age: 19, isActive: true, progress: 40 },
+//   { id: 4, name: "Max", age: 16, isActive: true, progress: 60 },
+//   { id: 5, name: "Sofia", age: 25, isActive: true, progress: 100 },
+// ];
+// const isActiveSudent = students.some(({ isActive , progress }) => isActive === false || progress < 30 )
+// const ageSudent = students.every(({age}) => age >= 15)
+// const isveSudent = students.every(({isActive}) => isActive)
+// const progStudent = students.some(({progress}) => progress === 100)
+// console.log(isveSudent);
+// console.log(progStudent);
+// console.log(ageSudent);
+// console.log(isActiveSudent);
 
 
-const transactions = [
-  { type: "income", amount: 500 },
-  { type: "expense", amount: 200 },
-  { type: "income", amount: 300 },
-];
-const reduceInCome = transactions.reduce((acc, transaction) => {
-  const { type, amount } = transaction
-  if (acc[type] !== undefined) {
-    acc[type] += amount
-  }else{
-    acc[type] = amount
-  }
-  return acc
-}, {})
-console.log(reduceInCome);
+// const transactions = [
+//   { type: "income", amount: 500 },
+//   { type: "expense", amount: 200 },
+//   { type: "income", amount: 300 },
+// ];
+// const reduceInCome = transactions.reduce((acc, transaction) => {
+//   const { type, amount } = transaction
+//   if (acc[type] !== undefined) {
+//     acc[type] += amount
+//   }else{
+//     acc[type] = amount
+//   }
+//   return acc
+// }, {})
+// console.log(reduceInCome);
 
 
-const characters = [
-  { id: 1, name: "Arthas", class: "Paladin", level: 80, health: 12000, faction: "Alliance" },
-  { id: 2, name: "Thrall", class: "Shaman", level: 75, health: 9500, faction: "Horde" },
-  { id: 3, name: "Sylvanas", class: "Ranger", level: 85, health: 8000, faction: "Horde" },
-  { id: 4, name: "Jaina", class: "Mage", level: 78, health: 6500, faction: "Alliance" },
-  { id: 5, name: "Uther", class: "Paladin", level: 90, health: 15000, faction: "Alliance" },
-  { id: 6, name: "Gul'dan", class: "Warlock", level: 82, health: 7000, faction: "Horde" },
-  { id: 7, name: "Illidan", class: "Demon Hunter", level: 99, health: 20000, faction: "Neutral" },
-  { id: 8, name: "Malfurion", class: "Druid", level: 88, health: 11000, faction: "Alliance" },
-  { id: 9, name: "Vol'jin", class: "Shadow Hunter", level: 72, health: 8800, faction: "Horde" },
-  { id: 10, name: "Tyrande", class: "Priest", level: 84, health: 7500, faction: "Alliance" }
-];
+// const characters = [
+//   { id: 1, name: "Arthas", class: "Paladin", level: 80, health: 12000, faction: "Alliance" },
+//   { id: 2, name: "Thrall", class: "Shaman", level: 75, health: 9500, faction: "Horde" },
+//   { id: 3, name: "Sylvanas", class: "Ranger", level: 85, health: 8000, faction: "Horde" },
+//   { id: 4, name: "Jaina", class: "Mage", level: 78, health: 6500, faction: "Alliance" },
+//   { id: 5, name: "Uther", class: "Paladin", level: 90, health: 15000, faction: "Alliance" },
+//   { id: 6, name: "Gul'dan", class: "Warlock", level: 82, health: 7000, faction: "Horde" },
+//   { id: 7, name: "Illidan", class: "Demon Hunter", level: 99, health: 20000, faction: "Neutral" },
+//   { id: 8, name: "Malfurion", class: "Druid", level: 88, health: 11000, faction: "Alliance" },
+//   { id: 9, name: "Vol'jin", class: "Shadow Hunter", level: 72, health: 8800, faction: "Horde" },
+//   { id: 10, name: "Tyrande", class: "Priest", level: 84, health: 7500, faction: "Alliance" }
+// ];
 
-const charechtersFilter = characters.filter(({ faction }) => faction === "Horde").map(({ name: charactersName }) => charactersName)
-const findCharacters = characters.find(({ class: classs }) => classs === "Mage")
-const sortCharactersByHealth = [...characters].sort(({ health: a }, { health: b }) => b - a)
-const sortCharactersByName = [...characters].sort(({ name: a }, { name: b }) => a.localeCompare(b))
-const sumCharactersHealth = characters.reduce((acc, { health }) => {
-  return (acc += health)
-}, 0)
-const reduceShaman = characters.reduce((acc, character) => {
-  const { class: classs } = character
-  if (classs === "Shaman") {
-    acc.push(character)
-  } return acc
-}, [])
-console.log(reduceShaman);
-console.log(sumCharactersHealth);
-console.log(sortCharactersByName);
-console.log(sortCharactersByHealth[0]);
-console.log(findCharacters);
-console.log(charechtersFilter);
+// const charechtersFilter = characters.filter(({ faction }) => faction === "Horde").map(({ name: charactersName }) => charactersName)
+// const findCharacters = characters.find(({ class: classs }) => classs === "Mage")
+// const sortCharactersByHealth = [...characters].sort(({ health: a }, { health: b }) => b - a)
+// const sortCharactersByName = [...characters].sort(({ name: a }, { name: b }) => a.localeCompare(b))
+// const sumCharactersHealth = characters.reduce((acc, { health }) => {
+//   return (acc += health)
+// }, 0)
+// const reduceShaman = characters.reduce((acc, character) => {
+//   const { class: classs } = character
+//   if (classs === "Shaman") {
+//     acc.push(character)
+//   } return acc
+// }, [])
+// console.log(reduceShaman);
+// console.log(sumCharactersHealth);
+// console.log(sortCharactersByName);
+// console.log(sortCharactersByHealth[0]);
+// console.log(findCharacters);
+// console.log(charechtersFilter);
 
 
-const users5 = [
-  { id: 1, name: "Anna", role: "admin" },
-  { id: 2, name: "Ivan", role: "user" },
-  { id: 3, name: "Olga", role: "admin" },
-  { id: 4, name: "Ivan", role: "user" },
-  { id: 5, name: "Petro", role: "user" }
-];
-const reduceUsers = users5.reduce((acc, user) => {
-  if (user.role in acc){
-   acc[user.role].push(user)
-  }else{
-  acc[user.role] = [user]
-  }
-  return acc
+// const users5 = [
+//   { id: 1, name: "Anna", role: "admin" },
+//   { id: 2, name: "Ivan", role: "user" },
+//   { id: 3, name: "Olga", role: "admin" },
+//   { id: 4, name: "Ivan", role: "user" },
+//   { id: 5, name: "Petro", role: "user" }
+// ];
+// const reduceUsers = users5.reduce((acc, user) => {
+//   if (user.role in acc){
+//    acc[user.role].push(user)
+//   }else{
+//   acc[user.role] = [user]
+//   }
+//   return acc
 
-},
- {})
- console.log(reduceUsers);
+// },
+//  {})
+//  console.log(reduceUsers);
 
-//  admin: [{...}, {...}],
-// user: [{...}, {...}]},
+// //  admin: [{...}, {...}],
+// // user: [{...}, {...}]},
 
-const pirat = { 
-  name: "Petro",
-  pseudo: "Jack",
-  money: 0,
-  goWalk(){
-  this.money += 100;
-  console.log(pirat);
-  },
-};
-pirat.goWalk();
+// const pirat = { 
+//   name: "Petro",
+//   pseudo: "Jack",
+//   money: 0,
+//   goWalk(){
+//   this.money += 100;
+//   console.log(pirat);
+//   },
+// };
+// pirat.goWalk();
 
-class BasePirate {
-  constructor(name, pseudo, money){
-    this.name = name;
-    this.pseudo = pseudo;
-    this.money = money;
-  }
-};
-const Bill = new BasePirate("North", "tirn", 0);
-for (let i = 0; i < 100; i++) {
+// class BasePirate {
+//   constructor(name, pseudo, money){
+//     this.name = name;
+//     this.pseudo = pseudo;
+//     this.money = money;
+//   }
+// };
+// const Bill = new BasePirate("North", "tirn", 0);
+// for (let i = 0; i < 100; i++) {
  
   
-}
-console.log(Bill);
-console.log(BasePirate);
+// }
+// console.log(Bill);
+// console.log(BasePirate);
 
-class Student {
-  constructor(name , age , cours) {
-    this.name = name;
-    this.age = age;
-    this.cours = cours;
-  }
-};
-const Fill = new Student( "Fill" , 17 , 2 );
-console.log(Fill); 
+// class Student {
+//   #name
+
+//   constructor(name , age , cours) {
+//     this.#name = name;
+//     this.age = age;
+//     this.cours = cours;
+//   }
+
+//   get name() {return this.#name}
+//   set name(newName) {return this.#name = newName}
+// };
+// const Fill = new Student( "Fill" , 17 , 2 );
+// console.log(Fill.cours);
+// console.log(Fill.name = "Petro");
+// console.log(Fill.name);
+// console.log(Fill); 
+
+
+// const numbers = [1, 2, 3, 4, 5];
+// const numbersT = numbers.map((number) => {return number * number});
+// Array.prototype.numberss = function () {
+//   const numbersTT = this.map((number) => {return number * number});
+//   console.log(numbersTT);
+//   return numbersTT
+// }
+// const numbersss = [1, 2, 3, 4, 5, 6, 7, 8].numberss();
+
+// console.log(numbersT);
+
+const htmlLink = document.querySelector("#link");
+htmlLink.href = "asdasdas"
+htmlLink.target = "_blank"
+htmlLink.textContent = "НАТИСКАЙ"
+htmlLink.textContent = ""
+htmlLink.getAttribute("target")
+htmlLink.removeAttribute("target")
+console.log(htmlLink.getAttribute("target"));
+console.log(htmlLink);
+
+const htmlDiv = document.querySelector(`[data-user-id="1234"]`);
+console.log(htmlDiv);
+console.log(htmlDiv.dataset.userId);
+
+const htmlInput = document.querySelector("#input");
+console.log(htmlInput.checked);
+htmlInput.getAttribute("aria-checked")
+console.log(htmlInput.getAttribute("aria-checked"));
+
+const paswordInput = document.querySelector("#password")
+
+const passwordButton = document.querySelector("#buttonpasw");
+console.log(paswordInput.value);
+console.log(paswordInput.getAttribute("value"));
+paswordInput.value = "2222"
+console.log(paswordInput.getAttribute("value"));
+console.log(paswordInput.value);
+passwordButton.addEventListener("click",(e) => {if (paswordInput.getAttribute("type") === "text") {
+  paswordInput.type = "password"
+} else {
+ paswordInput.type = "text"
+};})
