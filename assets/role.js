@@ -7,21 +7,19 @@
   const roleCards = gate.querySelectorAll('[data-role]');
   const form = document.getElementById('wsappGateForm');
   const passwordInput = document.getElementById('wsappGatePassword');
+  const togglePasswordBtn = document.getElementById('wsappGateToggle');
   const errorEl = document.getElementById('wsappGateError');
   const closeBtns = gate.querySelectorAll('[data-gate-close]');
 
-  // 🔐 ПРОСТІ, ПАРОЛІ
   const PASSWORDS = {
     student: '1111',
     teacher: '2222'
   };
 
-
   const SHOW_DELAY = 2000;
 
   let selectedRole = localStorage.getItem('wsapp_role') || 'student';
 
-  // ---------- helpers ----------
   function highlightRole() {
     roleCards.forEach(card => {
       card.classList.toggle(
@@ -31,15 +29,34 @@
     });
   }
 
+  function resetPasswordField() {
+    if (!passwordInput) return;
+
+    passwordInput.value = '';
+    passwordInput.type = 'password';
+
+    if (togglePasswordBtn) {
+      togglePasswordBtn.textContent = '👁';
+      togglePasswordBtn.setAttribute('aria-label', 'Показати пароль');
+      togglePasswordBtn.setAttribute('aria-pressed', 'false');
+    }
+  }
+
   function showGate() {
     gate.classList.remove('wsapp-gate--hidden');
     gate.setAttribute('aria-hidden', 'false');
 
-    if (passwordInput) passwordInput.value = '';
-    if (errorEl) errorEl.textContent = '';
+    resetPasswordField();
+
+    if (errorEl) {
+      errorEl.textContent = '';
+    }
 
     highlightRole();
-    setTimeout(() => passwordInput && passwordInput.focus(), 0);
+
+    setTimeout(() => {
+      if (passwordInput) passwordInput.focus();
+    }, 0);
   }
 
   function hideGate() {
@@ -47,45 +64,65 @@
     gate.setAttribute('aria-hidden', 'true');
   }
 
-  // ---------- вибір ролі ----------
   roleCards.forEach(card => {
     card.addEventListener('click', () => {
       selectedRole = card.dataset.role;
       highlightRole();
-      if (errorEl) errorEl.textContent = '';
+
+      if (errorEl) {
+        errorEl.textContent = '';
+      }
     });
   });
 
-  // ---------- submit ----------
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (togglePasswordBtn && passwordInput) {
+    togglePasswordBtn.addEventListener('click', () => {
+      const isHidden = passwordInput.type === 'password';
 
-    const pass = passwordInput.value.trim();
-    if (pass !== PASSWORDS[selectedRole]) {
-      errorEl.textContent = 'Невірний пароль';
-      return;
-    }
+      passwordInput.type = isHidden ? 'text' : 'password';
+      togglePasswordBtn.textContent = isHidden ? '🙈' : '👁';
+      togglePasswordBtn.setAttribute(
+        'aria-label',
+        isHidden ? 'Сховати пароль' : 'Показати пароль'
+      );
+      togglePasswordBtn.setAttribute(
+        'aria-pressed',
+        isHidden ? 'true' : 'false'
+      );
+    });
+  }
 
-    // ✅ встановлюємо роль
-    localStorage.setItem('wsapp_role', selectedRole);
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    // повідомляємо app.js
-    document.dispatchEvent(
-      new CustomEvent('wsapp:roleChanged', {
-        detail: { role: selectedRole }
-      })
-    );
+      const pass = passwordInput.value.trim();
 
-    hideGate();
+      if (pass !== PASSWORDS[selectedRole]) {
+        if (errorEl) {
+          errorEl.textContent = 'Невірний пароль';
+        }
+        return;
+      }
+
+      localStorage.setItem('wsapp_role', selectedRole);
+
+      document.dispatchEvent(
+        new CustomEvent('wsapp:roleChanged', {
+          detail: { role: selectedRole }
+        })
+      );
+
+      hideGate();
+    });
+  }
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', hideGate);
   });
 
-  // ---------- close ----------
-  closeBtns.forEach(btn => btn.addEventListener('click', hideGate));
-
-  // ---------- public API ----------
   window.wsappOpenRoleGate = showGate;
 
-  // ---------- ⏱ СТАРТ ЧЕРЕЗ 3 СЕКУНДИ ----------
   function startGateTimer() {
     setTimeout(showGate, SHOW_DELAY);
   }
