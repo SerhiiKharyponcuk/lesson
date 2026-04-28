@@ -1337,3 +1337,164 @@ passwordButton.addEventListener("click",(e) => {if (paswordInput.getAttribute("t
 } else {
  paswordInput.type = "text"
 };})
+
+
+const teamMembers = [
+  {
+    id: 201,
+    name: "Marta Ilchenko",
+    avatar: "https://i.pravatar.cc/100?img=21",
+    role: "Product Designer",
+  },
+  {
+    id: 202,
+    name: "Denys Moroz",
+    avatar: "https://i.pravatar.cc/100?img=22",
+    role: "Frontend Engineer",
+  },
+  {
+    id: 203,
+    name: "Sofia Petrenko",
+    avatar: "https://i.pravatar.cc/100?img=23",
+    role: "Data Analyst",
+  },
+  {
+    id: 204,
+    name: "Oleh Tkachenko",
+    avatar: "https://i.pravatar.cc/100?img=24",
+    role: "QA Automation",
+  },
+  {
+    id: 205,
+    name: "Nazar Bondarenko",
+    avatar: "https://i.pravatar.cc/100?img=25",
+    role: "DevOps Engineer",
+  },
+  {
+    id: 206,
+    name: "Alina Koval",
+    avatar: "https://i.pravatar.cc/100?img=26",
+    role: "HR Manager",
+  },
+  {
+    id: 207,
+    name: "Taras Hnatiuk",
+    avatar: "https://i.pravatar.cc/100?img=27",
+    role: "Backend Engineer",
+  },
+  {
+    id: 208,
+    name: "Viktoria Savchuk",
+    avatar: "https://i.pravatar.cc/100?img=28",
+    role: "Marketing Lead",
+  },
+  {
+    id: 209,
+    name: "Roman Kravets",
+    avatar: "https://i.pravatar.cc/100?img=29",
+    role: "Security Engineer",
+  },
+  {
+    id: 210,
+    name: "Iryna Dovzhenko",
+    avatar: "https://i.pravatar.cc/100?img=30",
+    role: "Project Coordinator",
+  },
+];
+
+
+// const team__list = document.querySelector("#team");
+
+// function createMembersMarkup(member) {
+//   console.log(member);
+//   const li = document.createElement("li");
+//   li.classList.add("member__item");
+//   li.textContent = "якийсь текст";
+
+//   return li;
+// }
+
+// function renderMemberMarkup(members) {
+//   members.forEach((member) => {
+//     const li = createMembersMarkup(member);
+//     team__list.append(li);
+//   });
+// }
+
+// renderMemberMarkup(teamMembers);
+
+
+const generateUsers = (count = 200) => {
+  const roles = ["Frontend", "Backend", "QA", "DevOps", "UI/UX"];
+
+  return Array.from({ length: count }, (_, index) => ({
+    id: index + 1,
+    name: `User ${index + 1}`,
+    avatar: `https://i.pravatar.cc/100?img=${(index % 70) + 1}`,
+    role: roles[index % roles.length],
+  }));
+};
+
+const largeUserList = generateUsers(10001);
+console.log(largeUserList);
+const users__list = document.querySelector("#users");
+// function createUsersMarkup(user) {
+//   const li = document.createElement("li");
+//   li.classList.add("user-item");
+//   const img = document.createElement("img");
+//   img.src = user.avatar;
+//   const text = document.createElement("p");
+//   text.textContent = user.name;
+//   li.append( img , text )
+//   return li
+// }
+// function renderUsersMarkup(users) {
+//     users.forEach((user) => {
+//     const li = createUsersMarkup(user);
+//     users__list.append(li);
+//   });
+// }
+// const start = performance.now()
+// renderUsersMarkup(largeUserList);
+// const end = performance.now()
+// console.log(end - start);
+
+
+// function createMembersMarkup(members) {
+//   return members
+//     .map(({ id, name, avatar, role }) => {
+//       return `<li id=${id} class="members-item">
+//         <p class="members-name">${name}</p>
+//         <img class="members-avatar" src="${avatar}" alt="${role}" />
+//         <p class="member__role">${role}</p>
+//       </li>`;
+//     })
+//     .join(" ");
+// }
+
+// const membersMarkup = createMembersMarkup(teamMembers);
+
+// team__list.insertAdjacentHTML("beforeend", membersMarkup);
+
+const generateUsersss = generateUsers(50)
+function createUsersMarkup(users) {
+  return users 
+  .map(({ id, name, avatar, role }) => {
+    return `<li id=${id} class="users-item">
+        <p class="users-name">${name}</p>
+        <img class="users-avatar" src="${avatar}" alt="${role}" />
+        <p class="users__role">${role}</p>
+      </li>`;
+  })
+  .join(" ");
+}
+
+const usersMarkup = createUsersMarkup(generateUsersss);
+
+const start = performance.now()
+users__list.insertAdjacentHTML("beforeend", usersMarkup);
+const end = performance.now()
+console.log(end - start);
+
+
+document.body.innerHTML = usersMarkup
