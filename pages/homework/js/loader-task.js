@@ -30,6 +30,8 @@
     "js-016.html",
     "js-017.html",
     "js-018.html",
+    "js-019.html",
+    "js-020.html",
   ];
 
   const cssMap = {
@@ -64,6 +66,8 @@
     "js-016.html": "../../../assets/js/js-016.js",
     "js-017.html": "../../../assets/js/js-017.js",
     "js-018.html": "../../../assets/js/js-018.js",
+    "js-019.html": "../../../assets/js/js-019.js",
+    "js-020.html": "../../../assets/js/js-020.js",
   };
 
   const titleMap = {
@@ -85,6 +89,8 @@
     "js-016.html": "JS-016 — ООП",
     "js-017.html": "JS-017 — DOM (основи)",
     "js-018.html": "JS-018 — DOM Створення та видалення вузлів.",
+    "js-019.html": "JS-019 — Події.",
+    "js-020.html": "JS-020 — ПОдії.",
   };
 
   function setNav(i) {

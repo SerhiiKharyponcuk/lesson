@@ -1269,8 +1269,8 @@ console.log("Top product:", bestItem, bestCount);
 // };
 // const Bill = new BasePirate("North", "tirn", 0);
 // for (let i = 0; i < 100; i++) {
- 
-  
+
+
 // }
 // console.log(Bill);
 // console.log(BasePirate);
@@ -1332,11 +1332,13 @@ console.log(paswordInput.getAttribute("value"));
 paswordInput.value = "2222"
 console.log(paswordInput.getAttribute("value"));
 console.log(paswordInput.value);
-passwordButton.addEventListener("click",(e) => {if (paswordInput.getAttribute("type") === "text") {
-  paswordInput.type = "password"
-} else {
- paswordInput.type = "text"
-};})
+passwordButton.addEventListener("click", (e) => {
+  if (paswordInput.getAttribute("type") === "text") {
+    paswordInput.type = "password"
+  } else {
+    paswordInput.type = "text"
+  };
+})
 
 
 const teamMembers = [
@@ -1476,25 +1478,158 @@ const users__list = document.querySelector("#users");
 
 // team__list.insertAdjacentHTML("beforeend", membersMarkup);
 
-const generateUsersss = generateUsers(50)
-function createUsersMarkup(users) {
-  return users 
-  .map(({ id, name, avatar, role }) => {
-    return `<li id=${id} class="users-item">
-        <p class="users-name">${name}</p>
-        <img class="users-avatar" src="${avatar}" alt="${role}" />
-        <p class="users__role">${role}</p>
-      </li>`;
-  })
-  .join(" ");
-}
+// const generateUsersss = generateUsers(50)
+// function createUsersMarkup(users) {
+//   return users 
+//   .map(({ id, name, avatar, role }) => {
+//     return `<li id=${id} class="users-item">
+//         <p class="users-name">${name}</p>
+//         <img class="users-avatar" src="${avatar}" alt="${role}" />
+//         <p class="users__role">${role}</p>
+//       </li>`;
+//   })
+//   .join(" ");
+// }
 
-const usersMarkup = createUsersMarkup(generateUsersss);
+// const usersMarkup = createUsersMarkup(generateUsersss);
 
-const start = performance.now()
-users__list.insertAdjacentHTML("beforeend", usersMarkup);
-const end = performance.now()
-console.log(end - start);
+// const start = performance.now()
+// users__list.insertAdjacentHTML("beforeend", usersMarkup);
+// const end = performance.now()
+// console.log(end - start);
 
 
-document.body.innerHTML = usersMarkup
+// document.body.innerHTML = usersMarkup
+
+// const liList = document.querySelectorAll("li")
+// Array.from(liList)
+// const arr6 = [...liList]
+// console.log(arr6);;
+// const sortLi = arr6.sort((a, b) => normalaizSalary(b.dataset.salary) - normalaizSalary(a.dataset.salary));
+// // console.log(Array.from(liList));
+// // console.log(liList);
+// function normalaizSalary(salary) {
+//   console.log(salary);
+//   let result = "";
+//   for (const ch of salary) {
+//     if (!isNaN(ch)) {
+//       result += ch
+//     }
+//   }
+//   return Number(result)
+// }
+// const ulList = document.querySelector("#ul-list")
+// function createRobitnikiMarkup(robitniki) {
+//   ulList.innerHTML = ""
+//   robitniki.forEach(element => {
+//     ulList.append(element)
+//   });
+// }
+// createRobitnikiMarkup(sortLi);
+// console.log(sortLi);
+
+
+// const formState = document.querySelector("#state-form");
+// // const lableMale = document.querySelector("#lable-male");
+// // const lableFamele = document.querySelector("#lable-famele");
+// // const lableThis = document.querySelector("#lable-this");
+// const ganderSpan = document.querySelector(".gander");
+// formState.addEventListener("click", (e) => {
+//   ;
+//   if (e.target.tagName !== "INPUT") {
+//     return
+//   }
+//   console.log(e.target.value)
+//   if (e.target.value === "male") {
+//     ganderSpan.textContent = e.target.value
+//     if (ganderSpan.classList.contains("pink")) {
+//       ganderSpan.classList.remove("pink")
+//     }
+//     if (ganderSpan.classList.contains("this")) {
+//       ganderSpan.classList.remove("this")
+//     }
+//     ganderSpan.classList.add("green")
+//     // lableMale.textContent  = e.target.value
+//   } if (e.target.value === "femele") {
+//     ganderSpan.textContent = e.target.value
+//     ganderSpan.classList.add("pink")
+//     if (ganderSpan.classList.contains("green")) {
+//       ganderSpan.classList.remove("green")
+//     } if (ganderSpan.classList.contains("this")) {
+//       ganderSpan.classList.remove("this")
+//     }
+//     // lableFamele.textContent  = e.target.value
+//   } if (e.target.value === "this") {
+//     ganderSpan.textContent = e.target.value
+//     ganderSpan.classList.add("this")
+//     if (ganderSpan.classList.contains("green")) {
+//       ganderSpan.classList.remove("green")
+//     } if (ganderSpan.classList.contains("pink")) {
+//       ganderSpan.classList.remove("pink")
+//     }
+//     // lableThis.textContent  = e.target.value
+//   }
+// });
+// console.log(formState);
+const box = document.querySelector("#box");
+
+document.addEventListener("keydown" , onKeyDown);
+let step = 0;
+function onKeyDown(e) {
+ console.log(e); 
+ if(e.code === "KeyD"){
+  step += 10;
+  box.style.left = `${step}px`
+ } if(e.code === "KeyA"){
+  step -= 10;
+  box.style.left = `${step}px`
+ } if(e.code === "KeyW"){
+  step += 10;
+  box.style.bottom = `${step}px`
+ } if(e.code === "KeyS"){
+  step -= 10;
+  box.style.bottom = `${step}px`
+ }if (e.code === "KeyW" && e.shiftKey) {
+  step += 40;
+  box.style.bottom = `${step}px`
+ }
+  if (e.code === "KeyS" && e.shiftKey) { 
+  step -= 40;
+  box.style.bottom = `${step}px`
+ }if (e.code === "KeyD" && e.shiftKey) { 
+  step += 40;
+  box.style.left = `${step}px`
+ }
+if (e.code === "KeyA" && e.shiftKey) { 
+  step -= 40;
+  box.style.left = `${step}px`
+ }
+
+  }
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e) => {
+  console.log(e);
+  console.log(e.clientX);
+  console.log(e.clientY);
+  cursor.style.left = `${e.clientX}px`
+  cursor.style.top = `${e.clientY}px`
+});
+const btnMe = document.querySelector(".btn-me");
+btnMe.addEventListener("mouseenter", (e) => {
+  cursor.classList.add("active")
+});
+btnMe.addEventListener("mouseleave", (e) => {
+  cursor.classList.remove("active")
+});
+document.addEventListener("mousedown", (e) => {
+  cursor.classList.add("small")
+});
+document.addEventListener("mouseup", (e) => {
+  cursor.classList.remove("small")
+});
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+document.addEventListener("dblclick", (e) => {
+  alert("Подвійний клік")
+});
