@@ -31,7 +31,6 @@
     "js-017.html",
     "js-018.html",
     "js-019.html",
-    "js4-001.html",
   ];
 
   const cssMap = {
@@ -48,7 +47,7 @@
   };
 
   const jsMap = {
-    "js4-001.html": "../../../assets/js/js4-001.js",
+    "js-001.html": "../../../assets/js/js-001.js",
     "js-002.html": "../../../assets/js/js-002.js",
     "js-003.html": "../../../assets/js/js-003.js",
     "js-004.html": "../../../assets/js/js-004.js",
@@ -67,7 +66,6 @@
     "js-017.html": "../../../assets/js/js-017.js",
     "js-018.html": "../../../assets/js/js-018.js",
     "js-019.html": "../../../assets/js/js-019.js",
-    "js4-001.html": "../../../assets/js/js4-001.js",
   };
 
   const titleMap = {
@@ -89,8 +87,7 @@
     "js-016.html": "JS-016 — ООП",
     "js-017.html": "JS-017 — DOM (основи)",
     "js-018.html": "JS-018 — DOM Створення та видалення вузлів.",
-    "js-019.html": "JS-019 — Події.",
-    "js4-001.html": "JS-001 — Variables and Constants",
+    "js-019.html": "JS-019 - Events.",
   };
 
   function setNav(i) {

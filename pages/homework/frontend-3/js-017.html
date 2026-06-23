@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DOM завдання</title>
+</head>
+<body>
+
+  <!-- 1) Кнопка + поле вводу -->
+  <section>
+    <h2>1) Кнопка + input</h2>
+    <input id="textInput" type="text" value="Новий текст кнопки" />
+    <button id="changeBtn" type="button">Старий текст</button>
+  </section>
+
+  <hr />
+
+  <!-- 2) Заголовок + зображення (міняємо src) -->
+  <section>
+    <h2>2) Картинка (src)</h2>
+    <h3>Моє зображення</h3>
+    <img
+      id="mainImage"
+      src="https://picsum.photos/seed/start/400/250"
+      alt="Початкове зображення"
+      width="400"
+      height="250"
+    />
+  </section>
+
+  <hr />
+
+  <!-- 3) Посилання + зображення (міняємо href, додаємо alt) -->
+  <section>
+    <h2>3) Link + image</h2>
+    <a id="siteLink" href="https://example.com" target="_blank">
+      Перейти на сайт
+    </a>
+    <br /><br />
+    <img
+      id="linkImage"
+      src="https://picsum.photos/seed/link/300/200"
+      width="300"
+      height="200"
+    />
+  </section>
+
+  <hr />
+
+  <!-- 4) Список (міняємо перший li) -->
+  <section>
+    <h2>4) Список</h2>
+    <ul>
+      <li>Перший елемент</li>
+      <li>Другий елемент</li>
+      <li>Третій елемент</li>
+    </ul>
+  </section>
+
+  <!-- Підключення твого JS -->
+  <script src="./script.js"></script>
+</body>
+</html>

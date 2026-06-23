@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Домашка DOM</title>
+
+  <style>
+    #validation-input {
+      border: 3px solid #bdbdbd;
+      padding: 8px;
+      outline: none;
+    }
+    #validation-input.valid {
+      border-color: #4caf50;
+    }
+    #validation-input.invalid {
+      border-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1) Radio: зміна фону</h2>
+  <form>
+    <p>Choose a color:</p>
+    <label>
+      <input type="radio" name="color" value="red" checked />
+      Red
+    </label>
+    <label>
+      <input type="radio" name="color" value="white" />
+      White
+    </label>
+    <label>
+      <input type="radio" name="color" value="green" />
+      Green
+    </label>
+  </form>
+
+  <hr />
+
+  <h2>2) Input: ім'я</h2>
+  <input type="text" placeholder="Ваше ім'я?" id="name-input" />
+  <h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
+
+  <hr />
+
+  <h2>2.2) Перевірка довжини (blur)</h2>
+  <input
+    type="text"
+    id="validation-input"
+    data-length="6"
+    placeholder="Введи 6 символів"
+  />
+
+  <hr />
+
+  <h2>3) Range: розмір тексту</h2>
+  <input id="font-size-control" type="range" />
+  <br /><br />
+  <span id="text">Абракадабра!</span>
+
+</body>
+</html>

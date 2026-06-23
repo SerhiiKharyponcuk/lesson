@@ -1305,40 +1305,40 @@ console.log("Top product:", bestItem, bestCount);
 
 // console.log(numbersT);
 
-const htmlLink = document.querySelector("#link");
-htmlLink.href = "asdasdas"
-htmlLink.target = "_blank"
-htmlLink.textContent = "НАТИСКАЙ"
-htmlLink.textContent = ""
-htmlLink.getAttribute("target")
-htmlLink.removeAttribute("target")
-console.log(htmlLink.getAttribute("target"));
-console.log(htmlLink);
+// const htmlLink = document.querySelector("#link");
+// htmlLink.href = "asdasdas"
+// htmlLink.target = "_blank"
+// htmlLink.textContent = "НАТИСКАЙ"
+// htmlLink.textContent = ""
+// htmlLink.getAttribute("target")
+// htmlLink.removeAttribute("target")
+// console.log(htmlLink.getAttribute("target"));
+// console.log(htmlLink);
 
-const htmlDiv = document.querySelector(`[data-user-id="1234"]`);
-console.log(htmlDiv);
-console.log(htmlDiv.dataset.userId);
+// const htmlDiv = document.querySelector(`[data-user-id="1234"]`);
+// console.log(htmlDiv);
+// console.log(htmlDiv.dataset.userId);
 
-const htmlInput = document.querySelector("#input");
-console.log(htmlInput.checked);
-htmlInput.getAttribute("aria-checked")
-console.log(htmlInput.getAttribute("aria-checked"));
+// const htmlInput = document.querySelector("#input");
+// console.log(htmlInput.checked);
+// htmlInput.getAttribute("aria-checked")
+// console.log(htmlInput.getAttribute("aria-checked"));
 
-const paswordInput = document.querySelector("#password")
+// const paswordInput = document.querySelector("#password")
 
-const passwordButton = document.querySelector("#buttonpasw");
-console.log(paswordInput.value);
-console.log(paswordInput.getAttribute("value"));
-paswordInput.value = "2222"
-console.log(paswordInput.getAttribute("value"));
-console.log(paswordInput.value);
-passwordButton.addEventListener("click", (e) => {
-  if (paswordInput.getAttribute("type") === "text") {
-    paswordInput.type = "password"
-  } else {
-    paswordInput.type = "text"
-  };
-})
+// const passwordButton = document.querySelector("#buttonpasw");
+// console.log(paswordInput.value);
+// console.log(paswordInput.getAttribute("value"));
+// paswordInput.value = "2222"
+// console.log(paswordInput.getAttribute("value"));
+// console.log(paswordInput.value);
+// passwordButton.addEventListener("click", (e) => {
+//   if (paswordInput.getAttribute("type") === "text") {
+//     paswordInput.type = "password"
+//   } else {
+//     paswordInput.type = "text"
+//   };
+// })
 
 
 const teamMembers = [
@@ -1571,65 +1571,174 @@ const users__list = document.querySelector("#users");
 //   }
 // });
 // console.log(formState);
-const box = document.querySelector("#box");
+// const box = document.querySelector("#box");
 
-document.addEventListener("keydown" , onKeyDown);
-let step = 0;
-function onKeyDown(e) {
- console.log(e); 
- if(e.code === "KeyD"){
-  step += 10;
-  box.style.left = `${step}px`
- } if(e.code === "KeyA"){
-  step -= 10;
-  box.style.left = `${step}px`
- } if(e.code === "KeyW"){
-  step += 10;
-  box.style.bottom = `${step}px`
- } if(e.code === "KeyS"){
-  step -= 10;
-  box.style.bottom = `${step}px`
- }if (e.code === "KeyW" && e.shiftKey) {
-  step += 40;
-  box.style.bottom = `${step}px`
- }
-  if (e.code === "KeyS" && e.shiftKey) { 
-  step -= 40;
-  box.style.bottom = `${step}px`
- }if (e.code === "KeyD" && e.shiftKey) { 
-  step += 40;
-  box.style.left = `${step}px`
- }
-if (e.code === "KeyA" && e.shiftKey) { 
-  step -= 40;
-  box.style.left = `${step}px`
- }
+// document.addEventListener("keydown" , onKeyDown);
+// let step = 0;
+// function onKeyDown(e) {
+//  console.log(e); 
+//  if(e.code === "KeyD"){
+//   step += 10;
+//   box.style.left = `${step}px`
+//  } if(e.code === "KeyA"){
+//   step -= 10;
+//   box.style.left = `${step}px`
+//  } if(e.code === "KeyW"){
+//   step += 10;
+//   box.style.bottom = `${step}px`
+//  } if(e.code === "KeyS"){
+//   step -= 10;
+//   box.style.bottom = `${step}px`
+//  }if (e.code === "KeyW" && e.shiftKey) {
+//   step += 40;
+//   box.style.bottom = `${step}px`
+//  }
+//   if (e.code === "KeyS" && e.shiftKey) { 
+//   step -= 40;
+//   box.style.bottom = `${step}px`
+//  }if (e.code === "KeyD" && e.shiftKey) { 
+//   step += 40;
+//   box.style.left = `${step}px`
+//  }
+// if (e.code === "KeyA" && e.shiftKey) { 
+//   step -= 40;
+//   box.style.left = `${step}px`
+//  }
 
-  }
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", (e) => {
+//   }
+// const cursor = document.querySelector(".cursor");
+// document.addEventListener("mousemove", (e) => {
+//   console.log(e);
+//   console.log(e.clientX);
+//   console.log(e.clientY);
+//   cursor.style.left = `${e.clientX}px`
+//   cursor.style.top = `${e.clientY}px`
+// });
+// const btnMe = document.querySelector(".btn-me");
+// btnMe.addEventListener("mouseenter", (e) => {
+//   cursor.classList.add("active")
+// });
+// btnMe.addEventListener("mouseleave", (e) => {
+//   cursor.classList.remove("active")
+// });
+// document.addEventListener("mousedown", (e) => {
+//   cursor.classList.add("small")
+// });
+// document.addEventListener("mouseup", (e) => {
+//   cursor.classList.remove("small")
+// });
+// document.addEventListener("contextmenu", (e) => {
+//   e.preventDefault();
+// });
+// document.addEventListener("dblclick", (e) => {
+//   alert("Подвійний клік")
+// });
+
+// const container = document.querySelector("#list");
+// container.addEventListener("click", (e) => {
+//       if (e.target.tagName !== "BUTTON") {
+//         return
+//       }
+//       console.log(e.target.tagName);
+//       document.body.style.backgroundColor = e.target.style.backgroundColor;
+//     });
+
+// function randomHexColor() {
+//   const hexDigits = "0123456789ABCDEF";
+//   let color = "#";  
+//   for (let i = 0; i < 6; i++) {
+//     color += hexDigits[Math.floor(Math.random() * 16)];
+//   } 
+//   return color;
+// }
+
+// genreateColorButtons(11);
+// function genreateColorButtons(count) {
+ 
+//   for (let i = 0; i < count; i++) {
+//     const button = document.createElement("button");
+//     button.textContent = `Color ${i + 1}`;
+//     button.style.backgroundColor = randomHexColor();
+//     button.classList.add("color-button");
+//     container.appendChild(button);
+//   }
+// }
+
+
+// const cards = document.querySelectorAll(".color-button");
+// console.log(container.lastElementChild);
+// let CLE = container.lastElementChild;
+// if ("IntersectionObserver" in window) {
+//   const observer = new IntersectionObserver(
+//     (cards) => {
+//       console.log(cards);
+//         if (cards[0].isIntersecting) {
+//           genreateColorButtons(1400);
+//           observer.unobserve(cards[0].target);
+//            CLE = container.lastElementChild;
+//            observer.observe(CLE);
+//         }
+//     },
+//     {
+//       rootMargin: "2500px",
+//     },
+//   );
+// if (CLE) {
+//     observer.observe(CLE);
+
+// }
+//  else {
+//   console.log("Ваш браузер не підтримує");
+// }
+
+// }
+
+
+
+
+
+
+
+// let couter = 0;
+
+// document.addEventListener("scroll", _.throttle(() => {
+//   couter++  
+
+// console.log(`Прокручено ${couter} разів`);
+// },2000));
+
+// let couter = 0;
+
+// document.addEventListener("scroll", _.debounce(() => {
+//   couter++  
+
+// console.log(`Прокручено ${couter} разів`);
+// },2000 , { leading: true, trailing: false }));
+
+
+
+
+const input = document.querySelector("#input");
+const nameSpan = document.querySelector("#name");
+const rangeInput = document.querySelector("#input-range");
+const img = document.querySelector("#image");
+
+input.addEventListener("input", _.debounce(() => {
+  nameSpan.textContent = input.value.trim() === "" ? "Гість" : input.value;
+}, 1));
+
+document.addEventListener("mousemove", _.debounce(cursorMove, 600 ));
+
+
+function cursorMove(e) {
   console.log(e);
-  console.log(e.clientX);
-  console.log(e.clientY);
+  const cursor = document.querySelector(".cursor");
   cursor.style.left = `${e.clientX}px`
   cursor.style.top = `${e.clientY}px`
-});
-const btnMe = document.querySelector(".btn-me");
-btnMe.addEventListener("mouseenter", (e) => {
-  cursor.classList.add("active")
-});
-btnMe.addEventListener("mouseleave", (e) => {
-  cursor.classList.remove("active")
-});
-document.addEventListener("mousedown", (e) => {
-  cursor.classList.add("small")
-});
-document.addEventListener("mouseup", (e) => {
-  cursor.classList.remove("small")
-});
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
-document.addEventListener("dblclick", (e) => {
-  alert("Подвійний клік")
-});
+}
+
+
+rangeInput.addEventListener("input", _.throttle((e) => {
+  console.log(e.target.value);
+  img.style.width = `${e.target.value}%`
+}, 1000));
