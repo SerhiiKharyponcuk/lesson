@@ -1,0 +1,107 @@
+<section class="frontend-4-task">
+  <style>
+    .frontend-4-task {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    .frontend-4-task h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .frontend-4-task p {
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .load-button {
+      display: inline-block;
+      margin: 24px 0;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #3273dc;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .gallery {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .image-wrapper {
+      margin-bottom: 32px;
+    }
+
+    .lazy-image {
+      display: block;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      background: #f4f4f4;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .lazy-image.loaded {
+      opacity: 1;
+    }
+
+    .lazy-image.loading {
+      filter: blur(4px);
+    }
+  </style>
+
+  <h2>Frontend 4 — JS-003: Ліниве завантаження зображень</h2>
+  <p>Це завдання з Frontend 4. Тут показано, як використовувати Intersection Observer для завантаження зображень тільки коли вони з'являються в області видимості. Це зменшує час початкового рендеру сторінки і економить трафік.</p>
+
+  <button id="load-all" class="load-button" type="button">
+    Завантажити всі зображення одразу
+  </button>
+
+  <div class="gallery">
+    <div class="image-wrapper">
+      <img
+        class="lazy-image"
+        data-src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Гірський пейзаж"
+      />
+    </div>
+
+    <div class="image-wrapper">
+      <img
+        class="lazy-image"
+        data-src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Собаки"
+      />
+    </div>
+
+    <div class="image-wrapper">
+      <img
+        class="lazy-image"
+        data-src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Місто"
+      />
+    </div>
+
+    <div class="image-wrapper">
+      <img
+        class="lazy-image"
+        data-src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Море"
+      />
+    </div>
+
+    <div class="image-wrapper">
+      <img
+        class="lazy-image"
+        data-src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Засніжені гори"
+      />
+    </div>
+  </div>
+</section>

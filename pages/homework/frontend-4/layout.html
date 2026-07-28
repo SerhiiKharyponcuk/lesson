@@ -8,6 +8,10 @@
 
     <link rel="stylesheet" href="../../../assets/base.css" />
     <link rel="stylesheet" id="jsStyle" href="" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css"
+/>
 </head>
 
 <body class="fe-body">
@@ -26,11 +30,10 @@
             <h2 class="wsapp-h2" id="taskTitle">Завдання</h2>
 
             <div class="wsapp-panel">
-                <div class="fe-task" id="taskContent"></div>
-
-                <div style="margin-top:16px">
+                  <div style="margin-top:16px">
                     <button class="wsapp-btn" id="runJsBtn" type="button">▶ Запустити код</button>
                 </div>
+                <div class="fe-task" id="taskContent"></div>
             </div>
 
             <nav class="wsapp-navTask" aria-label="Навігація завдання">
@@ -41,6 +44,13 @@
     </div>
 
     <script src="./loader-task.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="./loader-task.js"></script>
 </body>
 
 </html>

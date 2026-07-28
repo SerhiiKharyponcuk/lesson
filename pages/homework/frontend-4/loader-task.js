@@ -1,3 +1,5 @@
+
+
 (() => {
   "use strict";
 
@@ -11,18 +13,53 @@
   const elNext = document.getElementById("nextTask");
   const runBtn = document.getElementById("runJsBtn");
 
-  const TASKS = ["js4-001.html"];
+  const TASKS = [
+    "js4-001.html",
+    "js4-002.html",
+    "js4-003.html",
+    "js4-004.html",
+    "js4-005.html",
+    "js4-006.html",
+    "js4-007.html",
+    "js4-008.html",
+    "js4-009.html",
+    "js4-010.html",
+  ];
 
   const cssMap = {
     "js4-001.html": "../../../assets/js/js4-001.css",
   };
 
+  const externalScriptsMap = {
+    "js4-002.html": [
+      "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js",
+    ],
+  };
+
   const jsMap = {
     "js4-001.html": "../../../assets/js/js4-001.js",
+    "js4-002.html": "../../../assets/js/js4-002.js",
+    "js4-003.html": "../../../assets/js/js4-003.js",
+    "js4-004.html": "../../../assets/js/js4-004.js",
+    "js4-005.html": "../../../assets/js/js4-005.js",
+    "js4-006.html": "../../../assets/js/js4-006.js",
+    "js4-007.html": "../../../assets/js/js4-007.js",
+    "js4-008.html": "../../../assets/js/js4-008.js",
+    "js4-009.html": "../../../assets/js/js4-009.js",
+    "js4-010.html": "../../../assets/js/js4-010.js",
   };
 
   const titleMap = {
     "js4-001.html": "JS-001 - Gallery lightbox",
+    "js4-002.html": "JS-002 - Lodash. Throttle and Debounce",
+    "js4-003.html": "JS-003 - Intersection Observer",
+    "js4-004.html": "JS-004 - Package.json setup",
+    "js4-005.html": "JS-005 - Biblioteks and frameworks",
+    "js4-006.html": "JS-006 - ",
+    "js4-007.html": "JS-007 - ",
+    "js4-008.html": "JS-008 - ",
+    "js4-009.html": "JS-009 - ",
+    "js4-010.html": "JS-010 - ",
   };
 
   function setRunButtonState(ready) {
@@ -59,12 +96,29 @@
     return new Promise((resolve, reject) => {
       const s = document.createElement("script");
       s.src = src;
-      s.defer = true;
-      s.dataset.taskScript = "1";
+      s.async = false;
       s.onload = () => resolve();
       s.onerror = () => reject(new Error("Script load failed: " + src));
       document.body.appendChild(s);
     });
+  }
+
+  async function loadExternalScripts(sources) {
+    if (!sources || !sources.length) return;
+
+    for (const src of sources) {
+      if (document.querySelector(`script[src="${src}"]`)) continue;
+
+      await new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = src;
+        s.async = false;
+        s.onload = () => resolve();
+        s.onerror = () =>
+          reject(new Error("External script load failed: " + src));
+        document.body.appendChild(s);
+      });
+    }
   }
 
   async function loadTask(taskFile) {
@@ -86,6 +140,9 @@
     setRunButtonState(false);
 
     try {
+      const externalScripts = externalScriptsMap[taskFile] || [];
+      if (externalScripts.length) await loadExternalScripts(externalScripts);
+
       const jsSrc = jsMap[taskFile];
       if (jsSrc) await loadTaskScript(jsSrc);
       setRunButtonState(typeof window.runTask === "function");
@@ -107,7 +164,8 @@
 
   if (!file) {
     elTitle.textContent = "Choose a task from the list";
-    elContent.innerHTML = "<p>Frontend 4 tasks will appear here after they are added.</p>";
+    elContent.innerHTML =
+      "<p>Frontend 4 tasks will appear here after they are added.</p>";
     elPrev.style.visibility = "hidden";
     elNext.style.visibility = "hidden";
     setRunButtonState(false);

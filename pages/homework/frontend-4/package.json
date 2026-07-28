@@ -1,0 +1,11 @@
+{
+  "name": "frontend-4-node-project",
+  "version": "1.0.0",
+  "description": "Простий Node.js проєкт у папці Frontend 4",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
