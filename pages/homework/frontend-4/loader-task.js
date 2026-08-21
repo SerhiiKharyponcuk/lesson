@@ -26,6 +26,7 @@
     "js4-010.html",
     "js4-011.html",
     "js4-012.html",
+    "js4-013.html",
   ];
 
   const cssMap = {
@@ -55,6 +56,7 @@
     "js4-010.html": "../../../assets/js/js4-010.js",
     "js4-011.html": "../../../assets/js/js4-011.js",
     "js4-012.html": "../../../assets/js/js4-012.js",
+    "js4-013.html": "../../../assets/js/js4-013.js",
   };
 
   const titleMap = {
@@ -70,6 +72,7 @@
     "js4-010.html": "JS-010 - Таймери та інтервали",
     "js4-011.html": "JS-011 - Таймери з повідомленням",
     "js4-012.html": "JS-012 - CountdownTimer",
+    "js4-013.html": "JS-013 - Promises",
   };
 
   function setRunButtonState(ready) {
