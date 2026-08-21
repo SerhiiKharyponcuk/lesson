@@ -24,12 +24,16 @@
     "js4-008.html",
     "js4-009.html",
     "js4-010.html",
+    "js4-011.html",
+    "js4-012.html",
   ];
 
   const cssMap = {
     "js4-001.html": "../../../assets/js/js4-001.css",
     "js4-009.html": "../../../assets/js/js4-009.css",
     "js4-010.html": "../../../assets/js/js4-010.css",
+    "js4-011.html": "../../../assets/js/js4-011.css",
+    "js4-012.html": "../../../assets/js/js4-012.css",
   };
 
   const externalScriptsMap = {
@@ -49,6 +53,8 @@
     "js4-008.html": "../../../assets/js/js4-008.js",
     "js4-009.html": "../../../assets/js/js4-009.js",
     "js4-010.html": "../../../assets/js/js4-010.js",
+    "js4-011.html": "../../../assets/js/js4-011.js",
+    "js4-012.html": "../../../assets/js/js4-012.js",
   };
 
   const titleMap = {
@@ -62,6 +68,8 @@
     "js4-008.html": "JS-008 - localStorage і Handlebars",
     "js4-009.html": "JS-009 - Книга контактів",
     "js4-010.html": "JS-010 - Таймери та інтервали",
+    "js4-011.html": "JS-011 - Таймери з повідомленням",
+    "js4-012.html": "JS-012 - CountdownTimer",
   };
 
   function setRunButtonState(ready) {

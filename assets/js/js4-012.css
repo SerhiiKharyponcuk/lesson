@@ -1,0 +1,45 @@
+.countdown-homework {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.countdown-homework h2 {
+  font-size: 22px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 75px;
+}
+
+.value {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.label {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+@media (max-width: 500px) {
+  .timer {
+    gap: 8px;
+  }
+
+  .field {
+    min-width: 60px;
+  }
+
+  .value {
+    font-size: 26px;
+  }
+}
