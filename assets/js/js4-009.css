@@ -1,0 +1,70 @@
+.contacts-app {
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+#contact-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#contact-form input,
+#contact-form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+#contact-form button,
+.contact-buttons button {
+  color: white;
+  background-color: #2879b9;
+  border: none;
+  cursor: pointer;
+}
+
+#contact-list {
+  padding: 0;
+  list-style: none;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.contact-item h3,
+.contact-item p {
+  margin: 0 0 6px;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contact-buttons button {
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.contact-buttons .delete-button {
+  background-color: #c63d3d;
+}
+
+@media (max-width: 600px) {
+  .contact-item {
+    flex-direction: column;
+  }
+
+  .contact-buttons button {
+    flex-grow: 1;
+  }
+}

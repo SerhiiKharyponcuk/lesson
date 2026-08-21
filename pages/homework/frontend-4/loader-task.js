@@ -28,6 +28,8 @@
 
   const cssMap = {
     "js4-001.html": "../../../assets/js/js4-001.css",
+    "js4-009.html": "../../../assets/js/js4-009.css",
+    "js4-010.html": "../../../assets/js/js4-010.css",
   };
 
   const externalScriptsMap = {
@@ -55,11 +57,11 @@
     "js4-003.html": "JS-003 - Intersection Observer",
     "js4-004.html": "JS-004 - Package.json setup",
     "js4-005.html": "JS-005 - Biblioteks and frameworks",
-    "js4-006.html": "JS-006 - ",
-    "js4-007.html": "JS-007 - ",
-    "js4-008.html": "JS-008 - ",
-    "js4-009.html": "JS-009 - ",
-    "js4-010.html": "JS-010 - ",
+    "js4-006.html": "JS-006 - Parcel та JavaScript модулі",
+    "js4-007.html": "JS-007 - Handlebars і Parcel",
+    "js4-008.html": "JS-008 - localStorage і Handlebars",
+    "js4-009.html": "JS-009 - Книга контактів",
+    "js4-010.html": "JS-010 - Таймери та інтервали",
   };
 
   function setRunButtonState(ready) {

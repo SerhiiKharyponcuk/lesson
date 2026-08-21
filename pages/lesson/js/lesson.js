@@ -1,6 +1,5 @@
 // import validator from 'validator';
 
-
 const hackerStyle = `
   background: black;
   color: #00ff00;
@@ -10,9 +9,9 @@ const hackerStyle = `
   text-shadow: 0 0 5px #00ff00;
 `;
 
-console.log('%cSYSTEM ONLINE', hackerStyle);
-console.log('%cCONNECTING TO SERVER...', hackerStyle);
-console.log('%cACCESS GRANTED', hackerStyle);
+console.log("%cSYSTEM ONLINE", hackerStyle);
+console.log("%cCONNECTING TO SERVER...", hackerStyle);
+console.log("%cACCESS GRANTED", hackerStyle);
 
 // урок 2
 
@@ -35,9 +34,7 @@ console.log('%cACCESS GRANTED', hackerStyle);
 // }
 // console.log(userName.length >= 3)
 
-
 // УРОК 3
-
 
 // console.log(isNaN(67))
 
@@ -63,13 +60,13 @@ console.log('%cACCESS GRANTED', hackerStyle);
 // const number2 = parseFloat(prompt("Веди число"))
 // const operator = (prompt("Веди знак"))
 // if (operator === "+") {
-//    console.log(number1 + number2) 
+//    console.log(number1 + number2)
 // }if (operator === "-") {
-//    console.log(number1 - number2) 
+//    console.log(number1 - number2)
 // }if (operator === "*") {
-//    console.log(number1 * number2) 
+//    console.log(number1 * number2)
 // }if (operator === "/") {
-//    console.log(number1 / number2) 
+//    console.log(number1 / number2)
 // }
 
 // урок 5
@@ -106,13 +103,12 @@ console.log('%cACCESS GRANTED', hackerStyle);
 //     alert("Все погано")
 // }
 
-
 //  let role = prompt("Ведіть нікнейм")
 //  role = role.toLowerCase()
 //  role = role[0].toUpperCase()
 //  alert(`Привіт ${role.trim()}`)
 
-// виправлено 
+// виправлено
 
 //  let role = prompt("Ведіть нікнейм");
 
@@ -142,11 +138,11 @@ console.log('%cACCESS GRANTED', hackerStyle);
 
 // const pasword = prompt("Ведіть пароль")
 // if (!pasword){
-//     console.log("Ведіть правильний пароль") 
+//     console.log("Ведіть правильний пароль")
 // }else if(pasword.trim().length < 6){
-// console.log("Пароль закороткий") 
+// console.log("Пароль закороткий")
 // }else{
-//   console.log("Пароль правильний")  
+//   console.log("Пароль правильний")
 // }
 
 // let mark = prompt("Ведіть оцінку")
@@ -223,7 +219,6 @@ console.log('%cACCESS GRANTED', hackerStyle);
 //         alert("Game over")
 //     }
 // }
-
 
 // УРОК 9
 
@@ -309,7 +304,6 @@ console.log('%cACCESS GRANTED', hackerStyle);
 
 // console.log(maxNumber)
 
-
 // УРОК 11
 
 // let marks = [8 , 9 , 7 , 8 , 9 ]
@@ -342,11 +336,11 @@ console.log('%cACCESS GRANTED', hackerStyle);
 
 // const orders = [120, 450, 99, 560, 300, 120, 800];
 // let maxPrice = 0
-// let sum = 0 
+// let sum = 0
 // let maxOrders = 0
 // for (let i = 0; i < orders.length; i++) {
 //     let value = Number(orders[i])
-//     sum += value; 
+//     sum += value;
 //   if (maxPrice < value) {
 //     maxPrice = value
 //   }if (value > 300){
@@ -377,7 +371,6 @@ console.log('%cACCESS GRANTED', hackerStyle);
 // const result = newMassage.join(" ")
 
 // console.log(result);
-
 
 // const allowedDomains = ["company.com", "corp.org"];
 // const email = "user@company.co";
@@ -414,12 +407,10 @@ console.log('%cACCESS GRANTED', hackerStyle);
 
 // console.log(newCart);
 
-
 // const numbers = [5, 10, 15, 20];
 // numbers.forEach(num => {
 //   console.log(num);
 // });
-
 
 // 🟢 Задача 2
 
@@ -429,8 +420,7 @@ console.log('%cACCESS GRANTED', hackerStyle);
 
 // const doubled = numbers.map(num => num * 2);
 
-// console.log(doubled); 
-
+// console.log(doubled);
 
 // 🟡 Задача 3
 
@@ -522,7 +512,6 @@ console.log('%cACCESS GRANTED', hackerStyle);
 // console.log(findCart(cart, newCart));
 // console.log(addCard(copyCart(cart), "PC"));
 
-
 // let players = ["Anna", "Max", "Olena"];
 
 // function addPlayer(players, addPalayers) {
@@ -583,7 +572,6 @@ console.log('%cACCESS GRANTED', hackerStyle);
 // wallet(15);
 // wallet(25);
 
-
 // function createTracker(goal) {
 //     return function (staps){
 //       if(staps > goal){
@@ -618,10 +606,9 @@ console.log('%cACCESS GRANTED', hackerStyle);
 //   return a * b;
 // }
 
-
 // console.log(calculate(2, 2, minus));
-// console.log(calculate(2, 2, plus)); 
-// console.log(calculate(6, 2, divide)); 
+// console.log(calculate(2, 2, plus));
+// console.log(calculate(6, 2, divide));
 // console.log(calculate(3, 2, multiply));
 
 // function upString(string , colback) {
@@ -679,7 +666,7 @@ console.log('%cACCESS GRANTED', hackerStyle);
 //     }
 // }
 // let participants = [11, 25, 77, 54];
-// console.log(runLottery(participants,choseWinner)); 
+// console.log(runLottery(participants,choseWinner));
 
 // function sayHello() {
 //   console.log("Hello");
@@ -694,44 +681,41 @@ console.log('%cACCESS GRANTED', hackerStyle);
 
 // УРОК 17
 
-const telefon = {
-  brand: "Samsung",
-  price: 1000,
+// const telefon = {
+//   brand: "Samsung",
+//   price: 1000,
 
+//   color: "black",
 
+//   priceUp(money) {
+//     telefon.price += money;
+//   },
+// };
+// telefon.brand = "Apple";
+// console.log(telefon.brand);
+// console.log(telefon["price"]);
+// console.log(telefon.color);
+// telefon.priceUp(200);
+// console.log(telefon.price);
 
-  color: "black",
-
-  priceUp(money) {
-    telefon.price += money;
-  },
-}
-telefon.brand = "Apple"
-console.log(telefon.brand);
-console.log(telefon["price"]);
-console.log(telefon.color);
-telefon.priceUp(200);
-console.log(telefon.price);
-
-
-const player = {
-  currentSong: "Eminem - Lose Yourself",
-  volume: 60,
-  isPlaying: false,
-  play() {
-    this.isPlaying = true;
-    console.log(`Грає пісня ${this.currentSong}`);
-  },
-  setVolume(newVolume) {
-    if (newVolume <= 100 && newVolume >= 0) {
-      this.volume = newVolume;
-    }
-  }
-}
-player.play()
-console.log(player);
-player.setVolume(100)
-console.log(player);
+// const player = {
+//   currentSong: "Eminem - Lose Yourself",
+//   volume: 60,
+//   isPlaying: false,
+//   play() {
+//     this.isPlaying = true;
+//     console.log(`Грає пісня ${this.currentSong}`);
+//   },
+//   setVolume(newVolume) {
+//     if (newVolume <= 100 && newVolume >= 0) {
+//       this.volume = newVolume;
+//     }
+//   },
+// };
+// player.play();
+// console.log(player);
+// player.setVolume(100);
+// console.log(player);
 
 // УРОК 18
 
@@ -747,50 +731,47 @@ console.log(player);
 
 // undo(): Повертає стан books до останнього збереженого в history.
 
-const library = {
-  name: "Cyber-Library 2026",
-  books: { "Clean Code": 5, "JS for Kids": 2 },
-  history: [],
+// const library = {
+//   name: "Cyber-Library 2026",
+//   books: { "Clean Code": 5, "JS for Kids": 2 },
+//   history: [],
 
-  saveState() {
-    console.log({ ...this.books });
-    this.history.push({ ...this.books });
-    // TODO: Додай копію this.books в this.history через {...}
-  },
+//   saveState() {
+//     console.log({ ...this.books });
+//     this.history.push({ ...this.books });
+//     // TODO: Додай копію this.books в this.history через {...}
+//   },
 
-  addBook(title, amount) {
-    this.saveState();
-    if (this.books[title]) {
-      this.books[title] += amount;
-    } else {
-      this.books[title] = amount;
-    }
-    console.log(this.books);
-    // TODO: Логіка додавання (якщо є — плюсуєм, якщо нема — створюєм ключ)
-  },
+//   addBook(title, amount) {
+//     this.saveState();
+//     if (this.books[title]) {
+//       this.books[title] += amount;
+//     } else {
+//       this.books[title] = amount;
+//     }
+//     console.log(this.books);
+//     // TODO: Логіка додавання (якщо є — плюсуєм, якщо нема — створюєм ключ)
+//   },
 
-  lendBook(title) {
-    // TODO: Валідація (чи є книга і чи > 0)
-    if (!this.books[title] || this.books[title] <= 0) {
-      console.log("Книга не знайдена або відсутня");
-      return;
+//   lendBook(title) {
+//     // TODO: Валідація (чи є книга і чи > 0)
+//     if (!this.books[title] || this.books[title] <= 0) {
+//       console.log("Книга не знайдена або відсутня");
+//       return;
+//     }
+//     this.saveState();
+//     this.books[title] -= 1;
+//     console.log(this.books);
+//     // TODO: Логіка зменшення на 1
+//   },
 
-    }
-    this.saveState();
-    this.books[title] -= 1;
-    console.log(this.books);
-    // TODO: Логіка зменшення на 1
-  },
-
-  undo() {
-    // TODO: Дістань останній запис з history через .pop() і заміни ним this.books
-    let LastState = this.history.pop();
-    console.log(LastState);
-    this.books = LastState;
-  },
-};
-
-
+//   undo() {
+//     // TODO: Дістань останній запис з history через .pop() і заміни ним this.books
+//     let LastState = this.history.pop();
+//     console.log(LastState);
+//     this.books = LastState;
+//   },
+// };
 
 // Об’єкт:
 // const user = {
@@ -815,15 +796,15 @@ const library = {
 //   console.log(key, user[key]);
 // }
 
-const product = {
-  title: "Phone",
-  price: 500,
-  brand: "Samsung"
-};
+// const product = {
+//   title: "Phone",
+//   price: 500,
+//   brand: "Samsung",
+// };
 
-for (let key in product) {
-  console.log(`${key}: ${product[key]}`);
-}
+// for (let key in product) {
+//   console.log(`${key}: ${product[key]}`);
+// }
 
 // УРОК 19
 
@@ -839,23 +820,22 @@ for (let key in product) {
 // const fullProfile = {...user, ...stats, ...achievements, lastLogin: new Date().toLocaleDateString()};
 // console.log(fullProfile);
 
+// const chest = { gold: 50, diamonds: 5, silver: 100 };
+// let sum = 0;
+// for (let key in chest) {
+//   sum += chest[key];
+// }
 
-const chest = { gold: 50, diamonds: 5, silver: 100 };
-let sum = 0;
-for (let key in chest) {
-  sum += chest[key];
-}
+// console.log(`Загальна кількість: ${sum}`);
+// const velues = Object.values(chest);
+// let sum2 = 0;
+// for (let i = 0; i < velues.length; i++) {
+//   sum2 += velues[i];
+// }
+// console.log(`Загальна кількість (через Object.values): ${sum2}`);
 
-console.log(`Загальна кількість: ${sum}`);
-const velues = Object.values(chest);
-let sum2 = 0;
-for (let i = 0; i < velues.length; i++) {
-  sum2 += velues[i];
-}
-console.log(`Загальна кількість (через Object.values): ${sum2}`);
-
-const chest2 = { ...chest };
-console.log(chest2);
+// const chest2 = { ...chest };
+// console.log(chest2);
 
 // УРОК 20
 
@@ -863,69 +843,67 @@ console.log(chest2);
 // Вивести назви всіх товарів
 // Порахувати скільки всього різних товарів у магазині
 
-const store = {
-  laptop: 5,
-  mouse: 12,
-  keyboard: 8,
-  monitor: 3,
-};
-const items = Object.keys(store);
-let sum1 = 0;
-for (let i = 0; i < items.length; i++) {
-  const element = items[i];
-  console.log(element);
-}
-sum1 = items.length
-console.log(sum1);
-console.log(items);
-
+// const store = {
+//   laptop: 5,
+//   mouse: 12,
+//   keyboard: 8,
+//   monitor: 3,
+// };
+// const items = Object.keys(store);
+// let sum1 = 0;
+// for (let i = 0; i < items.length; i++) {
+//   const element = items[i];
+//   console.log(element);
+// }
+// sum1 = items.length;
+// console.log(sum1);
+// console.log(items);
 
 // Завдання
 // Вивести імена всіх користувачів
 // Порахувати кількість онлайн користувачів
 
-const users = {
-  Artem: true,
-  Anna: false,
-  Ivan: true,
-  Olha: true,
-};
-const user = Object.values(users);
-let onlineSum = 0
-for (let i = 0; i < user.length; i++) {
-  const element = user[i];
-  console.log(element);
-  if (element === true) {
-    onlineSum++
-  }
-}
-console.log(onlineSum);
+// const users = {
+//   Artem: true,
+//   Anna: false,
+//   Ivan: true,
+//   Olha: true,
+// };
+// const user = Object.values(users);
+// let onlineSum = 0;
+// for (let i = 0; i < user.length; i++) {
+//   const element = user[i];
+//   console.log(element);
+//   if (element === true) {
+//     onlineSum++;
+//   }
+// }
+// console.log(onlineSum);
 
 // Є об'єкт оцінок.
 
 // Завдання: Порахувати середню оцінку
 
-const grades = {
-  math: 90,
-  english: 75,
-  physics: 85,
-  history: 80,
-};
-const gradess = Object.values(grades)
-let sum3 = 0
-let result = 0
-for (const element of gradess) {
-  console.log(element);
-  sum3 += element
-  result = sum3 / gradess.length
-}
-console.log(sum3);
-console.log(result);
+// const grades = {
+//   math: 90,
+//   english: 75,
+//   physics: 85,
+//   history: 80,
+// };
+// const gradess = Object.values(grades);
+// let sum3 = 0;
+// let result = 0;
+// for (const element of gradess) {
+//   console.log(element);
+//   sum3 += element;
+//   result = sum3 / gradess.length;
+// }
+// console.log(sum3);
+// console.log(result);
 // for (let i = 0; i < gradess.length; i++) {
 //   const element = gradess[i];
 
 // }
-
 
 // const car = {
 //   marka: "Toyota",
@@ -946,25 +924,23 @@ console.log(result);
 //   console.log(key, value);
 // }
 
-
-const sales = {
-  laptop: 12,
-  mouse: 25,
-  keyboard: 15,
-  monitor: 8,
-};
-const entries = Object.entries(sales);
-let bestItem = ""
-let bestCount = 0
-for (const [key, value] of entries) {
-  console.log(key, value);
-  if (value > bestCount) {
-    bestCount = value;
-    bestItem = key;
-  }
-}
-console.log("Top product:", bestItem, bestCount);
-
+// const sales = {
+//   laptop: 12,
+//   mouse: 25,
+//   keyboard: 15,
+//   monitor: 8,
+// };
+// const entries = Object.entries(sales);
+// let bestItem = "";
+// let bestCount = 0;
+// for (const [key, value] of entries) {
+//   console.log(key, value);
+//   if (value > bestCount) {
+//     bestCount = value;
+//     bestItem = key;
+//   }
+// }
+// console.log("Top product:", bestItem, bestCount);
 
 // Завдання
 // Є об'єкт продажів магазину.
@@ -972,7 +948,6 @@ console.log("Top product:", bestItem, bestCount);
 // 1️⃣ перебрати всі товари
 // 2️⃣ знайти товар з найбільшою кількістю продажів
 // 3️⃣ вивести:Top product: mouse (25)
-
 
 // const products = {
 //   laptop: 1200,
@@ -1004,8 +979,6 @@ console.log("Top product:", bestItem, bestCount);
 
 // console.log(expensiveProducts);
 
-
-
 // const human = {
 //   name: "Петро",
 //   adult: true,
@@ -1024,8 +997,6 @@ console.log("Top product:", bestItem, bestCount);
 // }
 // console.log(Petro.sleep(12));
 // console.log(Petro);
-
-
 
 // const car = {
 //   brand: "Tesla",
@@ -1060,7 +1031,6 @@ console.log("Top product:", bestItem, bestCount);
 // В циклі вивести:
 // "Artem is 24 years old"
 
-
 // УРОК 21
 
 // const items1 = [
@@ -1081,17 +1051,12 @@ console.log("Top product:", bestItem, bestCount);
 // };
 // console.log(getSum(items1));
 
-
 // УРОК 22
-
-
 
 // const arr2 = [2, 4, 5, 6];
 // for (const element of arr2) {
 //   element
 // }
-
-
 
 // console.log(arr2.forEach((number) => { console.log(number * 2); }));
 
@@ -1118,7 +1083,6 @@ console.log("Top product:", bestItem, bestCount);
 // const filterArr = users2.filter((user) => user.age > 18).map((user) => user.name)
 // console.log(filterArr);
 
-
 // const cart = [
 //   { id: 1, title: "Phone", price: 500 },
 //   { id: 2, title: "Laptop", price: 1200 },
@@ -1140,10 +1104,6 @@ console.log("Top product:", bestItem, bestCount);
 // ];
 // const sortedUsers = [...users3].sort(({ isActive }, { isActive: b }) => b - isActive)
 // console.log(sortedUsers);
-
-
-
-
 
 // function filterNam(arr3) {
 //   const arr4 = []
@@ -1178,7 +1138,6 @@ console.log("Top product:", bestItem, bestCount);
 // console.log(ageSudent);
 // console.log(isActiveSudent);
 
-
 // const transactions = [
 //   { type: "income", amount: 500 },
 //   { type: "expense", amount: 200 },
@@ -1194,7 +1153,6 @@ console.log("Top product:", bestItem, bestCount);
 //   return acc
 // }, {})
 // console.log(reduceInCome);
-
 
 // const characters = [
 //   { id: 1, name: "Arthas", class: "Paladin", level: 80, health: 12000, faction: "Alliance" },
@@ -1229,7 +1187,6 @@ console.log("Top product:", bestItem, bestCount);
 // console.log(findCharacters);
 // console.log(charechtersFilter);
 
-
 // const users5 = [
 //   { id: 1, name: "Anna", role: "admin" },
 //   { id: 2, name: "Ivan", role: "user" },
@@ -1252,7 +1209,7 @@ console.log("Top product:", bestItem, bestCount);
 // //  admin: [{...}, {...}],
 // // user: [{...}, {...}]},
 
-// const pirat = { 
+// const pirat = {
 //   name: "Petro",
 //   pseudo: "Jack",
 //   money: 0,
@@ -1272,7 +1229,6 @@ console.log("Top product:", bestItem, bestCount);
 // };
 // const Bill = new BasePirate("North", "tirn", 0);
 // for (let i = 0; i < 100; i++) {
-
 
 // }
 // console.log(Bill);
@@ -1294,8 +1250,7 @@ console.log("Top product:", bestItem, bestCount);
 // console.log(Fill.cours);
 // console.log(Fill.name = "Petro");
 // console.log(Fill.name);
-// console.log(Fill); 
-
+// console.log(Fill);
 
 // const numbers = [1, 2, 3, 4, 5];
 // const numbersT = numbers.map((number) => {return number * number});
@@ -1343,70 +1298,68 @@ console.log("Top product:", bestItem, bestCount);
 //   };
 // })
 
-
-const teamMembers = [
-  {
-    id: 201,
-    name: "Marta Ilchenko",
-    avatar: "https://i.pravatar.cc/100?img=21",
-    role: "Product Designer",
-  },
-  {
-    id: 202,
-    name: "Denys Moroz",
-    avatar: "https://i.pravatar.cc/100?img=22",
-    role: "Frontend Engineer",
-  },
-  {
-    id: 203,
-    name: "Sofia Petrenko",
-    avatar: "https://i.pravatar.cc/100?img=23",
-    role: "Data Analyst",
-  },
-  {
-    id: 204,
-    name: "Oleh Tkachenko",
-    avatar: "https://i.pravatar.cc/100?img=24",
-    role: "QA Automation",
-  },
-  {
-    id: 205,
-    name: "Nazar Bondarenko",
-    avatar: "https://i.pravatar.cc/100?img=25",
-    role: "DevOps Engineer",
-  },
-  {
-    id: 206,
-    name: "Alina Koval",
-    avatar: "https://i.pravatar.cc/100?img=26",
-    role: "HR Manager",
-  },
-  {
-    id: 207,
-    name: "Taras Hnatiuk",
-    avatar: "https://i.pravatar.cc/100?img=27",
-    role: "Backend Engineer",
-  },
-  {
-    id: 208,
-    name: "Viktoria Savchuk",
-    avatar: "https://i.pravatar.cc/100?img=28",
-    role: "Marketing Lead",
-  },
-  {
-    id: 209,
-    name: "Roman Kravets",
-    avatar: "https://i.pravatar.cc/100?img=29",
-    role: "Security Engineer",
-  },
-  {
-    id: 210,
-    name: "Iryna Dovzhenko",
-    avatar: "https://i.pravatar.cc/100?img=30",
-    role: "Project Coordinator",
-  },
-];
-
+// const teamMembers = [
+//   {
+//     id: 201,
+//     name: "Marta Ilchenko",
+//     avatar: "https://i.pravatar.cc/100?img=21",
+//     role: "Product Designer",
+//   },
+//   {
+//     id: 202,
+//     name: "Denys Moroz",
+//     avatar: "https://i.pravatar.cc/100?img=22",
+//     role: "Frontend Engineer",
+//   },
+//   {
+//     id: 203,
+//     name: "Sofia Petrenko",
+//     avatar: "https://i.pravatar.cc/100?img=23",
+//     role: "Data Analyst",
+//   },
+//   {
+//     id: 204,
+//     name: "Oleh Tkachenko",
+//     avatar: "https://i.pravatar.cc/100?img=24",
+//     role: "QA Automation",
+//   },
+//   {
+//     id: 205,
+//     name: "Nazar Bondarenko",
+//     avatar: "https://i.pravatar.cc/100?img=25",
+//     role: "DevOps Engineer",
+//   },
+//   {
+//     id: 206,
+//     name: "Alina Koval",
+//     avatar: "https://i.pravatar.cc/100?img=26",
+//     role: "HR Manager",
+//   },
+//   {
+//     id: 207,
+//     name: "Taras Hnatiuk",
+//     avatar: "https://i.pravatar.cc/100?img=27",
+//     role: "Backend Engineer",
+//   },
+//   {
+//     id: 208,
+//     name: "Viktoria Savchuk",
+//     avatar: "https://i.pravatar.cc/100?img=28",
+//     role: "Marketing Lead",
+//   },
+//   {
+//     id: 209,
+//     name: "Roman Kravets",
+//     avatar: "https://i.pravatar.cc/100?img=29",
+//     role: "Security Engineer",
+//   },
+//   {
+//     id: 210,
+//     name: "Iryna Dovzhenko",
+//     avatar: "https://i.pravatar.cc/100?img=30",
+//     role: "Project Coordinator",
+//   },
+// ];
 
 // const team__list = document.querySelector("#team");
 
@@ -1428,21 +1381,20 @@ const teamMembers = [
 
 // renderMemberMarkup(teamMembers);
 
+// const generateUsers = (count = 200) => {
+//   const roles = ["Frontend", "Backend", "QA", "DevOps", "UI/UX"];
 
-const generateUsers = (count = 200) => {
-  const roles = ["Frontend", "Backend", "QA", "DevOps", "UI/UX"];
+//   return Array.from({ length: count }, (_, index) => ({
+//     id: index + 1,
+//     name: `User ${index + 1}`,
+//     avatar: `https://i.pravatar.cc/100?img=${(index % 70) + 1}`,
+//     role: roles[index % roles.length],
+//   }));
+// };
 
-  return Array.from({ length: count }, (_, index) => ({
-    id: index + 1,
-    name: `User ${index + 1}`,
-    avatar: `https://i.pravatar.cc/100?img=${(index % 70) + 1}`,
-    role: roles[index % roles.length],
-  }));
-};
-
-const largeUserList = generateUsers(10001);
-console.log(largeUserList);
-const users__list = document.querySelector("#users");
+// const largeUserList = generateUsers(10001);
+// console.log(largeUserList);
+// const users__list = document.querySelector("#users");
 // function createUsersMarkup(user) {
 //   const li = document.createElement("li");
 //   li.classList.add("user-item");
@@ -1464,7 +1416,6 @@ const users__list = document.querySelector("#users");
 // const end = performance.now()
 // console.log(end - start);
 
-
 // function createMembersMarkup(members) {
 //   return members
 //     .map(({ id, name, avatar, role }) => {
@@ -1483,7 +1434,7 @@ const users__list = document.querySelector("#users");
 
 // const generateUsersss = generateUsers(50)
 // function createUsersMarkup(users) {
-//   return users 
+//   return users
 //   .map(({ id, name, avatar, role }) => {
 //     return `<li id=${id} class="users-item">
 //         <p class="users-name">${name}</p>
@@ -1500,7 +1451,6 @@ const users__list = document.querySelector("#users");
 // users__list.insertAdjacentHTML("beforeend", usersMarkup);
 // const end = performance.now()
 // console.log(end - start);
-
 
 // document.body.innerHTML = usersMarkup
 
@@ -1530,7 +1480,6 @@ const users__list = document.querySelector("#users");
 // }
 // createRobitnikiMarkup(sortLi);
 // console.log(sortLi);
-
 
 // const formState = document.querySelector("#state-form");
 // // const lableMale = document.querySelector("#lable-male");
@@ -1579,7 +1528,7 @@ const users__list = document.querySelector("#users");
 // document.addEventListener("keydown" , onKeyDown);
 // let step = 0;
 // function onKeyDown(e) {
-//  console.log(e); 
+//  console.log(e);
 //  if(e.code === "KeyD"){
 //   step += 10;
 //   box.style.left = `${step}px`
@@ -1596,14 +1545,14 @@ const users__list = document.querySelector("#users");
 //   step += 40;
 //   box.style.bottom = `${step}px`
 //  }
-//   if (e.code === "KeyS" && e.shiftKey) { 
+//   if (e.code === "KeyS" && e.shiftKey) {
 //   step -= 40;
 //   box.style.bottom = `${step}px`
-//  }if (e.code === "KeyD" && e.shiftKey) { 
+//  }if (e.code === "KeyD" && e.shiftKey) {
 //   step += 40;
 //   box.style.left = `${step}px`
 //  }
-// if (e.code === "KeyA" && e.shiftKey) { 
+// if (e.code === "KeyA" && e.shiftKey) {
 //   step -= 40;
 //   box.style.left = `${step}px`
 //  }
@@ -1648,16 +1597,16 @@ const users__list = document.querySelector("#users");
 
 // function randomHexColor() {
 //   const hexDigits = "0123456789ABCDEF";
-//   let color = "#";  
+//   let color = "#";
 //   for (let i = 0; i < 6; i++) {
 //     color += hexDigits[Math.floor(Math.random() * 16)];
-//   } 
+//   }
 //   return color;
 // }
 
 // genreateColorButtons(11);
 // function genreateColorButtons(count) {
- 
+
 //   for (let i = 0; i < count; i++) {
 //     const button = document.createElement("button");
 //     button.textContent = `Color ${i + 1}`;
@@ -1666,7 +1615,6 @@ const users__list = document.querySelector("#users");
 //     container.appendChild(button);
 //   }
 // }
-
 
 // const cards = document.querySelectorAll(".color-button");
 // console.log(container.lastElementChild);
@@ -1696,16 +1644,10 @@ const users__list = document.querySelector("#users");
 
 // }
 
-
-
-
-
-
-
 // let couter = 0;
 
 // document.addEventListener("scroll", _.throttle(() => {
-//   couter++  
+//   couter++
 
 // console.log(`Прокручено ${couter} разів`);
 // },2000));
@@ -1713,35 +1655,462 @@ const users__list = document.querySelector("#users");
 // let couter = 0;
 
 // document.addEventListener("scroll", _.debounce(() => {
-//   couter++  
+//   couter++
 
 // console.log(`Прокручено ${couter} разів`);
 // },2000 , { leading: true, trailing: false }));
 
+// const input = document.querySelector("#input");
+// const nameSpan = document.querySelector("#name");
+// const rangeInput = document.querySelector("#input-range");
+// const img = document.querySelector("#image");
+
+// input.addEventListener("input", _.debounce(() => {
+//   nameSpan.textContent = input.value.trim() === "" ? "Гість" : input.value;
+// }, 1));
+
+// document.addEventListener("mousemove", _.debounce(cursorMove, 600 ));
+
+// function cursorMove(e) {
+//   console.log(e);
+//   const cursor = document.querySelector(".cursor");
+//   cursor.style.left = `${e.clientX}px`
+//   cursor.style.top = `${e.clientY}px`
+// }
+
+// rangeInput.addEventListener("input", _.throttle((e) => {
+//   console.log(e.target.value);
+//   img.style.width = `${e.target.value}%`
+// }, 1000));
+
+// const timer = document.querySelector("#timer");
+// const startButton = document.querySelector("#start");
+// const stopButton = document.querySelector("#stop");
+// const resetButton = document.querySelector("#reset");
+// let seconds = 0;
+
+// let timerInterval = 0;
+// console.log(timerInterval);
+
+// function startTimer() {
+//   let timerId = setInterval(() => {
+//     seconds++;
+//     const minutes = Math.floor(seconds / 60);
+//     const remainingSeconds = seconds % 60;
+//     timer.textContent = `${minutes.toString().padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
+//   }, 1000);
+//   return timerId;
+// }
+
+// stopButton.addEventListener("click", () => {
+//   clearInterval(timerInterval);
+//   startButton.disabled = false;
+//   startButton.textContent = "Resume";
+// });
+// resetButton.addEventListener("click", () => {
+//   clearInterval(timerInterval);
+//   seconds = 0;
+//   timer.textContent = "00:00";
+//   startButton.disabled = false;
+//   startButton.textContent = "Start";
+// });
+// startButton.addEventListener("click", () => {
+//   timerInterval = startTimer();
+//   startButton.disabled = true;
+// });
+
+// const timerInput = document.querySelector("#countdown-input");
+// const countdownButton = document.querySelector("#start-countdown");
+// const countDownSpan = document.querySelector("#countdown-timer");
+
+// countdownButton.addEventListener("click", () => {
+//   let countdownSeconds = parseInt(timerInput.value);
+//   if (isNaN(countdownSeconds) || countdownSeconds <= 0) {
+//     alert("Please enter a valid number of seconds.");
+//     return;
+//   }
+
+//   let countdownInterval = setInterval(() => {
+//     const days = Math.floor(countdownSeconds / 86400);
+//     const hours = Math.floor((countdownSeconds % 86400) / 3600);
+//     const remainingMinutes = Math.floor((countdownSeconds % 3600) / 60);
+//     let seconds = countdownSeconds % 60;
+
+//     console.log(countdownSeconds);
+//     countDownSpan.textContent = `${days} дн. ${hours} год. ${remainingMinutes} хв. ${seconds} сек.`;
+//     if (countdownSeconds <= 0) {
+//       countDownSpan.textContent = "Countdown finished!";
+
+//       clearInterval(countdownInterval);
+//       return;
+//     }
+//     countdownSeconds -= 1;
+//   }, 1000);
+// });
+
+// const curentTime = document.querySelector("#currentTime");
+// function CurrentTime() {
+//   const now = new Date();
+//   const hours = now.getHours();
+//   const minutes = now.getMinutes();
+//   const seconds = now.getSeconds();
+//   curentTime.textContent = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+// }
+
+// setInterval(CurrentTime, 1000);
+
+// const timerInstructions = document.querySelector("#timer-instructions");
+// const startTimeInput = document.querySelector("#start-time");
+// const endTimeInput = document.querySelector("#end-time");
+// const startTimerButton = document.querySelector("#start-timer");
+// const daysSpan = document.querySelector("#days");
+// const hoursSpan = document.querySelector("#hours");
+// const minutesSpan = document.querySelector("#minutes");
+// let timerIntervalId = null;
+
+// startTimerButton.addEventListener("click", () => {
+//   if (!startTimeInput.value || !endTimeInput.value) {
+//     timerInstructions.textContent = "Please enter both start and end times.";
+//     return;
+//   }
+//   console.log(startTimeInput.value);
+//   console.log(endTimeInput.value);
+//   const startTime = new Date(startTimeInput.value);
+//   const endTime = new Date(endTimeInput.value);
+//   console.log(startTime);
+//   console.log(endTime);
+
+//   if (startTime >= endTime) {
+//     timerInstructions.textContent = "End time must be after start time.";
+//     return;
+//   }
+//   clearInterval(timerIntervalId);
+//   timerIntervalId = setInterval(setUpTimer, 1000);
+//   setUpTimer();
+// });
+
+// function setUpTimer() {
+//   const now = new Date();
+//   const startTime = new Date(startTimeInput.value);
+//   const endTime = new Date(endTimeInput.value);
+//   if (now < startTime) {
+//     timerInstructions.textContent = "The timer has not started yet.";
+//     return;
+//   }
+//   if (now > endTime) {
+//     timerInstructions.textContent = "The timer has already ended.";
+//     return;
+//   }
+//   const totalSeconds = Math.floor((endTime - now) / 1000);
+//   const days = Math.floor(totalSeconds / 86400);
+//   const hours = Math.floor((totalSeconds % 86400) / 3600);
+//   const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+//   startTimerButton.disabled = true;
+//   daysSpan.textContent = days.toString().padStart(2, "0");
+//   hoursSpan.textContent = hours.toString().padStart(2, "0");
+//   minutesSpan.textContent = minutes.toString().padStart(2, "0");
+// }
+
+// const date = new Date();
+// const currentDate = date.toLocaleDateString("uk-UA", {
+//   weekday: "long",
+//   year: "numeric",
+//   month: "short",
+//   day: "numeric",
+// });
+// const currentTime = date.toLocaleTimeString("uk-UA", {
+//   hour: "2-digit",
+//   minute: "2-digit",
+//   second: "2-digit",
+// });
+
+// date.getFullYear();
+// date.getMonth();
+// date.getDate();
+// date.getDay();
+
+// console.log(currentDate);
+// console.log(currentTime);
+// console.log(
+//   date,
+//   date.getFullYear(),
+//   date.getMonth(),
+//   date.getDate(),
+//   date.getDay(),
+// );
+
+// const reservButton = document.querySelector("#weit-item");
+// const reservInfo = document.querySelector("#reserv-info");
+// const reservStatus = document.querySelector("#reserv-status");
+
+// reservButton.addEventListener("click", () => {
+//   let eindReservationDate = new Date(date);
+//   let eindDate = eindReservationDate.setDate(eindReservationDate.getDate() + 1);
+//   setInterval(() => {
+//     let timeDiferents = eindReservationDate - new Date();
+//     const hours = Math.floor(
+//       (timeDiferents % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+//     );
+//     const minutes = Math.floor(
+//       (timeDiferents % (1000 * 60 * 60)) / (1000 * 60),
+//     );
+//     const seconds = Math.floor((timeDiferents % (1000 * 60)) / 1000);
+
+//     reservInfo.textContent = `Reservation ends on: ${eindReservationDate.toLocaleString(navigator.language)} | Time left: ${hours}h ${minutes}m ${seconds}s`;
+
+//     if (eindDate <= new Date()) {
+//       reservStatus.textContent = "Reservation has ended.";
+//     }
+//   }, 1000);
+
+//   reservStatus.textContent = "Reservation is active.";
+// });
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const success = true; // Simulate success or failure
+//     if (success) {
+//       resolve("Operation completed successfully.");
+//     } else {
+//       reject("Operation failed.");
+//     }
+//   }, 1000);
+// });
+// console.log(promise);
+
+// promise
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   })
+//   .finally(() => {
+//     console.log("Operation finished.");
+//   });     
 
 
 
-const input = document.querySelector("#input");
-const nameSpan = document.querySelector("#name");
-const rangeInput = document.querySelector("#input-range");
-const img = document.querySelector("#image");
 
-input.addEventListener("input", _.debounce(() => {
-  nameSpan.textContent = input.value.trim() === "" ? "Гість" : input.value;
-}, 1));
+//   function ageCheck() {
+//     return new Promise((resolve, reject) => {
+//       const age = parseInt(prompt("Enter your age:"));
+//       if (isNaN(age)) {
+//         reject("Invalid age entered.");
+//       } else {
+//         resolve(age);
+//       }
+//     });
+//   }
+// ageCheck()
+//   .then((age) => {
+//     if (age >= 18) {
+//       console.log("You are eligible to proceed.");
+//     } else {
+//       console.log("You are not eligible to proceed.");
+//     }
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   })
+//   .finally(() => {
+//     console.log("Operation finished.");
+//   });
 
-document.addEventListener("mousemove", _.debounce(cursorMove, 600 ));
+
+//   Promise.resolve(10)
+//   .then((value) => {
+//       console.log(value);})
+//     .then(() => {
+//       return Promise.resolve(20);
+//     })
+//     .then((value) => {
+//       console.log(value);})
+//     .then(() => {
+//       return Promise.reject("An error occurred.");
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     })
+//     .finally(() => {
+//       console.log("Operation finished.");
+//     });
+
+// let isLoading = false;
+
+// const loaderDiv = document.querySelector("#loader");
 
 
-function cursorMove(e) {
-  console.log(e);
-  const cursor = document.querySelector(".cursor");
-  cursor.style.left = `${e.clientX}px`
-  cursor.style.top = `${e.clientY}px`
-}
+
+//   function getUser(userName){
+//     isLoading = true;
+//     loaderDiv.classList.remove("hidden");
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         if (userName === "Artem") {
+//           resolve({ name: "Artem", age: 24 });
+//         } else {
+//           reject("User not found.");
+//         }
+//       }, 1000);
+//   })}
+
+// getUser("Artem")
+//   .then((user) => {
+//     console.log(user);})
+//   .catch((error) => {
+//     console.error(error);
+//   })
+//   .finally(() => {
+//     console.log("Operation finished.");
+//     isLoading = false;
+//     loaderDiv.classList.add("hidden");
+//   });
 
 
-rangeInput.addEventListener("input", _.throttle((e) => {
-  console.log(e.target.value);
-  img.style.width = `${e.target.value}%`
-}, 1000));
+
+
+//   const users2 = [
+//   {
+//     id: 1,
+//     name: "John",
+//     email: "john@gmail.com",
+//   },
+//   {
+//     id: 2,
+//     name: "Anna",
+//     email: "anna@gmail.com",
+//   },
+//   {
+//     id: 3,
+//     name: "Alex",
+//     email: "alex@gmail.com",
+//   },
+// ];
+
+// function getUser2(userId) {
+//   return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//       const findId = users2.find((user) => user.id === userId)
+//       console.log(findId);
+//         if (findId) {
+//           resolve(findId);
+//         } else {
+//           reject("User not found.");
+//         }
+//       }, 2000);
+// })}
+// getUser2(1)
+//   .then((user) => {
+//     console.log(user);})
+//   .catch((error) => {
+//     console.error(error);
+//   })
+//   .finally(() => {
+//     console.log("Operation finished.");
+//   });
+
+
+//   function retTry(maxAtems) {
+//   return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//       const random = Math.random() > 0.5 ;
+//         if (random) {
+//           resolve("Все успішно.");
+//           return;
+//         } else {
+//           retTry(maxAtems - 1);
+//           if (maxAtems <= 0) {
+//             reject("Максимальна кількість спроб вичерпана.");
+//             return;
+//           }
+//         }
+//       }, 0.1);
+// })}
+// retTry(10000000)
+//   .then((message) => {
+//     console.log(message);})
+//   .catch((error) => {
+//     console.error(error);
+//   })  
+
+
+console.log("START"); 1
+
+setTimeout(() => {
+  console.log("TIMEOUT"); 4
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("PROMISE");  3
+});
+
+console.log("END"); 2
+
+
+
+console.log("1");
+console.log("2");
+
+Promise.resolve().then(() => {
+  console.log("3");
+
+  Promise.resolve().then(() => {
+    console.log("4");
+  });
+});
+
+
+setTimeout(() => {
+  console.log("5");
+
+  Promise.resolve().then(() => {
+    console.log("6");
+  });
+}, 0);
+
+setTimeout(() => {
+  console.log("7");
+}, 0);
+
+
+// const promise1 = new Promise()
+console.dir(Promise);
+
+
+const loadResource = (name, delay, isError = false) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (isError) {
+        reject(`${name} failed to load`);
+      } else {
+        resolve(`${name} loaded`);
+      }
+    }, delay);
+  });
+};
+
+const map = loadResource("map", 100, true);
+const script = loadResource("script", 110 , true );
+const style = loadResource("style", 120 , true);
+const sounds = loadResource("sounds", 13 , true);
+Promise.allSettled([map, script, style, sounds]).then((values) => {
+  console.log(values);
+  values.forEach((value) => {
+    if (value.status === "rejected") {
+      console.log(value.reason);
+    }
+  });
+  console.log("All resources loaded");
+}).catch((error) => {
+  console.error(error);
+});
+
+Promise.race([map, script, style, sounds]).then((value) =>{
+  console.log(value);
+});
+
+Promise.any([map, script, style, sounds]).then((value) =>{
+  console.log(value);
+});

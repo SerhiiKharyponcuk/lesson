@@ -2,9 +2,11 @@
   "name": "lesson",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html",
+    "node": "node main.js",
+    "build": "parcel build src/index.html --dist-dir dist --public-url ./",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,9 @@
   "homepage": "https://github.com/SerhiiKharyponcuk/lesson#readme",
   "dependencies": {
     "validator": "^13.15.35"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.4"
   }
 }

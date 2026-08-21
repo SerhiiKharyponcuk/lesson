@@ -1,0 +1,60 @@
+.timers-homework {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.timer-task {
+  padding: 18px 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.timer-task h2 {
+  font-size: 20px;
+}
+
+.timer-task button,
+.timer-task input {
+  padding: 8px 12px;
+  margin: 4px;
+}
+
+.animation-list {
+  display: flex;
+  gap: 15px;
+  min-height: 90px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.animation-box {
+  width: 50px;
+  height: 50px;
+  background-color: #2879b9;
+  transition: 0.4s;
+}
+
+.animation-box-active {
+  width: 70px;
+  height: 70px;
+  transform: translateX(15px) rotate(20deg);
+  background-color: #e0a72f;
+}
+
+.game-area {
+  position: relative;
+  height: 240px;
+  margin-top: 15px;
+  border: 1px solid #999999;
+  overflow: hidden;
+}
+
+#game-target {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+#timeout-message {
+  min-height: 20px;
+}

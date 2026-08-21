@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-008 - localStorage і Handlebars</title>
+    <link rel="stylesheet" href="./js4-008/style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <p class="eyebrow">Frontend 4 · JS-008</p>
+        <h1>JavaScript застосунки</h1>
+        <p>Закладки, збереження форми та каталог товарів.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="app-section" id="bookmarkApp">
+        <div class="section-heading">
+          <h2>Закладки</h2>
+          <span>Зберігаються між сесіями</span>
+        </div>
+
+        <form class="inline-form" id="bookmarkForm">
+          <label>
+            URL сторінки
+            <input type="text" id="bookmarkInput" placeholder="https://example.com" required />
+          </label>
+          <button type="submit" id="addBookmarkBtn">Додати</button>
+        </form>
+
+        <ul class="bookmark-list" id="bookmarkList"></ul>
+        <p class="empty-message" id="bookmarkEmpty" hidden>Закладок ще немає.</p>
+      </section>
+
+      <section class="app-section" id="formApp">
+        <div class="section-heading">
+          <h2>Форма</h2>
+          <span id="saveStatus" aria-live="polite"></span>
+        </div>
+
+        <form class="saved-form" id="savedForm">
+          <label>
+            Логін
+            <input type="text" id="username" placeholder="Логін" required />
+          </label>
+          <label>
+            Пароль
+            <input type="password" id="password" placeholder="Пароль" required />
+          </label>
+          <button type="submit" id="saveBtn">Зберегти</button>
+        </form>
+      </section>
+
+      <section class="app-section products-section">
+        <div class="section-heading">
+          <h2>Товари</h2>
+          <span id="productCount" aria-live="polite"></span>
+        </div>
+
+        <label class="search-field">
+          Пошук товарів
+          <input type="search" id="productSearch" placeholder="Введіть назву товару" />
+        </label>
+
+        <div id="productContainer"></div>
+        <p class="empty-message" id="productEmpty" hidden>Товарів не знайдено.</p>
+      </section>
+    </main>
+
+    <script type="module" src="./js4-008/index.js"></script>
+  </body>
+</html>
