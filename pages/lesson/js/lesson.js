@@ -1888,10 +1888,7 @@ console.log("%cACCESS GRANTED", hackerStyle);
 //   })
 //   .finally(() => {
 //     console.log("Operation finished.");
-//   });     
-
-
-
+//   });
 
 //   function ageCheck() {
 //     return new Promise((resolve, reject) => {
@@ -1918,7 +1915,6 @@ console.log("%cACCESS GRANTED", hackerStyle);
 //     console.log("Operation finished.");
 //   });
 
-
 //   Promise.resolve(10)
 //   .then((value) => {
 //       console.log(value);})
@@ -1940,8 +1936,6 @@ console.log("%cACCESS GRANTED", hackerStyle);
 // let isLoading = false;
 
 // const loaderDiv = document.querySelector("#loader");
-
-
 
 //   function getUser(userName){
 //     isLoading = true;
@@ -1967,9 +1961,6 @@ console.log("%cACCESS GRANTED", hackerStyle);
 //     isLoading = false;
 //     loaderDiv.classList.add("hidden");
 //   });
-
-
-
 
 //   const users2 = [
 //   {
@@ -2011,7 +2002,6 @@ console.log("%cACCESS GRANTED", hackerStyle);
 //     console.log("Operation finished.");
 //   });
 
-
 //   function retTry(maxAtems) {
 //   return new Promise((resolve, reject) => {
 //       setTimeout(() => {
@@ -2033,84 +2023,402 @@ console.log("%cACCESS GRANTED", hackerStyle);
 //     console.log(message);})
 //   .catch((error) => {
 //     console.error(error);
-//   })  
+//   })
 
+// console.log("START"); 1
 
-console.log("START"); 1
+// setTimeout(() => {
+//   console.log("TIMEOUT"); 4
+// }, 0);
 
-setTimeout(() => {
-  console.log("TIMEOUT"); 4
-}, 0);
+// Promise.resolve().then(() => {
+//   console.log("PROMISE");  3
+// });
 
-Promise.resolve().then(() => {
-  console.log("PROMISE");  3
-});
+// console.log("END"); 2
 
-console.log("END"); 2
+// console.log("1");
+// console.log("2");
 
+// Promise.resolve().then(() => {
+//   console.log("3");
 
+//   Promise.resolve().then(() => {
+//     console.log("4");
+//   });
+// });
 
-console.log("1");
-console.log("2");
+// setTimeout(() => {
+//   console.log("5");
 
-Promise.resolve().then(() => {
-  console.log("3");
+//   Promise.resolve().then(() => {
+//     console.log("6");
+//   });
+// }, 0);
 
-  Promise.resolve().then(() => {
-    console.log("4");
-  });
-});
-
-
-setTimeout(() => {
-  console.log("5");
-
-  Promise.resolve().then(() => {
-    console.log("6");
-  });
-}, 0);
-
-setTimeout(() => {
-  console.log("7");
-}, 0);
-
+// setTimeout(() => {
+//   console.log("7");
+// }, 0);
 
 // const promise1 = new Promise()
-console.dir(Promise);
+// console.dir(Promise);
 
+// const loadResource = (name, delay, isError = false) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (isError) {
+//         reject(`${name} failed to load`);
+//       } else {
+//         resolve(`${name} loaded`);
+//       }
+//     }, delay);
+//   });
+// };
 
-const loadResource = (name, delay, isError = false) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (isError) {
-        reject(`${name} failed to load`);
-      } else {
-        resolve(`${name} loaded`);
-      }
-    }, delay);
+// const map = loadResource("map", 100, true);
+// const script = loadResource("script", 110 , true );
+// const style = loadResource("style", 120 , true);
+// const sounds = loadResource("sounds", 13 , true);
+// Promise.allSettled([map, script, style, sounds]).then((values) => {
+//   console.log(values);
+//   values.forEach((value) => {
+//     if (value.status === "rejected") {
+//       console.log(value.reason);
+//     }
+//   });
+//   console.log("All resources loaded");
+// }).catch((error) => {
+//   console.error(error);
+// });
+
+// Promise.race([map, script, style, sounds]).then((value) =>{
+//   console.log(value);
+// });
+
+// Promise.any([map, script, style, sounds]).then((value) =>{
+//   console.log(value);
+// });
+
+// const divvv = document.querySelector(".divvv")
+// console.log(fetch('https://jsonplaceholder.typicode.com/albums?_limit=50').then(response => {return(response.json())}).then(album => {albums(album)}))
+// function albums(album) {
+// const murkUp =   album.map(oneAlbum => `<h1>${oneAlbum.title}</h1>`)
+//   .join(" ");
+
+//   divvv.insertAdjacentHTML("beforeend", murkUp);
+// }
+
+// const inp = document.querySelector("#inputik");
+// const btn = document.querySelector("#buttonn");
+
+// console.log(fetch('https://6a8db170baf2ac84246d5d11.mockapi.io/users').then(r =>{return(r.json())}).then(user => {console.log(user)}))
+
+// const baseUrl = 'https://6a8db170baf2ac84246d5d11.mockapi.io/users';
+// btn.addEventListener("click", () => {
+//   const inpValue = inp.value;
+
+//   fetch(baseUrl, {
+//     method: 'POST', body: JSON.stringify({name:inpValue}), headers:{
+//       "Content-Type": "application/json"}
+//   });
+
+// })
+// function getUserById() {
+//   fetch(`${baseUrl}/1000`).then(r => {return(r.json())}).then(user => {console.log(user)})
+// }
+//  getUserById();
+
+const baseUrl = "https://6a8db170baf2ac84246d5d11.mockapi.io/users";
+
+// ----------------------
+// Отримати всіх юзерів
+// ----------------------
+// function getAllUsers() {
+//   fetch(baseUrl)
+//     .then((r) => r.json())
+//     .then((users) => console.log("Усі юзери:", users))
+//     .catch((err) => console.error("Помилка отримання юзерів:", err));
+// }
+
+// getAllUsers();
+
+// ----------------------
+// Додати нового юзера
+// ----------------------
+// btn.addEventListener("click", () => {
+//   const inpValue = inp.value.trim();
+
+//   if (!inpValue) {
+//     console.warn("Поле порожнє");
+//     return;
+//   }
+
+//   const newUser = { name: inpValue };
+
+//   fetch(baseUrl, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(newUser),
+//   })
+//     .then((r) => r.json())
+//     .then((created) => {
+//       console.log("Створено юзера:", created);
+//       getAllUsers(); // оновити список
+//     })
+//     .catch((err) => console.error("Помилка створення:", err));
+// });
+
+// ----------------------
+// Отримати юзера за ID
+// ----------------------
+// function getUserById(id) {
+//   let userInfo = null;
+//   fetch(`${baseUrl}/${id}`)
+//     .then((r) => r.json())
+//     .then((user) => (userInfo = user))
+//     .catch((err) => console.error("Помилка отримання юзера:", err));
+//   return userInfo;
+// }
+
+// Виклик з реальним ID (заміни на той, що існує)
+// getUserById(1);
+
+// function uD(id) {
+//   fetch(`${baseUrl}/${id}`)
+//     .then((r) => r.json())
+//     .then((user) => {
+//       const newUser = { ...user, pasword: "123" };
+//       fetch(`${baseUrl}/${id}`, {
+//         method: "PUT",
+//         body: JSON.stringify(newUser),
+//         headers: { "Content-Type": "application/json" }
+//       });
+//     })
+//     .catch((err) => console.error("Помилка отримання юзера:", err));
+// }
+// uD(1);
+// function dU(id) {
+//   fetch(`${baseUrl}/${id}`, {
+//         method: "DELETE"
+//       });
+// }
+// dU(1);
+
+const userForm = document.querySelector(".user-form");
+const userList = document.querySelector(".users");
+const inp = document.querySelector("#inputik");
+const btn = document.querySelector("#buttonn");
+
+userList.addEventListener("click", (e) => {
+  if (e.target.tagName !== "BUTTON") {
+    return;
+  }
+  if (e.target.textContent === "Delete") {
+    const userId = e.target.parentElement.dataset.id;
+    deleteUser(userId)
+      .then(() => {
+        e.target.parentElement.remove();
+      })
+      .catch((err) => console.error("Помилка видалення:", err));
+  } else if (e.target.textContent === "Update") {
+    const userId = e.target.parentElement.dataset.id;
+    const newName = prompt("Введіть нове ім'я:");
+    if (newName) {
+      const updatedUser = { id: userId, name: newName };
+      updateUser(updatedUser)
+        .then(() => {
+          e.target.parentElement.firstChild.textContent = newName;
+        }
+        )
+        .catch((err) => console.error("Помилка оновлення:", err));
+    }
+  }
   });
+
+function getAllUsers() {
+  return fetch(baseUrl)
+    .then((r) => r.json())
+    .catch((err) => console.error("Помилка отримання юзерів:", err));
+}
+
+function createMurkup(users) {
+  users.forEach((user) => {
+    const li = document.createElement("li");
+    const btnDelete = document.createElement("button");
+    const btnUpdate = document.createElement("button");
+    btnDelete.textContent = "Delete";
+    btnUpdate.textContent = "Update";
+    li.textContent = user.name;
+    li.dataset.id = user.id;
+    li.appendChild(btnDelete);
+    li.appendChild(btnUpdate);
+    userList.appendChild(li);
+  });
+}
+console.log(
+  getAllUsers().then((users) => {
+    createMurkup(users);
+  }),
+);
+
+function createUser(name) {
+  return fetch(baseUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name }),
+  });
+}
+
+userForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inpValue = inp.value.trim();
+  if (inpValue) {
+    createUser(inpValue)
+      .then((user) => user.json())
+      .then((created) => {
+        createOneUserMurkup(created);
+      })
+      .catch((err) => console.error("Помилка створення:", err))
+      }
+  }
+);
+
+function createOneUserMurkup(user) {
+  const li = document.createElement("li");
+  const btnDelete = document.createElement("button");
+  const btnUpdate = document.createElement("button");
+  btnDelete.textContent = "Delete";
+  btnUpdate.textContent = "Update";
+  li.textContent = user.name;
+  li.dataset.id = user.id;
+  li.appendChild(btnDelete);
+  li.appendChild(btnUpdate);
+  userList.appendChild(li);
+}
+
+function deleteUser(id) {
+  return fetch(`${baseUrl}/${id}`, {
+    method: "DELETE",
+  });
+} 
+
+function updateUser(user) {
+  return fetch(`${baseUrl}/${user.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
+  });
+}
+
+
+// const userForm = document.querySelector(".user-form");
+// const userList = document.querySelector(".users");
+// const inp = document.querySelector("#inputik");
+// const btn = document.querySelector("#buttonn");
+
+const api = {
+  getAll() {
+    return fetch(baseUrl).then(r => r.json());
+  },
+
+  create(name) {
+    return fetch(baseUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name }),
+    }).then(r => r.json());
+  },
+
+  delete(id) {
+    return fetch(`${baseUrl}/${id}`, { method: "DELETE" });
+  },
+
+  update(id, name) {
+    return fetch(`${baseUrl}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, name }),
+    }).then(r => r.json());
+  },
 };
 
-const map = loadResource("map", 100, true);
-const script = loadResource("script", 110 , true );
-const style = loadResource("style", 120 , true);
-const sounds = loadResource("sounds", 13 , true);
-Promise.allSettled([map, script, style, sounds]).then((values) => {
-  console.log(values);
-  values.forEach((value) => {
-    if (value.status === "rejected") {
-      console.log(value.reason);
+// ---------------- UI ----------------
+
+function renderUser(user) {
+  const li = document.createElement("li");
+  li.dataset.id = user.id;
+
+  const nameSpan = document.createElement("span");
+  nameSpan.textContent = user.name;
+
+  const btnDelete = document.createElement("button");
+  btnDelete.textContent = "Delete";
+
+  const btnUpdate = document.createElement("button");
+  btnUpdate.textContent = "Update";
+
+  li.append(nameSpan, btnDelete, btnUpdate);
+  return li;
+}
+
+function addUserToList(user) {
+  userList.appendChild(renderUser(user));
+}
+
+function renderUsers(users) {
+  userList.innerHTML = "";
+  users.forEach(addUserToList);
+}
+
+// ---------------- Events ----------------
+
+userList.addEventListener("click", async (e) => {
+  if (e.target.tagName !== "BUTTON") return;
+
+  const li = e.target.closest("li");
+  const id = li.dataset.id;
+
+  if (e.target.textContent === "Delete") {
+    try {
+      await api.delete(id);
+      li.remove();
+    } catch (err) {
+      console.error("Помилка видалення:", err);
     }
-  });
-  console.log("All resources loaded");
-}).catch((error) => {
-  console.error(error);
+  }
+
+  if (e.target.textContent === "Update") {
+    const newName = prompt("Введіть нове ім'я:");
+    if (!newName) return;
+
+    try {
+      const updated = await api.update(id, newName);
+      li.querySelector("span").textContent = updated.name;
+    } catch (err) {
+      console.error("Помилка оновлення:", err);
+    }
+  }
 });
 
-Promise.race([map, script, style, sounds]).then((value) =>{
-  console.log(value);
+userForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = inp.value.trim();
+  if (!name) return;
+
+  try {
+    const created = await api.create(name);
+    addUserToList(created);
+    inp.value = "";
+  } catch (err) {
+    console.error("Помилка створення:", err);
+  }
 });
 
-Promise.any([map, script, style, sounds]).then((value) =>{
-  console.log(value);
-});
+// ---------------- Init ----------------
+
+api.getAll()
+  .then(renderUsers)
+  .catch(err => console.error("Помилка отримання юзерів:", err));
+
+
