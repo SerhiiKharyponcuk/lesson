@@ -1,0 +1,248 @@
+.async-homework {
+  font-family: inherit;
+  color: var(--wsapp-ink);
+  line-height: 1.6;
+  padding-top: 16px;
+}
+
+.async-homework [hidden] {
+  display: none !important;
+}
+.async-homework h2,
+.async-homework h3 {
+  line-height: 1.3;
+}
+.async-homework form,
+.async-homework .settings {
+  margin: 20px 0;
+}
+
+.async-homework label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.async-homework input,
+.async-homework select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #a8b9c6;
+  border-radius: var(--wsapp-radius);
+  background: #fff;
+  color: #172b3a;
+  font: inherit;
+}
+
+.async-homework input:focus-visible,
+.async-homework select:focus-visible,
+.async-homework button:focus-visible,
+.async-homework a:focus-visible {
+  outline: 3px solid #2456a6;
+  outline-offset: 3px;
+}
+
+.async-homework button {
+  font: inherit;
+  cursor: pointer;
+}
+.async-homework button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.async-homework .form-row {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.async-homework .form-row > label {
+  flex: 1;
+  min-width: 160px;
+}
+
+.async-homework .status {
+  min-height: 48px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--wsapp-accent);
+  border-radius: var(--wsapp-radius);
+  background: #edf4ef;
+  overflow-wrap: anywhere;
+}
+
+.async-homework .status[data-type="error"] {
+  background: #ffe8e8;
+  border-left-color: #b73434;
+  color: #8d2020;
+}
+
+.async-homework pre {
+  padding: 16px;
+  border: 1px solid #cddbd6;
+  border-radius: var(--wsapp-radius);
+  background: #f1f5f1;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.async-homework .country-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  border: 1px solid #cddbd6;
+  border-radius: var(--wsapp-radius);
+  background: #fff;
+}
+
+.async-homework .country-card img {
+  width: 240px;
+  max-width: 100%;
+  border: 1px solid #ddd;
+}
+
+.async-homework .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.async-homework .photo-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #d5e0e8;
+  border-radius: var(--wsapp-radius);
+  background: #fff;
+}
+
+.async-homework .photo-link {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #edf2f6;
+}
+
+.async-homework .photo-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.async-homework .stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #d5e0d9;
+  background: #f6f8f5;
+}
+
+.async-homework .stats-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 13px;
+}
+.async-homework .material-icons {
+  color: var(--wsapp-accent);
+  font-size: 20px;
+}
+.async-homework .photo-source {
+  display: block;
+  padding: 0 12px 12px;
+  color: var(--wsapp-accent);
+  font-size: 13px;
+}
+.async-homework .load-more-row {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.async-homework .lightbox {
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  padding: 16px;
+  border: 0;
+  border-radius: var(--wsapp-radius);
+  background: #12202d;
+  color: white;
+}
+
+.async-homework .lightbox::backdrop {
+  background: rgb(0 0 0 / 0.8);
+}
+.async-homework .lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  margin: 12px auto 0;
+  object-fit: contain;
+}
+
+.async-homework .student-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.async-homework .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.async-homework input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+.async-homework .table-scroll {
+  overflow-x: auto;
+}
+.async-homework table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+}
+.async-homework th,
+.async-homework td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #d5e0e8;
+}
+.async-homework th {
+  background: #edf3ee;
+}
+
+.async-homework tbody tr:hover {
+  background: #f3f7f3;
+}
+.async-homework td:last-child {
+  min-width: 140px;
+}
+.async-homework td button {
+  margin: 3px 0;
+}
+
+@media (max-width: 850px) {
+  .async-homework .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .async-homework .gallery,
+  .async-homework .student-form {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,7 +1,11 @@
-(() => {
+window.taskReady = (async () => {
   "use strict";
 
-  window.runTask = () => {
-    console.info("JS-017 is ready for implementation.");
-  };
+  try {
+    const { default: initImageGallery } = await import("./image-gallery.js");
+    await initImageGallery(true);
+  } catch (error) {
+    document.querySelector("#gallery-status").textContent =
+      "Не вдалося завантажити галерею.";
+  }
 })();

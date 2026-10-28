@@ -1,5 +1,3 @@
-
-
 (() => {
   "use strict";
 
@@ -27,6 +25,13 @@
     "js4-011.html",
     "js4-012.html",
     "js4-013.html",
+    "js4-014.html",
+    "js4-015.html",
+    "js4-016.html",
+    "js4-017.html",
+    "js4-018.html",
+    "js4-019.html",
+    "js4-020.html",
   ];
 
   const cssMap = {
@@ -35,12 +40,50 @@
     "js4-010.html": "../../../assets/js/js4-010.css",
     "js4-011.html": "../../../assets/js/js4-011.css",
     "js4-012.html": "../../../assets/js/js4-012.css",
+    "js4-014.html": "../../../assets/js/async-homework.css",
+    "js4-015.html": "../../../assets/js/async-homework.css",
+    "js4-016.html": "../../../assets/js/async-homework.css",
+    "js4-017.html": "../../../assets/js/async-homework.css",
+    "js4-018.html": "../../../assets/js/async-homework.css",
+    "js4-019.html": "../../../assets/js/async-homework.css",
+    "js4-020.html": "../../../assets/js/async-homework.css",
   };
 
   const externalScriptsMap = {
+    "js4-005.html": [
+      "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js",
+      "https://cdn.jsdelivr.net/npm/chart.js",
+    ],
+    "js4-015.html": [
+      "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js",
+      "../../../assets/js/countries-ui.js",
+    ],
+    "js4-016.html": [
+      "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js",
+      "../../../assets/js/countries-ui.js",
+    ],
+    "js4-018.html": ["../../../assets/js/students-ui.js"],
+    "js4-019.html": ["../../../assets/js/students-ui.js"],
     "js4-002.html": [
       "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js",
     ],
+  };
+
+  const externalStylesMap = {
+    "js4-005.html": [
+      "https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css",
+    ],
+    "js4-015.html": [
+      "https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css",
+    ],
+    "js4-016.html": [
+      "https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css",
+    ],
+    "js4-017.html": ["https://fonts.googleapis.com/icon?family=Material+Icons"],
+    "js4-020.html": ["https://fonts.googleapis.com/icon?family=Material+Icons"],
   };
 
   const jsMap = {
@@ -57,6 +100,13 @@
     "js4-011.html": "../../../assets/js/js4-011.js",
     "js4-012.html": "../../../assets/js/js4-012.js",
     "js4-013.html": "../../../assets/js/js4-013.js",
+    "js4-014.html": "../../../assets/js/js4-014.js",
+    "js4-015.html": "../../../assets/js/js4-015.js",
+    "js4-016.html": "../../../assets/js/js4-016.js",
+    "js4-017.html": "../../../assets/js/js4-017.js",
+    "js4-018.html": "../../../assets/js/js4-018.js",
+    "js4-019.html": "../../../assets/js/js4-019.js",
+    "js4-020.html": "../../../assets/js/js4-020.js",
   };
 
   const titleMap = {
@@ -73,6 +123,13 @@
     "js4-011.html": "JS-011 - Таймери з повідомленням",
     "js4-012.html": "JS-012 - CountdownTimer",
     "js4-013.html": "JS-013 - Promises",
+    "js4-014.html": "JS-014 - Методи класу Promise. Цикл подій",
+    "js4-015.html": "JS-015 - HTTP-запити 1. REST API",
+    "js4-016.html": "JS-016 - HTTP-запити 2. AJAX",
+    "js4-017.html": "JS-017 - Пагінація",
+    "js4-018.html": "JS-018 - CRUD студентів",
+    "js4-019.html": "JS-019 - Асинхронні функції async/await",
+    "js4-020.html": "JS-020 - Пошук зображень з async/await",
   };
 
   function setRunButtonState(ready) {
@@ -102,6 +159,7 @@
 
   function loadTaskScript(src) {
     delete window.runTask;
+    delete window.taskReady;
 
     const old = document.querySelector("script[data-task-script='1']");
     if (old) old.remove();
@@ -110,6 +168,7 @@
       const s = document.createElement("script");
       s.src = src;
       s.async = false;
+      s.dataset.taskScript = "1";
       s.onload = () => resolve();
       s.onerror = () => reject(new Error("Script load failed: " + src));
       document.body.appendChild(s);
@@ -120,12 +179,13 @@
     if (!sources || !sources.length) return;
 
     for (const src of sources) {
-      if (document.querySelector(`script[src="${src}"]`)) continue;
+      if (document.querySelector(`script[data-external-src="${src}"]`)) continue;
 
       await new Promise((resolve, reject) => {
         const s = document.createElement("script");
         s.src = src;
         s.async = false;
+        s.dataset.externalSrc = src;
         s.onload = () => resolve();
         s.onerror = () =>
           reject(new Error("External script load failed: " + src));
@@ -139,12 +199,28 @@
     elTitle.textContent = title;
     document.title = title;
 
-    if (elStyle) elStyle.href = cssMap[taskFile] || "";
+    if (elStyle && cssMap[taskFile]) {
+      elStyle.href = cssMap[taskFile];
+    } else {
+      elStyle?.removeAttribute("href");
+    }
+
+    for (const href of externalStylesMap[taskFile] || []) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.append(link);
+    }
 
     try {
-      const res = await fetch(`./${taskFile}`, { cache: "no-store" });
+      const res = await fetch(`./${taskFile}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      elContent.innerHTML = await res.text();
+      const template = document.createElement("template");
+      template.innerHTML = await res.text();
+      for (const script of template.content.querySelectorAll("script")) {
+        script.remove();
+      }
+      elContent.replaceChildren(template.content);
     } catch (e) {
       elContent.innerHTML = `<p>Could not load <strong>${taskFile}</strong></p>`;
       console.error(e);
@@ -158,11 +234,13 @@
 
       const jsSrc = jsMap[taskFile];
       if (jsSrc) await loadTaskScript(jsSrc);
+      if (window.taskReady) await window.taskReady;
       setRunButtonState(typeof window.runTask === "function");
     } catch (e) {
       console.error(e);
       setRunButtonState(false);
     }
+    elContent.setAttribute("aria-busy", "false");
   }
 
   if (runBtn) {

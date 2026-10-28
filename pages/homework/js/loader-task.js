@@ -139,7 +139,7 @@
     if (elStyle) elStyle.href = cssMap[taskFile] || "";
 
     try {
-      const res = await fetch(`./${taskFile}`, { cache: "no-store" });
+      const res = await fetch(`./${taskFile}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       elContent.innerHTML = await res.text();
     } catch (e) {

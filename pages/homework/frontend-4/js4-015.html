@@ -1,4 +1,28 @@
-<section class="frontend-4-task">
-    <h2>Frontend 4 - JS-015</h2>
-    <p>Заготовка для домашнього завдання JS-015.</p>
+<section class="async-homework">
+  <h2>HTTP-запити 1. REST API</h2>
+  <p>Дані: <a href="https://countries.dev/">countries.dev</a>.</p>
+  <label for="country-search">Назва країни англійською</label>
+  <input
+    id="country-search"
+    type="search"
+    placeholder="Наприклад: Ukraine"
+    autocomplete="off"
+    maxlength="100"
+  />
+  <p class="status" id="country-status" role="status" aria-live="polite">
+    Введи назву країни англійською.
+  </p>
+  <div id="country-results"></div>
+  <template id="country-list-template"><li></li></template>
+  <template id="country-card-template">
+    <article class="country-card">
+      <div>
+        <h3></h3>
+        <p><strong>Столиця:</strong> <span data-capital></span></p>
+        <p><strong>Населення:</strong> <span data-population></span></p>
+        <p><strong>Мови:</strong> <span data-languages></span></p>
+      </div>
+      <img alt="" />
+    </article>
+  </template>
 </section>

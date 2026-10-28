@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "homework": "node tools/homework-server.cjs",
     "start": "parcel src/index.html",
     "node": "node main.js",
     "build": "parcel build src/index.html --dist-dir dist --public-url ./",

@@ -1,4 +1,74 @@
-<section class="frontend-4-task">
-    <h2>Frontend 4 - JS-019</h2>
-    <p>Заготовка для домашнього завдання JS-019.</p>
+<section class="async-homework students-homework">
+  <h2>CRUD студентів з async/await</h2>
+  <button class="wsapp-btn" id="get-students-btn" type="button">
+    Отримати студентів
+  </button>
+  <p class="status" id="students-status" role="status" aria-live="polite">
+    Натисни «Отримати студентів».
+  </p>
+  <div class="table-scroll">
+    <table id="students-table">
+      <caption>
+        Список студентів
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Ім’я</th>
+          <th scope="col">Вік</th>
+          <th scope="col">Курс</th>
+          <th scope="col">Навички</th>
+          <th scope="col">Email</th>
+          <th scope="col">Статус</th>
+          <th scope="col">Дії</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <h3 id="student-form-title">Додати нового студента</h3>
+  <form class="student-form" id="add-student-form">
+    <label
+      >Ім’я<input id="name" name="name" type="text" maxlength="100" required
+    /></label>
+    <label
+      >Вік<input id="age" name="age" type="number" min="1" max="120" required
+    /></label>
+    <label
+      >Курс<input
+        id="course"
+        name="course"
+        type="text"
+        maxlength="100"
+        required
+    /></label>
+    <label
+      >Навички через кому<input
+        id="skills"
+        name="skills"
+        type="text"
+        maxlength="500"
+        required
+    /></label>
+    <label>Email<input id="email" name="email" type="email" required /></label>
+    <label class="checkbox-label"
+      ><input id="isEnrolled" name="isEnrolled" type="checkbox" />Записаний на
+      курс</label
+    >
+    <div class="form-row">
+      <button class="wsapp-btn" id="save-student" type="submit">
+        Додати студента
+      </button>
+      <button class="wsapp-btn" id="cancel-edit" type="button" hidden>
+        Скасувати
+      </button>
+    </div>
+  </form>
+  <label for="update-method"
+    >Метод оновлення
+    <select id="update-method">
+      <option value="PATCH">PATCH — часткове оновлення</option>
+      <option value="PUT">PUT — повна заміна</option>
+    </select>
+  </label>
 </section>

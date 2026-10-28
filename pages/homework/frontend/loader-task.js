@@ -94,7 +94,7 @@
     // Content
     if (!elContent) return;
     try {
-      const res = await fetch(`./${taskFile}`, { cache: "no-store" });
+      const res = await fetch(`./${taskFile}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const html = await res.text();
       elContent.innerHTML = html;

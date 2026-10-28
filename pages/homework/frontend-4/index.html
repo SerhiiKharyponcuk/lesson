@@ -1,85 +1,187 @@
 <!doctype html>
 <html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <script src="../../../assets/auth.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Frontend 4 - homeworks</title>
+    <link rel="stylesheet" href="../../../assets/base.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Frontend 4 - homeworks</title>
-  <link rel="stylesheet" href="../../../assets/base.css" />
-</head>
+  <body class="fe-body">
+    <div class="wsapp-shell">
+      <header class="wsapp-topbar">
+        <div class="wsapp-topbar__left">
+          <strong class="wsapp-brand">Frontend 4</strong>
+        </div>
 
-<body class="fe-body">
-  <div class="wsapp-shell">
-    <header class="wsapp-topbar">
-      <div class="wsapp-topbar__left">
-        <strong class="wsapp-brand">Frontend 4</strong>
-      </div>
+        <div class="wsapp-topbar__right">
+          <a class="wsapp-btn wsapp-btn--ghost" href="../../../index.html"
+            >← До майстерні</a
+          >
+        </div>
+      </header>
 
-      <div class="wsapp-topbar__right">
-        <a class="wsapp-btn wsapp-btn--ghost" href="../../../index.html">Back to all homework</a>
-      </div>
-    </header>
+      <main class="wsapp-main">
+        <div class="wsapp-pageIntro">
+          <div>
+            <p class="wsapp-eyebrow">Frontend 4 / Домашні завдання</p>
+            <h1>JavaScript на практиці</h1>
+          </div>
+          <span class="wsapp-count">20 завдань</span>
+        </div>
+        <div class="wsapp-searchBar">
+          <label class="wsapp-search" for="homework-search">
+            <span class="sr-only">Пошук домашнього завдання</span>
+            <input
+              id="homework-search"
+              type="search"
+              placeholder="Знайти за назвою або номером…"
+              autocomplete="off"
+            />
+          </label>
+          <p id="homework-count" role="status" aria-live="polite">
+            Усі завдання: 20
+          </p>
+        </div>
+        <p class="wsapp-panel" id="homework-empty" hidden>
+          Нічого не знайдено. Спробуй іншу назву або номер.
+        </p>
 
-    <main class="wsapp-main">
-      <h1 class="wsapp-h2">Frontend 4 - JavaScript homeworks</h1>
-      <p class="wsapp-muted">New JavaScript homework.</p>
-
-      <section class="wsapp-list" aria-label="Frontend 4 JavaScript homework list">
-        <a class="wsapp-listItem" href="./layout.html?file=js4-001.html">
-          <p class="wsapp-listItem__title">JS-001 - Gallery lightbox</p>
-          <p class="wsapp-listItem__meta">render gallery / modal / events</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-002.html">
-          <p class="wsapp-listItem__title">JS-002 - Lodash. Throttle and Debounce</p>
-          <p class="wsapp-listItem__meta">implement throttle and debounce functions</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-003.html">
-          <p class="wsapp-listItem__title">JS-003 - Lazy loading images</p>
-          <p class="wsapp-listItem__meta">Frontend 4: Intersection Observer для лінивого завантаження картинок</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-004.html">
-          <p class="wsapp-listItem__title">JS-004 - Package.json setup</p>
-          <p class="wsapp-listItem__meta">Frontend 4: initialize Node project with package.json and main.js</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-005.html">
-          <p class="wsapp-listItem__title">JS-005 -</p>
-          <p class="wsapp-listItem__meta">Frontend 4:</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-006.html">
-          <p class="wsapp-listItem__title">JS-006 - Parcel та JavaScript модулі</p>
-          <p class="wsapp-listItem__meta">Frontend 4: npm scripts, import/export та збірка сайту</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-007.html">
-          <p class="wsapp-listItem__title">JS-007 - Handlebars і Parcel</p>
-          <p class="wsapp-listItem__meta">Frontend 4: шаблони, додавання та видалення товарів</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-008.html">
-          <p class="wsapp-listItem__title">JS-008 - localStorage і Handlebars</p>
-          <p class="wsapp-listItem__meta">Frontend 4: закладки, форма та пошук товарів</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-009.html">
-          <p class="wsapp-listItem__title">JS-009 - Книга контактів</p>
-          <p class="wsapp-listItem__meta">Frontend 4: додавання, редагування, видалення та localStorage</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-010.html">
-          <p class="wsapp-listItem__title">JS-010 - Таймери та інтервали</p>
-          <p class="wsapp-listItem__meta">Frontend 4: setInterval, clearInterval і setTimeout</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-011.html">
-          <p class="wsapp-listItem__title">JS-011 - Таймери з повідомленням</p>
-          <p class="wsapp-listItem__meta">Frontend 4: хвилинний таймер і відлік мілісекунд</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-012.html">
-          <p class="wsapp-listItem__title">JS-012 - CountdownTimer</p>
-          <p class="wsapp-listItem__meta">Frontend 4: плагін зворотного відліку до дати</p>
-        </a>
-        <a class="wsapp-listItem" href="./layout.html?file=js4-013.html">
-          <p class="wsapp-listItem__title">JS-013 - Promises</p>
-          <p class="wsapp-listItem__meta">Frontend 4: delay, toggleUserState і makeTransaction</p>
-        </a>
-      </section>
-    </main>
-  </div>
-</body>
-
+        <section
+          class="wsapp-list"
+          aria-label="Frontend 4 JavaScript homework list"
+        >
+          <a class="wsapp-listItem" href="./layout.html?file=js4-001.html">
+            <p class="wsapp-listItem__title">JS-001 - Gallery lightbox</p>
+            <p class="wsapp-listItem__meta">render gallery / modal / events</p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-002.html">
+            <p class="wsapp-listItem__title">
+              JS-002 - Lodash. Throttle and Debounce
+            </p>
+            <p class="wsapp-listItem__meta">
+              implement throttle and debounce functions
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-003.html">
+            <p class="wsapp-listItem__title">JS-003 - Lazy loading images</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: Intersection Observer для лінивого завантаження
+              картинок
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-004.html">
+            <p class="wsapp-listItem__title">JS-004 - Package.json setup</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: initialize Node project with package.json and main.js
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-005.html">
+            <p class="wsapp-listItem__title">JS-005 -</p>
+            <p class="wsapp-listItem__meta">Frontend 4:</p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-006.html">
+            <p class="wsapp-listItem__title">
+              JS-006 - Parcel та JavaScript модулі
+            </p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: npm scripts, import/export та збірка сайту
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-007.html">
+            <p class="wsapp-listItem__title">JS-007 - Handlebars і Parcel</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: шаблони, додавання та видалення товарів
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-008.html">
+            <p class="wsapp-listItem__title">
+              JS-008 - localStorage і Handlebars
+            </p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: закладки, форма та пошук товарів
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-009.html">
+            <p class="wsapp-listItem__title">JS-009 - Книга контактів</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: додавання, редагування, видалення та localStorage
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-010.html">
+            <p class="wsapp-listItem__title">JS-010 - Таймери та інтервали</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: setInterval, clearInterval і setTimeout
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-011.html">
+            <p class="wsapp-listItem__title">
+              JS-011 - Таймери з повідомленням
+            </p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: хвилинний таймер і відлік мілісекунд
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-012.html">
+            <p class="wsapp-listItem__title">JS-012 - CountdownTimer</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: плагін зворотного відліку до дати
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-013.html">
+            <p class="wsapp-listItem__title">JS-013 - Promises</p>
+            <p class="wsapp-listItem__meta">
+              Frontend 4: delay, toggleUserState і makeTransaction
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-014.html">
+            <p class="wsapp-listItem__title">
+              JS-014 - Методи класу Promise. Цикл подій
+            </p>
+            <p class="wsapp-listItem__meta">Promise.all і Promise.race</p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-015.html">
+            <p class="wsapp-listItem__title">
+              JS-015 - HTTP-запити 1. REST API
+            </p>
+            <p class="wsapp-listItem__meta">Пошук країн: інтерфейс і шаблони</p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-016.html">
+            <p class="wsapp-listItem__title">JS-016 - HTTP-запити 2. AJAX</p>
+            <p class="wsapp-listItem__meta">
+              Запити, debounce і результати пошуку
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-017.html">
+            <p class="wsapp-listItem__title">JS-017 - Пагінація</p>
+            <p class="wsapp-listItem__meta">
+              Вибір редакції Pixabay і завантаження наступних сторінок
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-018.html">
+            <p class="wsapp-listItem__title">JS-018 - CRUD студентів</p>
+            <p class="wsapp-listItem__meta">GET, POST, PATCH, PUT і DELETE</p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-019.html">
+            <p class="wsapp-listItem__title">
+              JS-019 - Асинхронні функції async/await
+            </p>
+            <p class="wsapp-listItem__meta">
+              CRUD студентів з async/await і try…catch
+            </p>
+          </a>
+          <a class="wsapp-listItem" href="./layout.html?file=js4-020.html">
+            <p class="wsapp-listItem__title">
+              JS-020 - Мініпроєкт: пошук зображень
+            </p>
+            <p class="wsapp-listItem__meta">
+              Pixabay, async/await, пагінація та великі фото
+            </p>
+          </a>
+        </section>
+      </main>
+    </div>
+    <script src="../../../assets/homework-list.js" defer></script>
+  </body>
 </html>

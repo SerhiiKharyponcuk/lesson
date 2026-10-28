@@ -1,135 +1,148 @@
-(function () {
-  'use strict';
+(() => {
+  "use strict";
 
-  const gate = document.getElementById('wsapp-roleGate');
-  if (!gate) return;
+  const auth = window.wsappAuth;
+  const gate = document.getElementById("wsapp-roleGate");
+  const app = document.getElementById("wsapp-app");
+  const form = document.getElementById("wsappGateForm");
+  const passwordInput = document.getElementById("wsappGatePassword");
+  const passwordToggle = document.getElementById("wsappGateToggle");
+  const passwordLabel = document.querySelector(
+    'label[for="wsappGatePassword"]',
+  );
+  const errorMessage = document.getElementById("wsappGateError");
+  const submitButton = form?.querySelector('[type="submit"]');
+  if (!gate || !auth || !form) return;
 
-  const roleCards = gate.querySelectorAll('[data-role]');
-  const form = document.getElementById('wsappGateForm');
-  const passwordInput = document.getElementById('wsappGatePassword');
-  const togglePasswordBtn = document.getElementById('wsappGateToggle');
-  const errorEl = document.getElementById('wsappGateError');
-  const closeBtns = gate.querySelectorAll('[data-gate-close]');
+  const roleCards = gate.querySelectorAll("[data-role]");
+  const savedRole = localStorage.getItem("wsapp_role");
+  let selectedRole = savedRole === "teacher" ? "teacher" : "student";
+  let checking = false;
 
-  const PASSWORDS = {
-    student: '1111',
-    teacher: '2222'
-  };
-
-  const SHOW_DELAY = 2000;
-
-  let selectedRole = localStorage.getItem('wsapp_role') || 'student';
-
-  function highlightRole() {
-    roleCards.forEach(card => {
-      card.classList.toggle(
-        'wsapp-gate__card--active',
-        card.dataset.role === selectedRole
-      );
-    });
-  }
-
-  function resetPasswordField() {
-    if (!passwordInput) return;
-
-    passwordInput.value = '';
-    passwordInput.type = 'password';
-
-    if (togglePasswordBtn) {
-      togglePasswordBtn.textContent = '👁';
-      togglePasswordBtn.setAttribute('aria-label', 'Показати пароль');
-      togglePasswordBtn.setAttribute('aria-pressed', 'false');
+  function selectRole(role) {
+    selectedRole = role;
+    for (const card of roleCards) {
+      const selected = card.dataset.role === role;
+      card.classList.toggle("wsapp-gate__card--active", selected);
+      card.setAttribute("aria-pressed", String(selected));
     }
+    passwordLabel.textContent =
+      role === "teacher" ? "Пароль вчителя" : "Мій пароль";
+    submitButton.textContent =
+      role === "teacher" ? "Увійти як вчитель" : "Увійти як учень";
+    errorMessage.textContent = "";
+    passwordInput.value = "";
+    passwordInput.type = "password";
+    passwordToggle.textContent = "👁";
+    passwordToggle.setAttribute("aria-pressed", "false");
+    passwordToggle.setAttribute("aria-label", "Показати пароль");
   }
 
   function showGate() {
-    gate.classList.remove('wsapp-gate--hidden');
-    gate.setAttribute('aria-hidden', 'false');
-
-    resetPasswordField();
-
-    if (errorEl) {
-      errorEl.textContent = '';
-    }
-
-    highlightRole();
-
-    setTimeout(() => {
-      if (passwordInput) passwordInput.focus();
-    }, 0);
+    app.classList.add("wsapp-app--hidden");
+    gate.classList.remove("wsapp-gate--hidden");
+    gate.setAttribute("aria-hidden", "false");
+    selectRole(selectedRole);
+    passwordInput.focus({ preventScroll: true });
   }
 
-  function hideGate() {
-    gate.classList.add('wsapp-gate--hidden');
-    gate.setAttribute('aria-hidden', 'true');
+  function showApp(role) {
+    passwordInput.value = "";
+    gate.classList.add("wsapp-gate--hidden");
+    gate.setAttribute("aria-hidden", "true");
+    app.classList.remove("wsapp-app--hidden");
+    document.dispatchEvent(
+      new CustomEvent("wsapp:roleChanged", { detail: { role } }),
+    );
   }
 
-  roleCards.forEach(card => {
-    card.addEventListener('click', () => {
-      selectedRole = card.dataset.role;
-      highlightRole();
-
-      if (errorEl) {
-        errorEl.textContent = '';
-      }
+  for (const card of roleCards) {
+    card.addEventListener("click", () => {
+      if (!checking) selectRole(card.dataset.role);
     });
+  }
+
+  passwordToggle.addEventListener("click", () => {
+    const visible = passwordInput.type === "password";
+    passwordInput.type = visible ? "text" : "password";
+    passwordToggle.textContent = visible ? "🙈" : "👁";
+    passwordToggle.setAttribute("aria-pressed", String(visible));
+    passwordToggle.setAttribute(
+      "aria-label",
+      visible ? "Сховати пароль" : "Показати пароль",
+    );
   });
 
-  if (togglePasswordBtn && passwordInput) {
-    togglePasswordBtn.addEventListener('click', () => {
-      const isHidden = passwordInput.type === 'password';
+  passwordInput.addEventListener("input", () => {
+    errorMessage.textContent = "";
+  });
 
-      passwordInput.type = isHidden ? 'text' : 'password';
-      togglePasswordBtn.textContent = isHidden ? '🙈' : '👁';
-      togglePasswordBtn.setAttribute(
-        'aria-label',
-        isHidden ? 'Сховати пароль' : 'Показати пароль'
-      );
-      togglePasswordBtn.setAttribute(
-        'aria-pressed',
-        isHidden ? 'true' : 'false'
-      );
-    });
-  }
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (checking) return;
 
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    try {
+      checking = true;
+      submitButton.disabled = true;
+      submitButton.textContent = "Перевіряємо…";
+      for (const card of roleCards) card.disabled = true;
+      const success = await auth.signIn(selectedRole, passwordInput.value);
 
-      const pass = passwordInput.value.trim();
-
-      if (pass !== PASSWORDS[selectedRole]) {
-        if (errorEl) {
-          errorEl.textContent = 'Невірний пароль';
-        }
+      if (!success) {
+        errorMessage.textContent = "Невірний пароль. Спробуйте ще раз.";
+        passwordInput.select();
         return;
       }
 
-      localStorage.setItem('wsapp_role', selectedRole);
-
-      document.dispatchEvent(
-        new CustomEvent('wsapp:roleChanged', {
-          detail: { role: selectedRole }
-        })
-      );
-
-      hideGate();
-    });
-  }
-
-  closeBtns.forEach(btn => {
-    btn.addEventListener('click', hideGate);
+      showApp(selectedRole);
+      const returnUrl = auth.getReturnUrl();
+      if (returnUrl) {
+        location.replace(returnUrl);
+      } else {
+        history.replaceState(null, "", location.pathname);
+        document.querySelector("#wsapp-screen-home button")?.focus();
+      }
+    } catch (error) {
+      errorMessage.textContent =
+        "Не вдалося виконати вхід. Оновіть сторінку та спробуйте ще раз.";
+    } finally {
+      checking = false;
+      submitButton.disabled = false;
+      submitButton.textContent =
+        selectedRole === "teacher" ? "Увійти як вчитель" : "Увійти як учень";
+      for (const card of roleCards) card.disabled = false;
+    }
   });
 
-  window.wsappOpenRoleGate = showGate;
+  gate.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") event.preventDefault();
+    if (event.key !== "Tab") return;
+    const controls = gate.querySelectorAll(
+      "button:not(:disabled), input:not(:disabled)",
+    );
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
-  function startGateTimer() {
-    setTimeout(showGate, SHOW_DELAY);
+  window.wsappOpenRoleGate = auth.signOut;
+  document.addEventListener("wsapp:loginRequired", showGate);
+
+  function init() {
+    const session = auth.getSession();
+    if (session) showApp(session.role);
+    else showGate();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startGateTimer);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
   } else {
-    startGateTimer();
+    init();
   }
 })();

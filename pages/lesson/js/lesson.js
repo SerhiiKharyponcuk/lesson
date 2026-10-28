@@ -1287,7 +1287,6 @@ console.log("%cACCESS GRANTED", hackerStyle);
 // const passwordButton = document.querySelector("#buttonpasw");
 // console.log(paswordInput.value);
 // console.log(paswordInput.getAttribute("value"));
-// paswordInput.value = "2222"
 // console.log(paswordInput.getAttribute("value"));
 // console.log(paswordInput.value);
 // passwordButton.addEventListener("click", (e) => {
@@ -2316,109 +2315,108 @@ function updateUser(user) {
 // const inp = document.querySelector("#inputik");
 // const btn = document.querySelector("#buttonn");
 
-const api = {
-  getAll() {
-    return fetch(baseUrl).then(r => r.json());
-  },
+// const api = {
+//   getAll() {
+//     return fetch(baseUrl).then(r => r.json());
+//   },
 
-  create(name) {
-    return fetch(baseUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name }),
-    }).then(r => r.json());
-  },
+//   create(name) {
+//     return fetch(baseUrl, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ name }),
+//     }).then(r => r.json());
+//   },
 
-  delete(id) {
-    return fetch(`${baseUrl}/${id}`, { method: "DELETE" });
-  },
+//   delete(id) {
+//     return fetch(`${baseUrl}/${id}`, { method: "DELETE" });
+//   },
 
-  update(id, name) {
-    return fetch(`${baseUrl}/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, name }),
-    }).then(r => r.json());
-  },
-};
+//   update(id, name) {
+//     return fetch(`${baseUrl}/${id}`, {
+//       method: "PUT",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ id, name }),
+//     }).then(r => r.json());
+//   },
+// };
 
-// ---------------- UI ----------------
+// // ---------------- UI ----------------
 
-function renderUser(user) {
-  const li = document.createElement("li");
-  li.dataset.id = user.id;
+// function renderUser(user) {
+//   const li = document.createElement("li");
+//   li.dataset.id = user.id;
 
-  const nameSpan = document.createElement("span");
-  nameSpan.textContent = user.name;
+//   const nameSpan = document.createElement("span");
+//   nameSpan.textContent = user.name;
 
-  const btnDelete = document.createElement("button");
-  btnDelete.textContent = "Delete";
+//   const btnDelete = document.createElement("button");
+//   btnDelete.textContent = "Delete";
 
-  const btnUpdate = document.createElement("button");
-  btnUpdate.textContent = "Update";
+//   const btnUpdate = document.createElement("button");
+//   btnUpdate.textContent = "Update";
 
-  li.append(nameSpan, btnDelete, btnUpdate);
-  return li;
-}
+//   li.append(nameSpan, btnDelete, btnUpdate);
+//   return li;
+// }
 
-function addUserToList(user) {
-  userList.appendChild(renderUser(user));
-}
+// function addUserToList(user) {
+//   userList.appendChild(renderUser(user));
+// }
 
-function renderUsers(users) {
-  userList.innerHTML = "";
-  users.forEach(addUserToList);
-}
+// function renderUsers(users) {
+//   userList.innerHTML = "";
+//   users.forEach(addUserToList);
+// }
 
-// ---------------- Events ----------------
+// // ---------------- Events ----------------
 
-userList.addEventListener("click", async (e) => {
-  if (e.target.tagName !== "BUTTON") return;
+// userList.addEventListener("click", async (e) => {
+//   if (e.target.tagName !== "BUTTON") return;
 
-  const li = e.target.closest("li");
-  const id = li.dataset.id;
+//   const li = e.target.closest("li");
+//   const id = li.dataset.id;
 
-  if (e.target.textContent === "Delete") {
-    try {
-      await api.delete(id);
-      li.remove();
-    } catch (err) {
-      console.error("Помилка видалення:", err);
-    }
-  }
+//   if (e.target.textContent === "Delete") {
+//     try {
+//       await api.delete(id);
+//       li.remove();
+//     } catch (err) {
+//       console.error("Помилка видалення:", err);
+//     }
+//   }
 
-  if (e.target.textContent === "Update") {
-    const newName = prompt("Введіть нове ім'я:");
-    if (!newName) return;
+//   if (e.target.textContent === "Update") {
+//     const newName = prompt("Введіть нове ім'я:");
+//     if (!newName) return;
 
-    try {
-      const updated = await api.update(id, newName);
-      li.querySelector("span").textContent = updated.name;
-    } catch (err) {
-      console.error("Помилка оновлення:", err);
-    }
-  }
-});
+//     try {
+//       const updated = await api.update(id, newName);
+//       li.querySelector("span").textContent = updated.name;
+//     } catch (err) {
+//       console.error("Помилка оновлення:", err);
+//     }
+//   }
+// });
 
-userForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// userForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
 
-  const name = inp.value.trim();
-  if (!name) return;
+//   const name = inp.value.trim();
+//   if (!name) return;
 
-  try {
-    const created = await api.create(name);
-    addUserToList(created);
-    inp.value = "";
-  } catch (err) {
-    console.error("Помилка створення:", err);
-  }
-});
+//   try {
+//     const created = await api.create(name);
+//     addUserToList(created);
+//     inp.value = "";
+//   } catch (err) {
+//     console.error("Помилка створення:", err);
+//   }
+// });
 
-// ---------------- Init ----------------
+// // ---------------- Init ----------------
 
-api.getAll()
-  .then(renderUsers)
-  .catch(err => console.error("Помилка отримання юзерів:", err));
-
+// api.getAll()
+//   .then(renderUsers)
+//   .catch(err => console.error("Помилка отримання юзерів:", err));
 

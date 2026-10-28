@@ -1,4 +1,80 @@
-<section class="frontend-4-task">
-    <h2>Frontend 4 - JS-020</h2>
-    <p>Заготовка для домашнього завдання JS-020.</p>
+<section class="async-homework">
+  <h2>Пошук зображень</h2>
+  <details class="settings">
+    <summary>API-ключ Pixabay</summary>
+    <label for="pixabay-key">Ключ доступу</label>
+    <input
+      id="pixabay-key"
+      type="password"
+      autocomplete="off"
+      placeholder="Встав свій API-ключ"
+    />
+  </details>
+  <form class="search-form form-row" id="search-form">
+    <label for="image-query"
+      >Ключове слово
+      <input
+        id="image-query"
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+        maxlength="100"
+        required
+      />
+    </label>
+    <button class="wsapp-btn" type="submit">Шукати</button>
+  </form>
+  <p>
+    Зображення з
+    <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer"
+      >Pixabay</a
+    >.
+  </p>
+  <p class="status" id="gallery-status" role="status" aria-live="polite">
+    Введи ключове слово для пошуку.
+  </p>
+  <ul class="gallery" aria-label="Результати пошуку зображень"></ul>
+  <div class="load-more-row">
+    <button class="wsapp-btn" id="load-more" type="button" hidden>
+      Load more
+    </button>
+  </div>
+  <template id="photo-template">
+    <li>
+      <div class="photo-card">
+        <button class="photo-link" type="button">
+          <img src="" alt="" loading="lazy" width="640" height="400" />
+        </button>
+        <div class="stats">
+          <p class="stats-item" title="Лайки">
+            <i class="material-icons" aria-hidden="true">thumb_up</i
+            ><span class="sr-only">Лайки:</span><span data-likes></span>
+          </p>
+          <p class="stats-item" title="Перегляди">
+            <i class="material-icons" aria-hidden="true">visibility</i
+            ><span class="sr-only">Перегляди:</span><span data-views></span>
+          </p>
+          <p class="stats-item" title="Коментарі">
+            <i class="material-icons" aria-hidden="true">comment</i
+            ><span class="sr-only">Коментарі:</span><span data-comments></span>
+          </p>
+          <p class="stats-item" title="Завантаження">
+            <i class="material-icons" aria-hidden="true">cloud_download</i
+            ><span class="sr-only">Завантаження:</span
+            ><span data-downloads></span>
+          </p>
+        </div>
+        <a class="photo-source" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+    </li>
+  </template>
+  <dialog
+    class="lightbox"
+    id="image-dialog"
+    aria-label="Перегляд великого зображення"
+  >
+    <button class="wsapp-btn" id="close-image" type="button">Закрити</button>
+    <img alt="" />
+  </dialog>
 </section>

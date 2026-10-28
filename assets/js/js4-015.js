@@ -1,7 +1,8 @@
 (() => {
   "use strict";
 
-  window.runTask = () => {
-    console.info("JS-015 is ready for implementation.");
-  };
+  window.taskReady = window.initCountrySearch().catch(() => {
+    document.querySelector("#country-status").textContent =
+      "Не вдалося підготувати пошук. Онови сторінку.";
+  });
 })();
